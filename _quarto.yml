@@ -1,0 +1,31 @@
+project:
+  type: book
+  output-dir: _book
+  
+book:
+  title: "This is the title"
+  author: "Kari Nordmann"
+  description: | 
+    Add some description here if you like.
+  repo-url: https://github.com/NINAnor/NINA-ebook-template
+  repo-branch: main
+  repo-actions: [edit]
+  sharing: [twitter, facebook, linkedin]
+  chapters:
+    - index.qmd
+    - part: my-first-book.qmd
+      chapters: 
+        - hello-world.qmd
+  appendices:
+    - appendix-notes.qmd
+    
+format:
+  html: 
+    theme: 
+    - cosmo
+    - NINAstyle.scss
+    
+    code-link: true
+
+bibliography: references.bib
+csl: NINArefStyle.csl

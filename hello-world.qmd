@@ -1,0 +1,33 @@
+# The Hello World Example {#sec-hello-world}
+
+Hello Quarto World!
+
+## Figures and cross referencing
+
+You can cross reference figures and tables easily. See for example @fig-plot, or if this figure was in the supplementary, you could add a custom prefix and cite it as [Figure S @fig-plot] .
+
+You can also cross reference chapters, for example with a hyper link like [this](#sec-appendix), or directly, like @sec-appendix.
+
+```{r}
+#| label: fig-plot
+#| fig-cap: "This is a figure caption"
+#| echo: true
+
+plot(cars)
+```
+
+Here's a simple markdown generated table [@tbl-myTable]:
+
+| Animal | Colour  | Size |
+|--------|---------|------|
+| Bear   | Brown   | Big  |
+| Wolf   | Grey    | Big  |
+| Lynx   | Orange? | Big  |
+
+: My Table {#tbl-myTable}
+
+For adding reference, quarto work great with Zotero. If you are in RStudio, just type \\\@ and you will be able to search your Zotero library. When you add a reference, it will automatically be added to the `references.bib` file. Here's a reference to a paper [@arvesen2018].
+
+For general Quarto help, see [here](#0){style="font-size: 11pt;"}, and for Quarto books, see [here](Quarto%20–%20Book%20Structure%3E%3E).
+
+#### References {.unnumbered}

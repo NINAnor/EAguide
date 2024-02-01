@@ -1,0 +1,27 @@
+---
+bibliography: references.bib
+---
+
+## Welcome {.unnumbered}
+
+Welcome splash page! Provide an overview of the book.
+
+Sample evaluation of R and Python in a side-by-side manner:
+
+::: {layout-ncol="2"}
+#### R
+
+```{r}
+my_list = list(1, 2, 3)
+typeof(my_list)
+```
+
+#### Python
+
+```{python}
+my_list = [1, 2, 3]
+type(my_list)
+```
+:::
+
+See [Chapter 1](#sec-hello-world) for how to plot and cross reference figures. We cannot make cross referanceble objects on this page, because it is an *unnumbered* page, and you can't cross reference to things in unnumbered pages.

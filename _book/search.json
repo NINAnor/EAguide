@@ -1,0 +1,85 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "This is the title",
+    "section": "",
+    "text": "Welcome\nWelcome splash page! Provide an overview of the book.\nSample evaluation of R and Python in a side-by-side manner:\nSee Chapter 1 for how to plot and cross reference figures. We cannot make cross referanceble objects on this page, because it is an unnumbered page, and you can’t cross reference to things in unnumbered pages.",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#welcome",
+    "href": "index.html#welcome",
+    "title": "This is the title",
+    "section": "",
+    "text": "my_list = list(1, 2, 3)\ntypeof(my_list)\nmy_list = [1, 2, 3]\ntype(my_list)\n\n\nR\n\n[1] \"list\"\n\nPython\n\n&lt;class 'list'&gt;",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "my-first-book.html",
+    "href": "my-first-book.html",
+    "title": "Part 1: Write the book",
+    "section": "",
+    "text": "Sample additional page",
+    "crumbs": [
+      "Part 1: Write the book"
+    ]
+  },
+  {
+    "objectID": "hello-world.html",
+    "href": "hello-world.html",
+    "title": "1  The Hello World Example",
+    "section": "",
+    "text": "1.1 Figures and cross referencing\nYou can cross reference figures and tables easily. See for example Figure 1.1, or if this figure was in the supplementary, you could add a custom prefix and cite it as Figure S 1.1 .\nYou can also cross reference chapters, for example with a hyper link like this, or directly, like Appendix A.\nplot(cars)\n\n\n\n\n\n\nFigure 1.1: This is a figure caption\nHere’s a simple markdown generated table Table 1.1:\nFor adding reference, quarto work great with Zotero. If you are in RStudio, just type \\@ and you will be able to search your Zotero library. When you add a reference, it will automatically be added to the references.bib file. Here’s a reference to a paper (Arvesen et al. 2018).\nFor general Quarto help, see here, and for Quarto books, see here.",
+    "crumbs": [
+      "Part 1: Write the book",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>The Hello World Example</span>"
+    ]
+  },
+  {
+    "objectID": "appendix-notes.html",
+    "href": "appendix-notes.html",
+    "title": "Appendix A — Additional Notes",
+    "section": "",
+    "text": "Sample appendix",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Additional Notes</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#figures-and-cross-referenncing",
+    "href": "index.html#figures-and-cross-referenncing",
+    "title": "This is the title",
+    "section": "Figures and cross referenncing",
+    "text": "Figures and cross referenncing\nYou can cross reference figures and tables easily. See for example Figure This is a figure caption. You can also cross ref to chapter, for example like this.\n\n\n\n\n\n\n\nFigure 1: This is a figure caption\n\n\n\n\nFor general Quarto help, see here.",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#figures-and-cross-referencing",
+    "href": "index.html#figures-and-cross-referencing",
+    "title": "This is the title",
+    "section": "Figures and cross referencing",
+    "text": "Figures and cross referencing\nYou can cross reference figures and tables easily. See for example Figure This is a figure caption, or if this figure was in the supplementary, you could add a custum prefix and cite it as [Figure S@fig-plot].\nYou can also cross reference chapters, for example like this.\n\nplot(cars)\n\n\n\n\n\n\nFigure 1: This is a figure caption\n\n\n\n\nHere’s a simple markdown generated table Table My Table:\n\n\nTable 1: My Table\n\n\n\nAnimal\nColour\nSize\n\n\n\nBear\nBrown\nBig\n\n\nWolf\nGrey\nBig\n\n\nLynx\nOrange?\nBig\n\n\n\n\n\n\nFor adding reference, quarto work great with Zotero. If you are in RStudio, just type \\@ and you will be able to search your Zotero library. When you add a reference, it will automatically be added to the references.bib file. Here’s a reference to a paper (Arvesen et al. 2018).\nFor general Quarto help, see here.\nReferences\n\n\n\n\nArvesen, Anders, Francesco Cherubini, Gonzalo del Alamo Serrano, Rasmus Astrup, Michael Becidan, Helmer Belbo, Franziska Goile, et al. 2018. “Cooling Aerosols and Changes in Albedo Counteract Warming from CO 2 and Black Carbon from Forest Bioenergy in Norway.” Scientific Reports 8 (September 2017): 1–13. https://doi.org/10.1038/s41598-018-21559-8.",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "hello-world.html#figures-and-cross-referencing",
+    "href": "hello-world.html#figures-and-cross-referencing",
+    "title": "1  The Hello World Example",
+    "section": "",
+    "text": "Table 1.1: My Table\n\n\n\nAnimal\nColour\nSize\n\n\n\nBear\nBrown\nBig\n\n\nWolf\nGrey\nBig\n\n\nLynx\nOrange?\nBig\n\n\n\n\n\n\n\n\nReferences\n\n\n\n\nArvesen, A., Cherubini, F., Serrano, G. del A., Astrup, R., Becidan, M., Belbo, H., Goile, F., Grytli, T., Guest, G., Lausselet, C., Rørstad, P.K., Rydså, L., Seljeskog, M., Skreiberg, Ø., Vezhapparambu, S., and Strømman, A.H. 2018. Cooling aerosols and changes in albedo counteract warming from CO 2 and black carbon from forest bioenergy in norway. Scientific Reports 8(September 2017): 1–13. doi:10.1038/s41598-018-21559-8.",
+    "crumbs": [
+      "Part 1: Write the book",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>The Hello World Example</span>"
+    ]
+  }
+]

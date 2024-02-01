@@ -41,37 +41,6 @@
     ]
   },
   {
-    "objectID": "appendix-notes.html",
-    "href": "appendix-notes.html",
-    "title": "Appendix A — Additional Notes",
-    "section": "",
-    "text": "Sample appendix",
-    "crumbs": [
-      "Appendices",
-      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Additional Notes</span>"
-    ]
-  },
-  {
-    "objectID": "index.html#figures-and-cross-referenncing",
-    "href": "index.html#figures-and-cross-referenncing",
-    "title": "This is the title",
-    "section": "Figures and cross referenncing",
-    "text": "Figures and cross referenncing\nYou can cross reference figures and tables easily. See for example Figure This is a figure caption. You can also cross ref to chapter, for example like this.\n\n\n\n\n\n\n\nFigure 1: This is a figure caption\n\n\n\n\nFor general Quarto help, see here.",
-    "crumbs": [
-      "Welcome"
-    ]
-  },
-  {
-    "objectID": "index.html#figures-and-cross-referencing",
-    "href": "index.html#figures-and-cross-referencing",
-    "title": "This is the title",
-    "section": "Figures and cross referencing",
-    "text": "Figures and cross referencing\nYou can cross reference figures and tables easily. See for example Figure This is a figure caption, or if this figure was in the supplementary, you could add a custum prefix and cite it as [Figure S@fig-plot].\nYou can also cross reference chapters, for example like this.\n\nplot(cars)\n\n\n\n\n\n\nFigure 1: This is a figure caption\n\n\n\n\nHere’s a simple markdown generated table Table My Table:\n\n\nTable 1: My Table\n\n\n\nAnimal\nColour\nSize\n\n\n\nBear\nBrown\nBig\n\n\nWolf\nGrey\nBig\n\n\nLynx\nOrange?\nBig\n\n\n\n\n\n\nFor adding reference, quarto work great with Zotero. If you are in RStudio, just type \\@ and you will be able to search your Zotero library. When you add a reference, it will automatically be added to the references.bib file. Here’s a reference to a paper (Arvesen et al. 2018).\nFor general Quarto help, see here.\nReferences\n\n\n\n\nArvesen, Anders, Francesco Cherubini, Gonzalo del Alamo Serrano, Rasmus Astrup, Michael Becidan, Helmer Belbo, Franziska Goile, et al. 2018. “Cooling Aerosols and Changes in Albedo Counteract Warming from CO 2 and Black Carbon from Forest Bioenergy in Norway.” Scientific Reports 8 (September 2017): 1–13. https://doi.org/10.1038/s41598-018-21559-8.",
-    "crumbs": [
-      "Welcome"
-    ]
-  },
-  {
     "objectID": "hello-world.html#figures-and-cross-referencing",
     "href": "hello-world.html#figures-and-cross-referencing",
     "title": "1  The Hello World Example",
@@ -80,6 +49,17 @@
     "crumbs": [
       "Part 1: Write the book",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>The Hello World Example</span>"
+    ]
+  },
+  {
+    "objectID": "appendix-notes.html",
+    "href": "appendix-notes.html",
+    "title": "Appendix A — Additional Notes",
+    "section": "",
+    "text": "Sample appendix",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Additional Notes</span>"
     ]
   }
 ]

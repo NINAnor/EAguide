@@ -1,0 +1,65 @@
+# Field surveys {#sec-field-surveys}
+
+```{r setup}
+#| include: false
+#| warning: false
+#| message: false
+library(tidyverse)
+library(DiagrammeR)
+```
+
+## GIS tools
+
+blablabla
+
+### Flowcharts
+
+I would've liked to use DiagrammeR, but I cant get it to render as html.
+
+It only renders in the interactive R session.
+
+```{r}
+#| label: flowchart
+#| echo: true
+#| eval: false
+#| code-fold: true
+
+
+create_graph() |>
+  add_node(
+    label="Node A"
+  ) |>
+  add_node(
+    label = " I have a\nhyperlink"
+  ) |>
+  add_edge(from = 1, to = 2) |>
+  select_last_nodes_created() |>
+  set_node_attrs_ws(node_attr = URL, value = "https://nrk.no") |>
+  add_node(
+    label = "Looooooooooooooooooooong name",
+    from = 1, 
+    to = 2) |>
+  set_node_attrs(node_attr = shape, values =  "box") |>
+  select_nodes_by_id(nodes = 3) |>
+  # not sure why this doesn't work:
+  set_node_attrs_ws(node_attr = shape, value = "rectangle")  |>
+  render_graph()
+```
+
+So we can use the integrated quarto functionality instead, mermaid or grViz (DOT).
+
+These don't render in interactive R sessions, but show in the knitted html.
+
+For mermaid instructions see [here](https://mermaid.js.org/syntax/flowchart.html).
+
+```{mermaid}
+flowchart LR
+    A-->B
+    B-->C
+    B-->D
+    C-->D
+    click A callback "Tooltip for a callback"
+    click B "https://www.github.com" "This is a tooltip for a link"
+    click C call callback() "Tooltip for a callback"
+    click D href "https://www.github.com" "This is a tooltip for a link"
+```

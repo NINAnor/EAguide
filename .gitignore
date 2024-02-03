@@ -28,3 +28,4 @@ vignettes/*.pdf
 .Renviron
 /.quarto/
 NINA-ebook-template.Rproj
+EAguide.Rproj

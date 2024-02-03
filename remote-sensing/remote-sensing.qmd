@@ -1,0 +1,3 @@
+# Remote sensing {#sec-remote-sensing}
+
+Maybe we want to have a chapter in this?

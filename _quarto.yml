@@ -3,19 +3,21 @@ project:
   output-dir: _book
   
 book:
-  title: "This is the title"
-  author: "Kari Nordmann"
+  title: "Local Ecosystem accounts - a technical guidebook" 
+  author:
+  - name: "Willeke Anna Josephina A'Campo"
+  - name: "Anders Lorentzen Kolstad"
   description: | 
-    Add some description here if you like.
-  repo-url: https://github.com/NINAnor/NINA-ebook-template
+    NINAs Technical Guidebook for Local-Scale Ecosystem Accounting Projects
+  repo-url: https://github.com/NINAnor/EAguide
   repo-branch: main
   repo-actions: [edit]
   sharing: [twitter, facebook, linkedin]
   chapters:
     - index.qmd
-    - part: my-first-book.qmd
-      chapters: 
-        - hello-world.qmd
+    - field-surveys/field-surveys.qmd
+    - remote-sensing/remote-sensing.qmd
+    - naming-convention/naming-convention.qmd
   appendices:
     - appendix-notes.qmd
     

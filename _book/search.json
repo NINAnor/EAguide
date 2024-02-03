@@ -2,11 +2,11 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "This is the title",
+    "title": "Local Ecosystem accounts - a technical guidebook",
     "section": "",
-    "text": "Welcome\nWelcome splash page! Provide an overview of the book.\nSample evaluation of R and Python in a side-by-side manner:\nSee Chapter 1 for how to plot and cross reference figures. We cannot make cross referanceble objects on this page, because it is an unnumbered page, and you can’t cross reference to things in unnumbered pages.",
+    "text": "Introduction\nThis technical guidebook is here to ….",
     "crumbs": [
-      "Welcome"
+      "Introduction"
     ]
   },
   {
@@ -60,6 +60,66 @@
     "crumbs": [
       "Appendices",
       "<span class='chapter-number'>A</span>  <span class='chapter-title'>Additional Notes</span>"
+    ]
+  },
+  {
+    "objectID": "field-surveys.html",
+    "href": "field-surveys.html",
+    "title": "1  Field surveys",
+    "section": "",
+    "text": "1.1 GIS tools\nblablabla",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Field surveys</span>"
+    ]
+  },
+  {
+    "objectID": "remote-sensing.html",
+    "href": "remote-sensing.html",
+    "title": "2  Remote sensing",
+    "section": "",
+    "text": "Maybe we want to have a chapter in this?",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Remote sensing</span>"
+    ]
+  },
+  {
+    "objectID": "field-surveys/field-surveys.html",
+    "href": "field-surveys/field-surveys.html",
+    "title": "1  Field surveys",
+    "section": "",
+    "text": "1.1 GIS tools\nblablabla",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Field surveys</span>"
+    ]
+  },
+  {
+    "objectID": "naming-convention/naming-convention.html",
+    "href": "naming-convention/naming-convention.html",
+    "title": "3  Naming convention",
+    "section": "",
+    "text": "How to name variables etc.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Naming convention</span>"
+    ]
+  },
+  {
+    "objectID": "remote-sensing/remote-sensing.html",
+    "href": "remote-sensing/remote-sensing.html",
+    "title": "2  Remote sensing",
+    "section": "",
+    "text": "Maybe we want to have a chapter in this?",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Remote sensing</span>"
+    ]
+  },
+  {
+    "objectID": "field-surveys/field-surveys.html#gis-tools",
+    "href": "field-surveys/field-surveys.html#gis-tools",
+    "title": "1  Field surveys",
+    "section": "",
+    "text": "1.1.1 Flowcharts\nI would’ve liked to use DiagrammeR, but I cant get it to render as html.\nIt only renders in the interactive R session.\n\nCodecreate_graph() |&gt;\n  add_node(\n    label=\"Node A\"\n  ) |&gt;\n  add_node(\n    label = \" I have a\\nhyperlink\"\n  ) |&gt;\n  add_edge(from = 1, to = 2) |&gt;\n  select_last_nodes_created() |&gt;\n  set_node_attrs_ws(node_attr = URL, value = \"https://nrk.no\") |&gt;\n  add_node(\n    label = \"Looooooooooooooooooooong name\",\n    from = 1, \n    to = 2) |&gt;\n  set_node_attrs(node_attr = shape, values =  \"box\") |&gt;\n  select_nodes_by_id(nodes = 3) |&gt;\n  # not sure why this doesn't work:\n  set_node_attrs_ws(node_attr = shape, value = \"rectangle\")  |&gt;\n  render_graph()\n\n\nSo we can use the integrated quarto functionality instead, mermaid or grViz (DOT).\nThese don’t render in interactive R sessions, but show in the knitted html.\nFor mermaid instructions see here.\n\n\n\n\n\nflowchart LR\n    A--&gt;B\n    B--&gt;C\n    B--&gt;D\n    C--&gt;D\n    click A callback \"Tooltip for a callback\"\n    click B \"https://www.github.com\" \"This is a tooltip for a link\"\n    click C call callback() \"Tooltip for a callback\"\n    click D href \"https://www.github.com\" \"This is a tooltip for a link\"",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Field surveys</span>"
     ]
   }
 ]

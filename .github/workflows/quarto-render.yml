@@ -59,5 +59,9 @@ jobs:
         uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
+          render: false
           #path: _book
+        env:
+          GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+
 

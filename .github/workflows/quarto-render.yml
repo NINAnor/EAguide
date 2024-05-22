@@ -50,7 +50,8 @@ jobs:
       # Install python dependencies from requirements via pip
       - name: "Install Python dependencies via Pip"
         run: | 
-           pip install -r requirements.txt
+          python -m pip install --upgrade pip
+          python -m pip install pyyaml jupyter nbformat
 
       # Render the Quarto book using GitHub actions and publish
       # We are using the built-in {{GITHUB_PAT}} environment variable.

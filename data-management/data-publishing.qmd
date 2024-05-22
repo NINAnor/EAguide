@@ -1,6 +1,6 @@
 # Publish Map Data {#sec-data-publishing}
 
-Local ecosystem accounting map results will be published in the dataset [Local Ecosystem Accounts](https://maps.nina.no/) on NINA's map portal for curated maps. To publish maps, the data manager of the project should submit the import schema to Miljødata (see [step-by-step guide](#step-by-step-guide-on-preparing-your-data)). 
+Local ecosystem accounting map results will be published in the dataset [Local Ecosystem Accounts](https://maps.nina.no/) on NINA's map portal for curated maps. To publish maps, the data manager of the project should submit the import schema to Miljødata (see the [step-by-step guide](#step-by-step-guide-on-preparing-your-data)). 
 
 The **Local Ecosystem Accounting Dataset** is structured as follows: maps are categorized by project, and within each project, map layers are further organized according to the components of the Ecosystem Accounting Framework:
 
@@ -13,8 +13,50 @@ The **Local Ecosystem Accounting Dataset** is structured as follows: maps are ca
 **Curated Maps** represent a collection of maps that are carefully selected and organized. [NINA's map portal](https://maps.nina.no/)  is designed to facilitate the sharing of your final map results with both internal and external users. It's important to note that this portal is not intended for storing interim or temporary data products. 
 :::
 
-## Step-by-step guide on preparing your data 
+## Step-by-step guide for submitting data
 
+1. Organize your data
+- Create a folder *nina_map_catalog* within your project folder (*P:/*)
+- Group your data into Ecosystem Accounting Framework groups: services, extent, condition, misc. 
+- Raster data:
+    - save each raster as a single-band GeoTIFF into the *nina_map_catalog* folder. 
+    - use underscore as spaces (*air_pollution_0301.tif*)
+- Vector data:
+    - save all vector layers of one group into one GeoPackage and save it in the *nina_map_catalog* folder. 
+    - *%project_name%*_service.gpkg
+    - *%project_name%*_extent.gpkg
+    - *%project_name%*_condition.gpkg
+    - *%project_name%*_misc.gpkg
+
+
+:::{.note}
+Example of GPKG-structure:
+```{text}
+├── *%project_name%*_misc.gpkg
+    ├── study_area
+    ├── districts
+    └── urban_form_blocks
+```
+:::
+
+2. Fill out the import schema 
+
+    - [Download import schema](NINA_naturregnskap_metadata_importskjema_TEMPLATE.xlsx)
+    - A filled out example can be found [here](NINA_naturregnskap_metadata_importskjema_EXAMPLE_SPARE.xlsx).
+    - Ensure to read the **README**-sheet and fill out all required (*) fields. 
+    - **Important**: Check the data source of each data layer. If the data source is not owned by NINA, provide the WMS link to the original source and the link of where users can download this data (for example GeoNorge). In other words, we do not add AR5 data into the gpkg's! Instead we show the map as a WMS layer and point the users to NIBIO for downloading the data.
+
+3. Layer styling
+
+    - In your prefrerred GIS-software create a style for each layer.
+    - **Note**: we try to make the styling as similar as possible, but know that the maplibre software we use is not as advanced as for example ArcGIS Pro. So customized colormaps might look slightly different in the NINA Maps Portal. 
+
+3. Request for publishing a new project within the EA NINA map portal
+
+    - Send the following information to Miljødata:
+        - the filled out import-schema
+        - the path to your cleaned and organized data: *P:/.../nina_map_catalog*
+        - a qgis file, a arcgispro layer file, an agol app, an R or python file that displays your preferred styling of the map layers. 
 
 ## Guide for developers
 

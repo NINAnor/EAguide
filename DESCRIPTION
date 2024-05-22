@@ -8,6 +8,6 @@ Imports:
   rmarkdown,
   reticulate,
   tidyverse,
-  DiagrammeR
-  DiagrammeRsvg
+  DiagrammeR,
+  DiagrammeRsvg,
   rsvg

@@ -10,43 +10,58 @@
     ]
   },
   {
-    "objectID": "field-surveys/field-surveys.html",
-    "href": "field-surveys/field-surveys.html",
-    "title": "1  Field surveys",
+    "objectID": "data-management/data-management-plan.html",
+    "href": "data-management/data-management-plan.html",
+    "title": "Data Management Plan",
     "section": "",
-    "text": "1.1 GIS tools\nblablabla",
+    "text": "budget for data management and data publishing\ninvolve Miljødata from step 1 (project application)",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Field surveys</span>"
+      "Data management",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Data Management Plan</span>"
     ]
   },
   {
-    "objectID": "field-surveys/field-surveys.html#gis-tools",
-    "href": "field-surveys/field-surveys.html#gis-tools",
-    "title": "1  Field surveys",
+    "objectID": "data-management/data-publishing.html",
+    "href": "data-management/data-publishing.html",
+    "title": "Publish Map Data",
     "section": "",
-    "text": "1.1.1 Flowcharts\nI would’ve liked to use DiagrammeR, but I cant get it to render as html.\nIt only renders in the interactive R session.\n\n\nCode\ncreate_graph() |&gt;\n  add_node(\n    label=\"Node A\"\n  ) |&gt;\n  add_node(\n    label = \" I have a\\nhyperlink\"\n  ) |&gt;\n  add_edge(from = 1, to = 2) |&gt;\n  select_last_nodes_created() |&gt;\n  set_node_attrs_ws(node_attr = URL, value = \"https://nrk.no\") |&gt;\n  add_node(\n    label = \"Looooooooooooooooooooong name\",\n    from = 1, \n    to = 2) |&gt;\n  set_node_attrs(node_attr = shape, values =  \"box\") |&gt;\n  select_nodes_by_id(nodes = 3) |&gt;\n  # not sure why this doesn't work:\n  set_node_attrs_ws(node_attr = shape, value = \"rectangle\")  |&gt;\n  render_graph()\n\n\nSo we can use the integrated quarto functionality instead, mermaid or grViz (DOT).\nThese don’t render in interactive R sessions, but show in the knitted html.\nFor mermaid instructions see here.\n\n\n\n\n\nflowchart LR\n    A--&gt;B\n    B--&gt;C\n    B--&gt;D\n    C--&gt;D\n    click A callback \"Tooltip for a callback\"\n    click B \"https://www.github.com\" \"This is a tooltip for a link\"\n    click C call callback() \"Tooltip for a callback\"\n    click D href \"https://www.github.com\" \"This is a tooltip for a link\"",
+    "text": "Step-by-step guide on preparing your data",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Field surveys</span>"
+      "Data management",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Publish Map Data</span>"
+    ]
+  },
+  {
+    "objectID": "data-management/data-publishing.html#guide-for-developers",
+    "href": "data-management/data-publishing.html#guide-for-developers",
+    "title": "Publish Map Data",
+    "section": "Guide for developers",
+    "text": "Guide for developers",
+    "crumbs": [
+      "Data management",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Publish Map Data</span>"
+    ]
+  },
+  {
+    "objectID": "data-management/naming-convention.html",
+    "href": "data-management/naming-convention.html",
+    "title": "Naming convention",
+    "section": "",
+    "text": "How to name variables etc.",
+    "crumbs": [
+      "Data management",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Naming convention</span>"
     ]
   },
   {
     "objectID": "remote-sensing/remote-sensing.html",
     "href": "remote-sensing/remote-sensing.html",
-    "title": "2  Remote sensing",
+    "title": "Remote sensing",
     "section": "",
     "text": "Maybe we want to have a chapter in this?",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Remote sensing</span>"
-    ]
-  },
-  {
-    "objectID": "naming-convention/naming-convention.html",
-    "href": "naming-convention/naming-convention.html",
-    "title": "3  Naming convention",
-    "section": "",
-    "text": "How to name variables etc.",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Naming convention</span>"
+      "Remote sensing",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Remote sensing</span>"
     ]
   },
   {

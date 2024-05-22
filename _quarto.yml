@@ -22,6 +22,7 @@ book:
         - data-management/naming-convention.qmd
     - part: Field surveys 
       chapters:
+        - field-surveys/field-surveys.qmd
         - field-surveys/intro-to-qfield.qmd
         - field-surveys/qfield-nin.qmd
         - field-surveys/qfield-biodiversity-metrics.qmd

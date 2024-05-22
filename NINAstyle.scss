@@ -21,5 +21,20 @@ $headings-font-family: $font-family-sans-serif;
 $body-color: #000000;;
 $table-accent-bg: rgba($primary, .4);
 
-
 /*-- scss:rules --*/
+
+/* Example of a note class
+:::{.note}
+**Note**: This is a note.
+:::
+*/
+.note {
+    background-color: rgba($primary, .2); 
+    border: 1px solid $primary; // Use the primary color as the border
+    padding: 10px 10px 2px 10px;
+    border-radius: 5px;
+    color: $body-color; // Use the body color for the text
+    font-family: $font-family-sans-serif;
+    font-size: 0.8em;
+    margin: 20px 0 40px 0;
+}

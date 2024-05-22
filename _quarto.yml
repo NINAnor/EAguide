@@ -15,9 +15,21 @@ book:
   sharing: [twitter, facebook, linkedin]
   chapters:
     - index.qmd
-    - field-surveys/field-surveys.qmd
-    - remote-sensing/remote-sensing.qmd
-    - naming-convention/naming-convention.qmd
+    - part: Data management
+      chapters:
+        - data-management/data-management-plan.qmd
+        - data-management/data-publishing.qmd
+        - data-management/naming-convention.qmd
+    - part: Field surveys 
+      chapters:
+        - field-surveys/intro-to-qfield.qmd
+        - field-surveys/qfield-nin.qmd
+        - field-surveys/qfield-biodiversity-metrics.qmd
+        - field-surveys/qfield-bgf.qmd
+        - field-surveys/rshiny-carbon-calculator.qmd
+    - part: Remote sensing
+      chapters:
+        - remote-sensing/remote-sensing.qmd
   appendices:
     - appendix-notes.qmd
     
@@ -26,6 +38,7 @@ format:
     theme: 
     - cosmo
     - NINAstyle.scss
+    number-sections: false 
     
     code-link: true
 

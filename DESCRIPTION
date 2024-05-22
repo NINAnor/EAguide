@@ -9,3 +9,5 @@ Imports:
   reticulate,
   tidyverse,
   DiagrammeR
+  DiagrammeRsvg
+  rsvg

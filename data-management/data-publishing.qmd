@@ -1,0 +1,30 @@
+# Publish Map Data {#sec-data-publishing}
+
+Local ecosystem accounting map results will be published in the dataset [Local Ecosystem Accounts](https://maps.nina.no/) on NINA's map portal for curated maps. To publish maps, the data manager of the project should submit the import schema to Miljødata (see [step-by-step guide](#step-by-step-guide-on-preparing-your-data)). 
+
+The **Local Ecosystem Accounting Dataset** is structured as follows: maps are categorized by project, and within each project, map layers are further organized according to the components of the Ecosystem Accounting Framework:
+
+- Ecosystem Services (*Økosystemtjenester*)
+- Ecosystem Extent (*Arealregnskap for økosystemer*)
+- Ecosystem Condition (*Økologisk tilstand*)
+- Misc. (*Andre temakart*)
+
+:::{.note}
+**Curated Maps** represent a collection of maps that are carefully selected and organized. [NINA's map portal](https://maps.nina.no/)  is designed to facilitate the sharing of your final map results with both internal and external users. It's important to note that this portal is not intended for storing interim or temporary data products. 
+:::
+
+## Step-by-step guide on preparing your data 
+
+
+## Guide for developers
+
+
+
+
+
+
+
+
+
+
+

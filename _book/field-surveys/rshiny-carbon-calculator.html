@@ -8,7 +8,7 @@
 
 <meta name="description" content="NINAs Technical Guidebook for Local-Scale Ecosystem Accounting Projects">
 
-<title>Local Ecosystem accounts - a technical guidebook - 8&nbsp; Remote sensing</title>
+<title>Local Ecosystem accounts - a technical guidebook - 7&nbsp; RShiny app | Carbon Calculator</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../appendix-notes.html" rel="next">
-<link href="../field-surveys/rshiny-carbon-calculator.html" rel="prev">
+<link href="../remote-sensing/remote-sensing.html" rel="next">
+<link href="../field-surveys/qfield-bgf.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../remote-sensing/remote-sensing.html">Remote sensing</a></li><li class="breadcrumb-item"><a href="../remote-sensing/remote-sensing.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Remote sensing</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../field-surveys/intro-to-qfield.html">Field surveys</a></li><li class="breadcrumb-item"><a href="../field-surveys/rshiny-carbon-calculator.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">RShiny app | Carbon Calculator</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -151,7 +151,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../data-management/data-management-plan.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Data management</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Data Management Plan</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -174,31 +174,31 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../field-surveys/intro-to-qfield.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">intro-to-qfield.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">QGIS and QField</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../field-surveys/qfield-nin.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">qfield-nin.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">QField app | Natur i Norge (NiN)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../field-surveys/qfield-biodiversity-metrics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">qfield-biodiversity-metrics.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">QField app | Biodiversity Metrics</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../field-surveys/qfield-bgf.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">qfield-bgf.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">QField app | Blue Green Factor (BGF)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../field-surveys/rshiny-carbon-calculator.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">rshiny-carbon-calculator.html</span></span></a>
+  <a href="../field-surveys/rshiny-carbon-calculator.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">RShiny app | Carbon Calculator</span></span></a>
   </div>
 </li>
       </ul>
@@ -214,7 +214,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../remote-sensing/remote-sensing.html" class="sidebar-item-text sidebar-link active">
+  <a href="../remote-sensing/remote-sensing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Remote sensing</span></span></a>
   </div>
 </li>
@@ -248,9 +248,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../remote-sensing/remote-sensing.html">Remote sensing</a></li><li class="breadcrumb-item"><a href="../remote-sensing/remote-sensing.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Remote sensing</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../field-surveys/intro-to-qfield.html">Field surveys</a></li><li class="breadcrumb-item"><a href="../field-surveys/rshiny-carbon-calculator.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">RShiny app | Carbon Calculator</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-remote-sensing" class="quarto-section-identifier"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Remote sensing</span></span></h1>
+<h1 class="title"><span id="sec-rshiny-carbon-calculator" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">RShiny app | Carbon Calculator</span></span></h1>
 </div>
 
 
@@ -267,7 +267,6 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Maybe we want to have a chapter in this?</p>
 
 
 
@@ -683,13 +682,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../field-surveys/rshiny-carbon-calculator.html" class="pagination-link" aria-label="rshiny-carbon-calculator.html">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">rshiny-carbon-calculator.html</span></span>
+      <a href="../field-surveys/qfield-bgf.html" class="pagination-link" aria-label="QField app | Blue Green Factor (BGF)">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">QField app | Blue Green Factor (BGF)</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../appendix-notes.html" class="pagination-link" aria-label="Additional Notes">
-        <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Additional Notes</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../remote-sensing/remote-sensing.html" class="pagination-link" aria-label="Remote sensing">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Remote sensing</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -698,4 +697,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/NINAnor/EAguide/edit/main/remote-sensing/remote-sensing.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/NINAnor/EAguide/edit/main/field-surveys/rshiny-carbon-calculator.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>

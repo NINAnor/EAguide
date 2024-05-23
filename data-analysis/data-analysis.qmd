@@ -1,0 +1,5 @@
+# Data analysis {#sec-data-analysis}
+
+- comparison of methods
+- refer to previous project methods
+- best practices 

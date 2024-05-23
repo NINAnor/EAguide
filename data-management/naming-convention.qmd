@@ -1,3 +1,0 @@
-# Naming convention {#sec-naming-convention}
-
-How to name variables etc.

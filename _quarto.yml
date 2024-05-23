@@ -4,6 +4,7 @@ project:
   
 book:
   title: "Local Ecosystem accounts - a technical guidebook" 
+  subtitle: "Finskala Naturregnskap - en teknisk håndbok"
   author:
   - name: "Willeke Anna Josephina A'Campo"
   - name: "Anders Lorentzen Kolstad"
@@ -15,22 +16,23 @@ book:
   sharing: [twitter, facebook, linkedin]
   chapters:
     - index.qmd
-    - part: Data management
+    - project-management/project-management.qmd
+    - part: Data Collection
       chapters:
-        - data-management/data-management-plan.qmd
-        - data-management/data-publishing.qmd
-        - data-management/naming-convention.qmd
-    - part: Field surveys 
+        - data-collection/field-surveys/field-surveys.qmd
+        - data-collection/remote-sensing/remote-sensing.qmd
+        - data-collection/field-surveys/intro-to-qfield.qmd
+        - data-collection/field-surveys/qfield-nin.qmd
+        - data-collection/field-surveys/qfield-biodiversity-metrics.qmd
+        - data-collection/field-surveys/qfield-bgf.qmd
+        - data-collection/field-surveys/rshiny-carbon-calculator.qmd
+    - data-analysis/data-analysis.qmd
+    - data-publishing/data-publishing.qmd
+    - documentation/documentation.qmd
+    - part: FAIR Data Management
       chapters:
-        - field-surveys/field-surveys.qmd
-        - field-surveys/intro-to-qfield.qmd
-        - field-surveys/qfield-nin.qmd
-        - field-surveys/qfield-biodiversity-metrics.qmd
-        - field-surveys/qfield-bgf.qmd
-        - field-surveys/rshiny-carbon-calculator.qmd
-    - part: Remote sensing
-      chapters:
-        - remote-sensing/remote-sensing.qmd
+        - fair-data/fair-principles.qmd
+        - fair-data/naming-convention.qmd
   appendices:
     - appendix/appendix-notes.qmd
     

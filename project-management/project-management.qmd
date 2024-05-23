@@ -1,4 +1,6 @@
-# Data Management Plan {#sec-data-management-plan}
+# Project Management {#sec-project-management}
 
+- Data Management Plan
+- Licenses, tools, software 
 - budget for data management and data publishing
 - involve Miljødata from step 1 (project application)

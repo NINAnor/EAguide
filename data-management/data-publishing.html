@@ -275,8 +275,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Local ecosystem accounting map results will be published in the dataset <a href="https://maps.nina.no/">Local Ecosystem Accounts</a> on NINA’s map portal for curated maps. To publish maps, the data manager of the project should submit the import schema to Miljødata (see the <a href="#step-by-step-guide-on-preparing-your-data">step-by-step guide</a>).</p>
-<p>The <strong>Local Ecosystem Accounting Dataset</strong> is structured as follows: maps are categorized by project, and within each project, map layers are further organized according to the components of the Ecosystem Accounting Framework:</p>
+<p>Local Ecosystem Accounts, <em>Finskala Naturregnskap</em>, map results will be published in the dataset <a href="https://maps.nina.no/">Finskala Naturregnskap</a> on NINA’s map catalogue for curated maps. To publish maps, the data manager of the project should submit the import schema to Miljødata (see the <a href="#step-by-step-guide-on-preparing-your-data">step-by-step guide</a>).</p>
+<p>The <strong>Local Ecosystem Accounts Dataset</strong> is structured as follows: maps are categorized by project, and within each project, map layers are further organized according to the components of the Ecosystem Accounting Framework:</p>
 <ul>
 <li>Ecosystem Services (<em>Økosystemtjenester</em>)</li>
 <li>Ecosystem Extent (<em>Arealregnskap for økosystemer</em>)</li>
@@ -284,7 +284,7 @@ ul.task-list li input[type="checkbox"] {
 <li>Misc. (<em>Andre temakart</em>)</li>
 </ul>
 <div class="note">
-<p><strong>Curated Maps</strong> represent a collection of maps that are carefully selected and organized. <a href="https://maps.nina.no/">NINA’s map portal</a> is designed to facilitate the sharing of your final map results with both internal and external users. It’s important to note that this portal is not intended for storing interim or temporary data products.</p>
+<p><strong>Curated Maps</strong> represent a collection of maps that are carefully selected and organized. <a href="https://maps.nina.no/">NINA’s map catalogue</a> is designed to facilitate the sharing of your final map results with both internal and external users. It’s important to note that this portal is not intended for storing interim or temporary data products.</p>
 </div>
 <section id="step-by-step-guide-for-submitting-data" class="level2">
 <h2 class="anchored" data-anchor-id="step-by-step-guide-for-submitting-data">Step-by-step guide for submitting data</h2>
@@ -308,13 +308,6 @@ ul.task-list li input[type="checkbox"] {
 <li><em>%project_name%</em>_misc.gpkg</li>
 </ul></li>
 </ul>
-<div class="note">
-<p>Example of GPKG-structure:</p>
-<pre class="{text}"><code>├── *%project_name%*_misc.gpkg
-    ├── study_area
-    ├── districts
-    └── urban_form_blocks</code></pre>
-</div>
 <ol start="2" type="1">
 <li><p>Fill out the import schema</p>
 <ul>
@@ -326,7 +319,7 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Layer styling</p>
 <ul>
 <li>In your prefrerred GIS-software create a style for each layer.</li>
-<li><strong>Note</strong>: we try to make the styling as similar as possible, but know that the maplibre software we use is not as advanced as for example ArcGIS Pro. So customized colormaps might look slightly different in the NINA Maps Portal.</li>
+<li><strong>Note</strong>: we try to make the styling as similar as possible, but know that the <a href="https://maplibre.org/">MapLibre</a> library we use is not as advanced as for example ArcGIS Pro. So customized colormaps might look slightly different in the NINA Maps Portal.</li>
 </ul></li>
 <li><p>Request for publishing a new project within the EA NINA map portal</p>
 <ul>
@@ -338,9 +331,34 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul></li>
 </ol>
+<div class="note">
+<p>Example structure of nina_map_catalog folder:</p>
+<pre class="{text}"><code>P:/.../nina_map_catalog
+├── NINA_naturregnskap_metadata_importskjema_PROSJEKTNAVN.xlsx    (import schema)
+├── *%project_name%*_layer_styling.qgz                            (qgis project with preferred styling)
+├── *%project_name%*_condition.gpkg                               (vector layers grouped by EA framework)  
+├── *%project_name%*_extent.gpkg
+├── *%project_name%*_misc.gpkg
+|    ├── study_area
+|    └── vector_layer
+├── *%project_name%*_service.gpkg
+├── air_pollution_0301.tif                                        (single band raster layers)
+└── raster_layer.tif</code></pre>
+</div>
 </section>
 <section id="guide-for-developers" class="level2">
 <h2 class="anchored" data-anchor-id="guide-for-developers">Guide for developers</h2>
+<p><strong>Developers</strong>:</p>
+<ul>
+<li><a href="https://www.nina.no/Kontakt/Ansatte/Ansattinformasjon.aspx?AnsattID=16844">Niccolò Cantù</a></li>
+<li><a href="https://www.nina.no/Kontakt/Ansatte/Ansattinformasjon.aspx?AnsattID=15958">Francesco Frassinelli</a></li>
+</ul>
+<p><strong>Documentation</strong>: <a href="https://ninanor.github.io/nina-catalogue">https://ninanor.github.io/nina-catalogue</a></p>
+<p>NINA’s catalogue consists of a <a href="https://maps.nina.no/">Map Catalogue</a> for viewing and dowloading maps and a <a href="https://pycsw.nina.no/geoapi/">Metadata Catalogue</a> for accessing metadata. For the Local Ecosystem Accounts dataset (<em>Finskala Naturregnskap</em>) the maps are uploaded into the <strong>Map Catalogue</strong>, in the future these maps can also be uploaded in the <em>Metadata Catalogue</em>.</p>
+<p>Below follows a short guide for setting up a local installation of the Catalogue on your machine. For detailed information and questions consult the documentation or the developers.</p>
+<p>### Installation instructions</p>
+<p><strong>Prerequisites</strong>: - Linux OS - Docker</p>
+<p><strong>GitHub repositories</strong>: - <a href="https://github.com/NINAnor/nina-catalogue">nina-catalogue</a> -</p>
 
 
 </section>

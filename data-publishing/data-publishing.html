@@ -253,7 +253,11 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#step-by-step-guide-for-submitting-data" id="toc-step-by-step-guide-for-submitting-data" class="nav-link active" data-scroll-target="#step-by-step-guide-for-submitting-data">Step-by-step guide for submitting data</a></li>
-  <li><a href="#guide-for-developers" id="toc-guide-for-developers" class="nav-link" data-scroll-target="#guide-for-developers">Guide for developers</a></li>
+  <li><a href="#guide-for-developers" id="toc-guide-for-developers" class="nav-link" data-scroll-target="#guide-for-developers">Guide for developers</a>
+  <ul class="collapse">
+  <li><a href="#installation-instructions" id="toc-installation-instructions" class="nav-link" data-scroll-target="#installation-instructions">Installation instructions</a></li>
+  </ul></li>
+  <li><a href="#how-to-create-a-map-and-upload-data-to-the-nina-catalogue" id="toc-how-to-create-a-map-and-upload-data-to-the-nina-catalogue" class="nav-link" data-scroll-target="#how-to-create-a-map-and-upload-data-to-the-nina-catalogue">How to create a map and upload data to the NINA Catalogue</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/NINAnor/EAguide/edit/main/data-publishing/data-publishing.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
@@ -358,11 +362,203 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://www.nina.no/Kontakt/Ansatte/Ansattinformasjon.aspx?AnsattID=15958">Francesco Frassinelli</a></li>
 </ul>
 <p><strong>Documentation</strong>: <a href="https://ninanor.github.io/nina-catalogue">https://ninanor.github.io/nina-catalogue</a></p>
-<p>NINA’s catalogue consists of a <a href="https://maps.nina.no/">Map Catalogue</a> for viewing and dowloading maps and a <a href="https://pycsw.nina.no/geoapi/">Metadata Catalogue</a> for accessing metadata. For the Local Ecosystem Accounts dataset (<em>Finskala Naturregnskap</em>) the maps are uploaded into the <strong>Map Catalogue</strong>, in the future these maps can also be uploaded in the <em>Metadata Catalogue</em>.</p>
-<p>Below follows a short guide for setting up a local installation of the Catalogue on your machine. For detailed information and questions consult the documentation or the developers.</p>
-<p>### Installation instructions</p>
-<p><strong>Prerequisites</strong>: - Linux OS - Docker</p>
-<p><strong>GitHub repositories</strong>: - <a href="https://github.com/NINAnor/nina-catalogue">nina-catalogue</a> -</p>
+<p>NINA’s catalogue includes a <strong>Map Module</strong> for storing maps, accesible at <a href="https://maps.nina.no/">maps.nina.no</a>, and a <strong>Datasets Module</strong> for storing data and metadata, accesible via <a href="https://pycsw.nina.no/geoapi/">PyGeoAPI</a>. For the Local Ecosystem Accounts dataset (<em>Finskala Naturregnskap</em>), maps are uploaded to the Map Catalogue. In the future, these maps may also be uploaded as a dataset thus be accesible via the PyGeoAPI.</p>
+<p>Below is a brief guide for setting up a local installation of the Catalogue on your machine. For detailed information and inquiries, please refer to the documentation or contact the developers. This is meant for development and testing, the production environment is managed by Niccolò Cantù.</p>
+<section id="installation-instructions" class="level3">
+<h3 class="anchored" data-anchor-id="installation-instructions">Installation instructions</h3>
+<p><strong>Prerequisites</strong>:</p>
+<ul>
+<li>Linux OS</li>
+<li>Docker</li>
+</ul>
+<p><strong>GitHub repositories</strong>:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Repository</th>
+<th>Description</th>
+<th>Technologies</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://github.com/NINAnor/nina-catalogue">nina-catalogue</a></td>
+<td>Backend architecture</td>
+<td>Django and PostgreSQL</td>
+</tr>
+<tr class="even">
+<td><a href="https://github.com/NINAnor/nina-map-explorer">nina-map-explorer</a></td>
+<td>Frontend map application</td>
+<td>MapLibre with PM Tiles</td>
+</tr>
+<tr class="odd">
+<td><a href="https://github.com/NINAnor/naturregnskap_maps_uploader">naturregnskap_maps_uploader</a></td>
+<td>API, specifically designed for uploading map data and metadata to the Local Ecosystem Accounts dataset using the import schema.</td>
+<td>Python</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Installation steps</strong>:</p>
+<ol type="1">
+<li><p>Install the backend architecture</p>
+<ul>
+<li>Follow the instructions in the README of the <a href="https://github.com/NINAnor/nina-catalogue">nina-catalogue</a>
+<ul>
+<li><p>Create secrets in the <code>secrets</code> folder</p>
+<pre class="{bash}"><code>cd setup
+docker compose up --build</code></pre></li>
+<li><p>start all services in <code>dev</code> mode</p>
+<pre class="{bash}"><code># source the helper functions
+. helpers.sh
+
+# alias in helpers.sh
+# run the docker-compose file in the dev profile
+# env variables are loaded from secrets 
+dpcli_dev up --build</code></pre></li>
+<li><p>create an admin user</p>
+<pre class="{bash}"><code>djcli_dev migrate
+djcli_dev createsuperuser</code></pre>
+<p>Set the admin email and password, and remember them to later login to the Django admin: <a href="http://localhost:8000/admin/">localhost:8000/admin/</a></p></li>
+<li><p>start the Django admin interface</p>
+<pre class="{bash}"><code>xdg-open http://localhost:8000/admin</code></pre></li>
+<li><p>generate a token for your user in Django admin GUI: Tokens -&gt; Add token</p></li>
+</ul></li>
+</ul></li>
+</ol>
+<br>
+<figure style="width: 100%; max-width: 650px; display: block; margin-left: auto; margin-right: auto;" class="figure">
+<img src="django_admin.JPG" alt="Django Admin Interface" style="width: 100%; height: auto;" class="figure-img">
+<figcaption style="text-align: center;">
+Django Admin GUI
+</figcaption>
+</figure>
+<ol start="2" type="1">
+<li><p>Install the frontend map application</p>
+<ul>
+<li>Follow the instructions in the README of the <a href="https://github.com/NINAnor/nina-map-explorer">nina-map-explorer</a>
+<ul>
+<li><p>start the web service in <code>prod</code> mode</p>
+<pre class="{bash}"><code># Start all services defined in the docker-compose.yml
+# -d run in detached mode (background)
+docker compose --profile prod up</code></pre></li>
+<li><p>start the web app</p>
+<pre class="{bash}"><code>xdg-open http://localhost:3000</code></pre></li>
+</ul></li>
+</ul></li>
+</ol>
+<div class="note">
+<p>Errors in the web application can be inspected in the browser console using: <code>right-click -&gt; inspect -&gt; console</code> or <code>ctrl+shift+j</code>.</p>
+</div>
+<ol start="3" type="1">
+<li><p>Install the Naturregnskap API</p>
+<ul>
+<li>Follow the instructions in the README of the <a href="https://github.com/NINAnor/naturregnskap_maps_uploader">naturregnskap_maps_uploader</a>
+<ul>
+<li>Install the Python environment</li>
+</ul>
+<pre class="{bash}"><code>python3 -m venv .venv
+source .venv/bin/activate
+
+pip install -e .
+
+touch .env</code></pre>
+<ul>
+<li>Configure the API with the Django backend
+<ul>
+<li>Copy the token generated in Django admin (step 1)</li>
+<li>Add the token to the <code>.env</code> file</li>
+</ul>
+<pre class="{bash}"><code>AUTH_TOKEN=my_token
+DEBUG=True</code></pre></li>
+</ul></li>
+</ul></li>
+</ol>
+<p>Now you have a local installation of the NINA Catalogue and the following services are available:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Service</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Metadata catalogue</td>
+<td><a href="http://localhost:8000">localhost:8000</a></td>
+</tr>
+<tr class="even">
+<td>Django admin</td>
+<td><a href="http://localhost:8000/admin/">localhost:8000/admin/</a></td>
+</tr>
+<tr class="odd">
+<td>Map application</td>
+<td><a href="http://localhost:3000">localhost:3000</a></td>
+</tr>
+<tr class="even">
+<td>Documentation</td>
+<td><a href="http://localhost:3001">localhost:3001</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="how-to-create-a-map-and-upload-data-to-the-nina-catalogue" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-create-a-map-and-upload-data-to-the-nina-catalogue">How to create a map and upload data to the NINA Catalogue</h2>
+<p>Below are the steps to create a map for the Local Ecosystem Accounts dataset and upload the data to the NINA Catalogue from scratch. You only need to create a map once, and then you can upload data to the same map multiple times using the API.</p>
+<ol type="1">
+<li><p>Django admin - Create a Map</p>
+<ul>
+<li>Django admin -&gt; Maps -&gt; Add map</li>
+<li>Fill out the form and save. An error will be shown if the form is not filled out correctly.</li>
+<li>The field <code>Extras</code> can be used to directly pass a JSON object to the <a href="https://maplibre.org/maplibre-style-spec/root/#center">MapLibre</a> Frontend. For example, to set the initial map view, you can pass the following JSON object: <code>{"center": [10.7, 59.9]}</code>.</li>
+</ul></li>
+<li><p>Django admin - Add background layer to the map.</p>
+<ul>
+<li>add source OSM!</li>
+<li>Django admin -&gt; Maps -&gt; Layers -&gt; Add layer</li>
+</ul>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Name</td>
+<td>OSM</td>
+</tr>
+<tr class="even">
+<td>slug</td>
+<td>osm</td>
+</tr>
+<tr class="odd">
+<td>Map</td>
+<td><em>Title of the map</em></td>
+</tr>
+<tr class="even">
+<td>Style</td>
+<td>{“type”: “raster”}</td>
+</tr>
+<tr class="odd">
+<td>Is basemap</td>
+<td>checked</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>Naturregnskaps API - Upload map layers and metadata</p>
+<ol type="a">
+<li><p>Check the import schema (<em>provided by the data manager</em>)</p></li>
+<li><p>Prepare the raster data</p></li>
+<li><p>Prepare the vector data</p></li>
+<li><p>Prepare the style file</p></li>
+<li><p>Upload the data and metadata using the API</p>
+<p>command: <code>naturregnskap_maps_uploader_start http://server:port map_slug --wd /path/to/data/</code></p>
+<p>example: <code>naturregnskap_maps_uploader_start http://localhost:8000 localEA --wd ~/temp/nina-map-catalog</code></p>
+<p>The API will read the import schema and upload the data to the NINA Catalogue.</p></li>
+</ol></li>
+</ol>
 
 
 </section>

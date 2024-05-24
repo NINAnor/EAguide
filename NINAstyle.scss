@@ -19,11 +19,25 @@ $font-weight-light: 200;
 $headings-font-weight: 300;
 $headings-font-family: $font-family-sans-serif;
 $body-color: #000000;;
-$table-accent-bg: rgba($primary, .4);
+
+/*-- table styling --*/
+table thead tr {
+    background-color: rgba($primary, .8
+    );
+    color: white;
+  }
+  
+  table tbody tr:nth-child(even) {
+    background-color: rgba($primary, .1);
+  }
+  
+  table tbody tr:nth-child(odd) {
+    background-color: white;
+  }
 
 /*-- scss:rules --*/
 
-/* Example of a note class
+/* Example of a note class for adding textboxes. 
 :::{.note}
 **Note**: This is a note.
 :::
@@ -38,6 +52,16 @@ $table-accent-bg: rgba($primary, .4);
     font-size: 0.8em;
     margin: 20px 0 40px 0;
 }
+
+/* Example of a flowchart class in HTML
+<div class="flowchart">
+  <div class="flowchart-box" id="start">Start</div>
+  <div class="flowchart-box" id="process1">Process 1</div>
+  <div class="flowchart-box" id="decision">Decision</div>
+  <div class="flowchart-box" id="process2">Process 2</div>
+  <div class="flowchart-box" id="end">End</div>
+</div>
+*/
 
 .flowchart {
     display: flex;
@@ -83,4 +107,3 @@ $table-accent-bg: rgba($primary, .4);
 #end::after, #end::before {
     display: none;
 }
-  

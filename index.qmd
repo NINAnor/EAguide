@@ -4,17 +4,17 @@ bibliography: references.bib
 
 ## Introduction {.unnumbered}
 
-This technical guidebook is here to help project managers and data scientists at NINAto follow a standardized and efficient method for data collection, data analysis, data publishing, and documentation for local-scale ecosystem accounting projects.
+This technical guidebook is here to assist project managers and data scientists at NINA in following a standardized and efficient method for data collection, analysis, publishing, and documentation in local-scale ecosystem accounting projects.
 
 The guidebook covers the following topics:
 
-- **Project Management**: how to plan and budget for data infrastructure in ecosystem accounting projects.
-- **Data collection**: how to collect data for ecosystem accounting projects.
-    - **Field Surveys**: how to conduct field surveys for ecosystem accounting projects and common field methods and protocols.
-    - **Remote Sensing**: how to use remote sensing data for ecosystem accounting projects.
-- **Data analysis**: methods and best practices for analyzing data for ecosystem accounting projects.
-- **Data Publishing**: how to publish data for ecosystem accounting projects in [NINA's map catalogue](https://maps.nina.no/)
-- **Documentation**: how to document your project and data.
-- **FAIR Data Managment**: how to adhere to FAIR-principles in ecosystem accounting projects. 
+- **Project Management**: Guidance on planning and budgeting for data infrastructure in ecosystem accounting projects.
+- **Data collection**: Procedures for collecting data in ecosystem accounting projects.
+    - **Field Surveys**: Instructions on conducting field surveys, including common methods and protocols.
+    - **Remote Sensing**: Techniques for utilizing remote sensing data in ecosystem accounting projects.
+- **Data analysis**: Best practices and methods for analyzing data in ecosystem accounting projects.
+- **Data Publishing**: Steps for publishing data in [NINA's map catalogue](https://maps.nina.no/).
+- **Documentation**: Guidelines for documenting your project and data.
+- **FAIR Data Managment**: How to adhere to FAIR principles in ecosystem accounting projects.
 
 This guidebook is a living document and will be updated as new methods and best practices are developed. If you have any suggestions for improvements or additions, please contact the authors or submit a pull request on the [GitHub repository](https://github.com/NINAnor/EAguide).

@@ -68,31 +68,165 @@ P:/.../nina_map_catalog
 
 **Developers**:
 
--  [Niccolò Cantù](https://www.nina.no/Kontakt/Ansatte/Ansattinformasjon.aspx?AnsattID=16844) 
+- [Niccolò Cantù](https://www.nina.no/Kontakt/Ansatte/Ansattinformasjon.aspx?AnsattID=16844) 
 - [Francesco Frassinelli](https://www.nina.no/Kontakt/Ansatte/Ansattinformasjon.aspx?AnsattID=15958)
 
 **Documentation**: [https://ninanor.github.io/nina-catalogue](https://ninanor.github.io/nina-catalogue)
 
-NINA's catalogue consists of a [Map Catalogue](https://maps.nina.no/) for viewing and dowloading maps and a [Metadata Catalogue](https://pycsw.nina.no/geoapi/) for accessing metadata. For the Local Ecosystem Accounts dataset (*Finskala Naturregnskap*) the maps are uploaded into the **Map Catalogue**, in the future these maps can also be uploaded in the *Metadata Catalogue*. 
+NINA's catalogue includes a **Map Module** for storing maps, accesible at [maps.nina.no](https://maps.nina.no/), and a **Datasets Module** for storing data and metadata, accesible via [PyGeoAPI](https://pycsw.nina.no/geoapi/). For the Local Ecosystem Accounts dataset (*Finskala Naturregnskap*), maps are uploaded to the Map Catalogue. In the future, these maps may also be uploaded as a dataset thus be accesible via the PyGeoAPI.
 
-Below follows a short guide for setting up a local installation of the Catalogue on your machine. For detailed information and questions consult the documentation or the developers. 
+Below is a brief guide for setting up a local installation of the Catalogue on your machine. For detailed information and inquiries, please refer to the documentation or contact the developers. This is meant for development and testing, the production environment is managed by Niccolò Cantù.
  
- ### Installation instructions
+### Installation instructions
 
- **Prerequisites**:
- - Linux OS
- - Docker 
+**Prerequisites**:
 
- **GitHub repositories**:
- - [nina-catalogue](https://github.com/NINAnor/nina-catalogue)
- - 
- 
+- Linux OS
+- Docker 
+
+**GitHub repositories**:
+
+| Repository | Description | Technologies |
+| --- | --- | --- |
+| [nina-catalogue](https://github.com/NINAnor/nina-catalogue) | Backend architecture | Django and PostgreSQL |
+| [nina-map-explorer](https://github.com/NINAnor/nina-map-explorer) | Frontend map application | MapLibre with PM Tiles |
+| [naturregnskap_maps_uploader](https://github.com/NINAnor/naturregnskap_maps_uploader) | API, specifically designed for uploading map data and metadata to the Local Ecosystem Accounts dataset using the import schema.| Python |
+
+**Installation steps**:
+
+1. Install the backend architecture
+    
+    - Follow the instructions in the README of the [nina-catalogue](https://github.com/NINAnor/nina-catalogue)
+        - Create secrets in the `secrets` folder
+
+            ```{bash}	
+            cd setup
+            docker compose up --build
+            ```
+
+        - start all services in `dev` mode
+        
+            ```{bash}
+            # source the helper functions
+            . helpers.sh
+
+            # alias in helpers.sh
+            # run the docker-compose file in the dev profile
+            # env variables are loaded from secrets 
+            dpcli_dev up --build
+            ```
+
+        - create an admin user
+
+            ```{bash}
+            djcli_dev migrate
+            djcli_dev createsuperuser
+            ```
+
+            Set the admin email and password, and remember them to later login to the Django admin: [localhost:8000/admin/](http://localhost:8000/admin/) 
+
+        - start the Django admin interface
+
+            ```{bash}
+            xdg-open http://localhost:8000/admin
+            ```
+        - generate a token for your user in Django admin GUI: Tokens -> Add token
+
+<br>
+<figure style="width: 100%; max-width: 650px; display: block; margin-left: auto; margin-right: auto;">
+  <img src="django_admin.JPG" alt="Django Admin Interface" style="width: 100%; height: auto;"/>
+  <figcaption style="text-align: center;">Django Admin GUI</figcaption>
+</figure>
+
+2. Install the frontend map application
+
+    - Follow the instructions in the README of the [nina-map-explorer](https://github.com/NINAnor/nina-map-explorer)
+        - start the web service in `prod` mode
+
+            ```{bash}
+            # Start all services defined in the docker-compose.yml
+            # -d run in detached mode (background)
+            docker compose --profile prod up
+            ```
+        - start the web app
+
+            ```{bash}
+            xdg-open http://localhost:3000
+            ```
+
+:::{.note}
+Errors in the web application can be inspected in the browser console using: `right-click -> inspect -> console` or `ctrl+shift+j`.
+:::
+
+3. Install the Naturregnskap API
+
+    - Follow the instructions in the README of the [naturregnskap_maps_uploader](https://github.com/NINAnor/naturregnskap_maps_uploader)
+        - Install the Python environment
+        ```{bash}	
+        python3 -m venv .venv
+        source .venv/bin/activate
+
+        pip install -e .
+
+        touch .env
+        ```
+        - Configure the API with the Django backend
+            - Copy the token generated in Django admin (step 1)
+            - Add the token to the `.env` file 
+
+            ```{bash}
+            AUTH_TOKEN=my_token
+            DEBUG=True
+            ```
+
+Now you have a local installation of the NINA Catalogue and the following services are available:
+
+| Service | URL |
+| --- | --- |
+| Metadata catalogue | [localhost:8000](http://localhost:8000) |
+| Django admin | [localhost:8000/admin/](http://localhost:8000/admin/) |
+| Map application | [localhost:3000](http://localhost:3000) |
+| Documentation | [localhost:3001](http://localhost:3001) |
+
+## How to create a map and upload data to the NINA Catalogue
+
+Below are the steps to create a map for the Local Ecosystem Accounts dataset and upload the data to the NINA Catalogue from scratch. You only need to create a map once, and then you can upload data to the same map multiple times using the API.
+
+1. Django admin - Create a Map
+   - Django admin -> Maps -> Add map
+   - Fill out the form and save. An error will be shown if the form is not filled out correctly.
+   - The field `Extras` can be used to directly pass a JSON object to the [MapLibre](https://maplibre.org/maplibre-style-spec/root/#center) Frontend. For example, to set the initial map view, you can pass the following JSON object: `{"center": [10.7, 59.9]}`.
+
+2. Django admin - Add background layer to the map. 
+
+    - add source OSM!
+    - Django admin -> Maps -> Layers -> Add layer
 
 
 
+    | Field | Value |
+    | --- | --- |
+    | Name | OSM |
+    | slug | osm |
+    | Map | *Title of the map* |
+    | Style | {"type": "raster"} |
+    | Is basemap | checked |
 
+3. Naturregnskaps API - Upload map layers and metadata 
 
+    a. Check the import schema (*provided by the data manager*)
 
+    b. Prepare the raster data
 
+    c. Prepare the vector data
 
+    d. Prepare the style file 
+
+    e. Upload the data and metadata using the API
+
+        command: `naturregnskap_maps_uploader_start http://server:port map_slug --wd /path/to/data/`
+
+        example: `naturregnskap_maps_uploader_start http://localhost:8000 localEA --wd ~/temp/nina-map-catalog`
+
+        The API will read the import schema and upload the data to the NINA Catalogue.
 

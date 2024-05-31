@@ -70,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -514,51 +543,60 @@ DEBUG=True</code></pre></li>
 </ul></li>
 <li><p>Django admin - Add background layer to the map.</p>
 <ul>
-<li>add source OSM!</li>
-<li>Django admin -&gt; Maps -&gt; Layers -&gt; Add layer</li>
+<li>add raster source
+<ul>
+<li>Maps &gt; Raster sources</li>
+<li>Set tile-URL, zoom and size in extras:</li>
 </ul>
-<table class="table">
-<thead>
-<tr class="header">
-<th>Field</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Name</td>
-<td>OSM</td>
-</tr>
-<tr class="even">
-<td>slug</td>
-<td>osm</td>
-</tr>
-<tr class="odd">
-<td>Map</td>
-<td><em>Title of the map</em></td>
-</tr>
-<tr class="even">
-<td>Style</td>
-<td>{“type”: “raster”}</td>
-</tr>
-<tr class="odd">
-<td>Is basemap</td>
-<td>checked</td>
-</tr>
-</tbody>
-</table></li>
+<pre class="{bash}"><code>{
+"tiles": ["https://a.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png"], 
+"maxZoom": 20, 
+"tileSize": 256
+}</code></pre></li>
+<li>add source to the Map as Layer
+<ul>
+<li>Maps &gt; Layers &gt; Add layer</li>
+<li>Set style: <code>{"type": "raster"}</code></li>
+<li>check basemap box</li>
+</ul></li>
+</ul></li>
+<li><p>Prepare your data</p>
+<ol type="a">
+<li><p>Prepare the raster data</p>
+<ul>
+<li>add the metadata to your geotiff</li>
+<li>convert GEOTiff to a Cloud Optimized GEOTIFF (COG) using <code>generate_cog.sh</code></li>
+<li>define raster style and legend in <code>style.json</code></li>
+</ul></li>
+<li><p>Prepare the vector data</p>
+<ul>
+<li>convert the GeoPackages to PMTiles using GDAL &gt;= 3.8.</li>
+</ul></li>
+</ol>
+<pre><code>source scripts/generate_pmtiles.h
+
+
+```bash
+docker run --rm -ti -v $PWD:/host --workdir /host ghcr.io/osgeo/gdal \
+    ogr2ogr -skipfailures -f PMTiles converted.pmtiles original.gpkg -dsco MAXZOOM=15</code></pre>
+<ul>
+<li><p>define the vector style and legend in <code>style.json</code></p></li>
+<li><p>docs: <a href="https://gdal.org/drivers/vector/pmtiles.html">gdal.org/drivers/vector/pmtiles.html</a>.</p></li>
+</ul></li>
 <li><p>Naturregnskaps API - Upload map layers and metadata</p>
 <ol type="a">
-<li><p>Check the import schema (<em>provided by the data manager</em>)</p></li>
-<li><p>Prepare the raster data</p></li>
-<li><p>Prepare the vector data</p></li>
-<li><p>Prepare the style file</p></li>
+<li><p>Check the import schema (<em>provided by the projects data manager</em>)</p></li>
+<li><p>Check the style file</p></li>
 <li><p>Upload the data and metadata using the API</p>
 <p>command: <code>naturregnskap_maps_uploader_start http://server:port map_slug --wd /path/to/data/</code></p>
 <p>example: <code>naturregnskap_maps_uploader_start http://localhost:8000 localEA --wd ~/temp/nina-map-catalog</code></p>
 <p>The API will read the import schema and upload the data to the NINA Catalogue.</p></li>
 </ol></li>
 </ol>
+<div class="note">
+<p>GDAL is needed to convert rasters to COG and vectors to PMTiles. Here is an example of how to execute a GDAL command inside a container.</p>
+<p>#!/bin/bash exec docker run –rm –pid=host -v /tmp/.X11-unix:/tmp/.X11-unix:ro -e DISPLAY=<span class="math inline">\(DISPLAY     -v "\)</span>PWD”:/host –workdir /host -v /tmp:/tmp –entrypoint=“” “osgeo/gdal:alpine-small-3.6.2” “gdal_translate” “$@”</p>
+</div>
 
 
 </section>

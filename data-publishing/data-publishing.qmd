@@ -199,28 +199,51 @@ Below are the steps to create a map for the Local Ecosystem Accounts dataset and
 
 2. Django admin - Add background layer to the map. 
 
-    - add source OSM!
-    - Django admin -> Maps -> Layers -> Add layer
+    - add raster source
+        - Maps > Raster sources
+        - Set tile-URL, zoom and size in extras:
+
+        ```{bash}
+        {
+        "tiles": ["https://a.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png"], 
+        "maxZoom": 20, 
+        "tileSize": 256
+        }
+        ```
+    - add source to the Map as Layer
+        - Maps > Layers > Add layer 
+        - Set style: `{"type": "raster"}`
+        - check basemap box
+
+3. Prepare your data
+
+    a. Prepare the raster data
+
+        - add the metadata to your geotiff
+        - convert GEOTiff to a Cloud Optimized GEOTIFF (COG) using `generate_cog.sh`
+        - define raster style and legend in `style.json`
+
+    b. Prepare the vector data
+
+        - convert the GeoPackages to PMTiles using GDAL >= 3.8.
+
+    ```
+    source scripts/generate_pmtiles.h
 
 
+    ```bash
+    docker run --rm -ti -v $PWD:/host --workdir /host ghcr.io/osgeo/gdal \
+        ogr2ogr -skipfailures -f PMTiles converted.pmtiles original.gpkg -dsco MAXZOOM=15
+    ```
 
-    | Field | Value |
-    | --- | --- |
-    | Name | OSM |
-    | slug | osm |
-    | Map | *Title of the map* |
-    | Style | {"type": "raster"} |
-    | Is basemap | checked |
+    - define the vector style and legend in `style.json`
 
+    - docs: [gdal.org/drivers/vector/pmtiles.html](https://gdal.org/drivers/vector/pmtiles.html).
 3. Naturregnskaps API - Upload map layers and metadata 
 
-    a. Check the import schema (*provided by the data manager*)
+    a. Check the import schema (*provided by the projects data manager*)
 
-    b. Prepare the raster data
-
-    c. Prepare the vector data
-
-    d. Prepare the style file 
+    b. Check the style file 
 
     e. Upload the data and metadata using the API
 
@@ -229,4 +252,12 @@ Below are the steps to create a map for the Local Ecosystem Accounts dataset and
         example: `naturregnskap_maps_uploader_start http://localhost:8000 localEA --wd ~/temp/nina-map-catalog`
 
         The API will read the import schema and upload the data to the NINA Catalogue.
+
+:::{.note}
+GDAL is needed to convert rasters to COG and vectors to PMTiles. Here is an example of how to execute a GDAL command inside a container. 
+
+#!/bin/bash
+exec docker run --rm --pid=host     -v /tmp/.X11-unix:/tmp/.X11-unix:ro -e DISPLAY=$DISPLAY     -v "$PWD":/host --workdir /host     -v /tmp:/tmp     --entrypoint="" "osgeo/gdal:alpine-small-3.6.2" "gdal_translate" "$@"
+
+:::
 

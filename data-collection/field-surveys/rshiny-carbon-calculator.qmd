@@ -1,1 +1,0 @@
-# RShiny app | Carbon Calculator {#sec-rshiny-carbon-calculator}

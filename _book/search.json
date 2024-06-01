@@ -185,7 +185,7 @@
     "href": "data-collection/field-surveys/field-surveys.html",
     "title": "Field surveys",
     "section": "",
-    "text": "GIS tools\nblablabla",
+    "text": "NiN 2.0 Naturtype Mapping\nshort description here",
     "crumbs": [
       "Data Collection",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Field surveys</span>"
@@ -207,7 +207,7 @@
     "href": "data-collection/remote-sensing/remote-sensing.html",
     "title": "Remote sensing",
     "section": "",
-    "text": "Maybe we want to have a chapter in this?",
+    "text": "GIS tools\nblablabla",
     "crumbs": [
       "Data Collection",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Remote sensing</span>"
@@ -242,6 +242,72 @@
     "text": "How to create a map and upload data to the NINA Catalogue\nBelow are the steps to create a map for the Local Ecosystem Accounts dataset and upload the data to the NINA Catalogue from scratch. You only need to create a map once, and then you can upload data to the same map multiple times using the API.\n\nDjango admin - Create a Map\n\nDjango admin -&gt; Maps -&gt; Add map\nFill out the form and save. An error will be shown if the form is not filled out correctly.\nThe field Extras can be used to directly pass a JSON object to the MapLibre Frontend. For example, to set the initial map view, you can pass the following JSON object: {\"center\": [10.7, 59.9]}.\n\nDjango admin - Add background layer to the map.\n\nadd raster source\n\nMaps &gt; Raster sources\nSet tile-URL, zoom and size in extras:\n\n{\n\"tiles\": [\"https://a.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png\"], \n\"maxZoom\": 20, \n\"tileSize\": 256\n}\nadd source to the Map as Layer\n\nMaps &gt; Layers &gt; Add layer\nSet style: {\"type\": \"raster\"}\ncheck basemap box\n\n\nPrepare your data\n\nPrepare the raster data\n\nadd the metadata to your geotiff\nconvert GEOTiff to a Cloud Optimized GEOTIFF (COG) using generate_cog.sh\ndefine raster style and legend in style.json\n\nPrepare the vector data\n\nconvert the GeoPackages to PMTiles using GDAL &gt;= 3.8.\n\n\nsource scripts/generate_pmtiles.h\n\n\n```bash\ndocker run --rm -ti -v $PWD:/host --workdir /host ghcr.io/osgeo/gdal \\\n    ogr2ogr -skipfailures -f PMTiles converted.pmtiles original.gpkg -dsco MAXZOOM=15\n\ndefine the vector style and legend in style.json\ndocs: gdal.org/drivers/vector/pmtiles.html.\n\nNaturregnskaps API - Upload map layers and metadata\n\nCheck the import schema (provided by the projects data manager)\nCheck the style file\nUpload the data and metadata using the API\ncommand: naturregnskap_maps_uploader_start http://server:port map_slug --wd /path/to/data/\nexample: naturregnskap_maps_uploader_start http://localhost:8000 localEA --wd ~/temp/nina-map-catalog\nThe API will read the import schema and upload the data to the NINA Catalogue.\n\n\n\nGDAL is needed to convert rasters to COG and vectors to PMTiles. Here is an example of how to execute a GDAL command inside a container.\n#!/bin/bash exec docker run –rm –pid=host -v /tmp/.X11-unix:/tmp/.X11-unix:ro -e DISPLAY=\\(DISPLAY     -v \"\\)PWD”:/host –workdir /host -v /tmp:/tmp –entrypoint=“” “osgeo/gdal:alpine-small-3.6.2” “gdal_translate” “$@”",
     "crumbs": [
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Data Publishing</span>"
+    ]
+  },
+  {
+    "objectID": "data-collection/remote-sensing/remote-sensing.html#gis-tools",
+    "href": "data-collection/remote-sensing/remote-sensing.html#gis-tools",
+    "title": "Remote sensing",
+    "section": "",
+    "text": "Flowcharts\nExample using html:\nNote that the classes are defined in the NINAstyle.scss\n\n\nStart\n\n\nProcess 1\n\n\nDecision\n\n\nProcess 2\n\n\nEnd\n\n\nExample using DiagrammerR:\n\n\nCode\ngraph &lt;- create_graph() %&gt;%\n  add_node(label=\"Node A\") %&gt;%\n  add_node(label = \" I have a\\nhyperlink\") %&gt;%\n  add_edge(from = 1, to = 2) %&gt;%\n  select_last_nodes_created() %&gt;%\n  set_node_attrs_ws(node_attr = URL, value = \"https://nrk.no\") %&gt;%\n  add_node(label = \"Looooooooooooooooooooong name\", from = 1, to = 2) %&gt;%\n  set_node_attrs(node_attr = shape, values =  \"box\") %&gt;%\n  select_nodes_by_id(nodes = 3) %&gt;%\n  set_node_attrs_ws(node_attr = shape, value = \"rectangle\")\n\n# Export the graph to a PNG file\nexport_graph(graph, file_name = \"graph.png\", width = 400, height = 400)\n\n# Include the PNG file in your HTML document\ninclude_graphics(\"graph.png\")\n\n\n\n\n\n\n\n\n\nExample using Mermaid:\nFor mermaid instructions see here.\n\n\n\n\n\nflowchart LR\n    A--&gt;B\n    B--&gt;C\n    B--&gt;D\n    C--&gt;D\n    click A callback \"Tooltip for a callback\"\n    click B \"https://www.github.com\" \"This is a tooltip for a link\"\n    click C call callback() \"Tooltip for a callback\"\n    click D href \"https://www.github.com\" \"This is a tooltip for a link\"",
+    "crumbs": [
+      "Data Collection",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Remote sensing</span>"
+    ]
+  },
+  {
+    "objectID": "data-collection/field-surveys/field-surveys.html#biodiversity-metric-4.0",
+    "href": "data-collection/field-surveys/field-surveys.html#biodiversity-metric-4.0",
+    "title": "Field surveys",
+    "section": "Bluegreen Factor",
+    "text": "short description here\n\nNINA Contacts\n\n\nBiodiversity Metrics:\n\nTrond Simensen\nErik Stange\n\n\nQGIS/QField Cloud managers:\n\nWilleke A’Campo\nStig Claussen\n\n\nBluegreen Factor\nshort description here\n\nNINA Contacts\n\n\nBGF:\n\nDavid Barton\nBart Immerzeel\nMaria Korkou\n\n\nQGIS/QField Cloud Managers:\n\nWilleke A’Campo\nStig Claussen\n\n\nCarbonViewer\nThe CarbonViewer app calculates the total volume of peat (m3) and the total carbon content (Tons C) in a peatland area. To be able to calculate those values the peatland area must be sampled for peat depth and the peatland type must be recorded.\n\nNote that CarbonViewer is not a field application! The user must go out in the field and record peat depth (cm) and the coordinates of the measurements before using CarbonViewer.\n\n\nNINA Contacts\n\n\nCarbonViewer:\n\nMagni Olsen Kyrkjeeide\nAnders Lyngstad\n\n\nRShiny Developers:\n\nBenjamin Cretois\nWilleke A’Campo",
+    "crumbs": [
+      "Data Collection",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Field surveys</span>"
+    ]
+  },
+  {
+    "objectID": "data-collection/field-surveys/field-surveys.html#blågrønn-faktor",
+    "href": "data-collection/field-surveys/field-surveys.html#blågrønn-faktor",
+    "title": "Field surveys",
+    "section": "Blågrønn Faktor",
+    "text": "Blågrønn Faktor\nshort description here\n\nNINA Contacts\nBGF, Fieldwork and Mapping contacts:\n\nDavid Barton\nBart Immerzeel\nMaria Korkou\n\nQGIS/QField Cloud managers:\n\nWilleke A’Campo\nStig Claussen",
+    "crumbs": [
+      "Data Collection",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Field surveys</span>"
+    ]
+  },
+  {
+    "objectID": "data-collection/field-surveys/field-surveys.html#carbonviewer",
+    "href": "data-collection/field-surveys/field-surveys.html#carbonviewer",
+    "title": "Field surveys",
+    "section": "",
+    "text": "The CarbonViewer app calculates the total volume of peat (m3) and the total carbon content (Tons C) in a peatland area. To be able to calculate those values the peatland area must be sampled for peat depth and the peatland type must be recorded.\n\nNote that CarbonViewer is not a field application! The user must go out in the field and record peat depth (cm) and the coordinates of the measurements before using CarbonViewer.\n\n\nNINA Contacts\n\n\nCarbonViewer:\n\nMagni Olsen Kyrkjeeide\nAnders Lyngstad\n\n\nRShiny Developers:\n\nBenjamin Cretois\nWilleke A’Campo",
+    "crumbs": [
+      "Data Collection",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Field surveys</span>"
+    ]
+  },
+  {
+    "objectID": "data-collection/field-surveys/field-surveys.html#nin-2.0-naturtype-mapping",
+    "href": "data-collection/field-surveys/field-surveys.html#nin-2.0-naturtype-mapping",
+    "title": "Field surveys",
+    "section": "Biodiversity Metric 4.0",
+    "text": "Note that this QField Template is designed for mapping NiN 2.0. From 2026 onwards NiN 3.0 will be used as mapping protocol. As of today, there is no QGIS Template available for NiN 3.0.\n\n\nInstall NiN QField on your tablet\nThe NiN 2.0 QGIS template is uploaded to NINA’s QField Cloud account. For general instructions on QGIS, QField and QField Cloud follow the guide: QGIS and QField introduciton.\n\n\nNINA Contacts\n\n\nNiN:\n\nTrond Simensen\nErik Stange\nAnders Lyngstad\n\n\nQGIS/QField Cloud managers:\n\nWilleke A’Campo\nStig Claussen\n\n\nBiodiversity Metric 4.0\nshort description here\n\nNINA Contacts\n\n\nBiodiversity Metrics:\n\nTrond Simensen\nErik Stange\n\n\nQGIS/QField Cloud managers:\n\nWilleke A’Campo\nStig Claussen\n\n\nBluegreen Factor\nshort description here\n\nNINA Contacts\n\n\nBGF:\n\nDavid Barton\nBart Immerzeel\nMaria Korkou\n\n\nQGIS/QField Cloud Managers:\n\nWilleke A’Campo\nStig Claussen\n\n\nCarbonViewer\nThe CarbonViewer app calculates the total volume of peat (m3) and the total carbon content (Tons C) in a peatland area. To be able to calculate those values the peatland area must be sampled for peat depth and the peatland type must be recorded.\n\nNote that CarbonViewer is not a field application! The user must go out in the field and record peat depth (cm) and the coordinates of the measurements before using CarbonViewer.\n\n\nNINA Contacts\n\n\nCarbonViewer:\n\nMagni Olsen Kyrkjeeide\nAnders Lyngstad\n\n\nRShiny Developers:\n\nBenjamin Cretois\nWilleke A’Campo",
+    "crumbs": [
+      "Data Collection",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Field surveys</span>"
+    ]
+  },
+  {
+    "objectID": "data-collection/field-surveys/field-surveys.html#bluegreen-factor",
+    "href": "data-collection/field-surveys/field-surveys.html#bluegreen-factor",
+    "title": "Field surveys",
+    "section": "CarbonViewer",
+    "text": "short description here\n\nNINA Contacts\n\n\nBGF:\n\nDavid Barton\nBart Immerzeel\nMaria Korkou\n\n\nQGIS/QField Cloud Managers:\n\nWilleke A’Campo\nStig Claussen\n\n\nCarbonViewer\nThe CarbonViewer app calculates the total volume of peat (m3) and the total carbon content (Tons C) in a peatland area. To be able to calculate those values the peatland area must be sampled for peat depth and the peatland type must be recorded.\n\nNote that CarbonViewer is not a field application! The user must go out in the field and record peat depth (cm) and the coordinates of the measurements before using CarbonViewer.\n\n\nNINA Contacts\n\n\nCarbonViewer:\n\nMagni Olsen Kyrkjeeide\nAnders Lyngstad\n\n\nRShiny Developers:\n\nBenjamin Cretois\nWilleke A’Campo",
+    "crumbs": [
+      "Data Collection",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Field surveys</span>"
     ]
   }
 ]

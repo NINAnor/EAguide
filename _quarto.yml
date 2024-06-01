@@ -20,12 +20,8 @@ book:
     - part: Data Collection
       chapters:
         - data-collection/field-surveys/field-surveys.qmd
-        - data-collection/remote-sensing/remote-sensing.qmd
         - data-collection/field-surveys/intro-to-qfield.qmd
-        - data-collection/field-surveys/qfield-nin.qmd
-        - data-collection/field-surveys/qfield-biodiversity-metrics.qmd
-        - data-collection/field-surveys/qfield-bgf.qmd
-        - data-collection/field-surveys/rshiny-carbon-calculator.qmd
+        - data-collection/remote-sensing/remote-sensing.qmd
     - data-analysis/data-analysis.qmd
     - data-publishing/data-publishing.qmd
     - documentation/documentation.qmd

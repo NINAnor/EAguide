@@ -1,3 +1,76 @@
 # Remote sensing {#sec-remote-sensing}
 
 Maybe we want to have a chapter in this?
+
+
+
+```{r setup}
+#| include: false
+#| warning: false
+#| message: false
+library(tidyverse)
+library(knitr)
+library(DiagrammeR)
+```
+
+## GIS tools
+
+blablabla
+
+### Flowcharts
+
+**Example using html:**
+
+Note that the classes are defined in the NINAstyle.scss
+
+<div class="flowchart">
+  <div class="flowchart-box" id="start">Start</div>
+  <div class="flowchart-box" id="process1">Process 1</div>
+  <div class="flowchart-box" id="decision">Decision</div>
+  <div class="flowchart-box" id="process2">Process 2</div>
+  <div class="flowchart-box" id="end">End</div>
+</div>
+
+
+**Example using DiagrammerR:**
+
+```{r}
+#| label: flowchart
+#| echo: true
+#| eval: true
+#| code-fold: true
+
+graph <- create_graph() %>%
+  add_node(label="Node A") %>%
+  add_node(label = " I have a\nhyperlink") %>%
+  add_edge(from = 1, to = 2) %>%
+  select_last_nodes_created() %>%
+  set_node_attrs_ws(node_attr = URL, value = "https://nrk.no") %>%
+  add_node(label = "Looooooooooooooooooooong name", from = 1, to = 2) %>%
+  set_node_attrs(node_attr = shape, values =  "box") %>%
+  select_nodes_by_id(nodes = 3) %>%
+  set_node_attrs_ws(node_attr = shape, value = "rectangle")
+
+# Export the graph to a PNG file
+export_graph(graph, file_name = "graph.png", width = 400, height = 400)
+
+# Include the PNG file in your HTML document
+include_graphics("graph.png")
+```
+
+
+**Example using Mermaid:**
+
+For mermaid instructions see [here](https://mermaid.js.org/syntax/flowchart.html).
+
+```{mermaid}
+flowchart LR
+    A-->B
+    B-->C
+    B-->D
+    C-->D
+    click A callback "Tooltip for a callback"
+    click B "https://www.github.com" "This is a tooltip for a link"
+    click C call callback() "Tooltip for a callback"
+    click D href "https://www.github.com" "This is a tooltip for a link"
+```

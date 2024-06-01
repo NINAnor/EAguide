@@ -64,8 +64,6 @@ The **NiN 2.0** QGIS template is uploaded to NINA's QField Cloud account. For ge
 - Stig Claussen
 :::
 
-<br> 
-
 ## Bluegreen Factor 
 
 *short description here*
@@ -87,8 +85,6 @@ The **NiN 2.0** QGIS template is uploaded to NINA's QField Cloud account. For ge
 - Willeke A'Campo 
 - Stig Claussen
 :::
-
-<br> 
 
 ## CarbonViewer 
 

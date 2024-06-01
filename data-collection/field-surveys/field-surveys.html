@@ -21,40 +21,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -65,7 +31,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../data-collection/remote-sensing/remote-sensing.html" rel="next">
+<link href="../../data-collection/field-surveys/intro-to-qfield.html" rel="next">
 <link href="../../project-management/project-management.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -103,9 +69,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
@@ -197,32 +160,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../data-collection/remote-sensing/remote-sensing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Remote sensing</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../../data-collection/field-surveys/intro-to-qfield.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">QGIS and QField introduction</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../data-collection/field-surveys/qfield-nin.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">QField app | Natur i Norge (NiN)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../data-collection/field-surveys/qfield-biodiversity-metrics.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">QField app | Biodiversity Metrics</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../data-collection/field-surveys/qfield-bgf.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">QField app | Blue Green Factor (BGF)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../data-collection/field-surveys/rshiny-carbon-calculator.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">RShiny app | Carbon Calculator</span></a>
+  <a href="../../data-collection/remote-sensing/remote-sensing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Remote sensing</span></a>
   </div>
 </li>
       </ul>
@@ -289,9 +232,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#gis-tools" id="toc-gis-tools" class="nav-link active" data-scroll-target="#gis-tools">GIS tools</a>
+  <li><a href="#nin-2.0-naturtype-mapping" id="toc-nin-2.0-naturtype-mapping" class="nav-link active" data-scroll-target="#nin-2.0-naturtype-mapping">NiN 2.0 Naturtype Mapping</a>
   <ul class="collapse">
-  <li><a href="#flowcharts" id="toc-flowcharts" class="nav-link" data-scroll-target="#flowcharts">Flowcharts</a></li>
+  <li><a href="#install-nin-qfield-on-your-tablet" id="toc-install-nin-qfield-on-your-tablet" class="nav-link" data-scroll-target="#install-nin-qfield-on-your-tablet">Install NiN QField on your tablet</a></li>
+  <li><a href="#nina-contacts" id="toc-nina-contacts" class="nav-link" data-scroll-target="#nina-contacts">NINA Contacts</a></li>
+  </ul></li>
+  <li><a href="#bluegreen-factor" id="toc-bluegreen-factor" class="nav-link" data-scroll-target="#bluegreen-factor">Bluegreen Factor</a>
+  <ul class="collapse">
+  <li><a href="#nina-contacts-2" id="toc-nina-contacts-2" class="nav-link" data-scroll-target="#nina-contacts-2">NINA Contacts</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/NINAnor/EAguide/edit/main/data-collection/field-surveys/field-surveys.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
@@ -318,80 +266,135 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="gis-tools" class="level2">
-<h2 class="anchored" data-anchor-id="gis-tools">GIS tools</h2>
-<p>blablabla</p>
-<section id="flowcharts" class="level3">
-<h3 class="anchored" data-anchor-id="flowcharts">Flowcharts</h3>
-<p><strong>Example using html:</strong></p>
-<p>Note that the classes are defined in the NINAstyle.scss</p>
-<div class="flowchart">
-<div id="start" class="flowchart-box">
-Start
+<p>This page presents a list of field surveys and applications usefull for ecosystem accounting projects.</p>
+<p><br></p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Field Application</th>
+<th style="text-align: left;">Tool</th>
+<th style="text-align: left;">Instructions</th>
+<th style="text-align: left;">Download</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>NiN 2.0</strong> <br> <strong>Naturetype Mapping</strong></td>
+<td style="text-align: left;">QGIS/QField</td>
+<td style="text-align: left;">• <a href="https://github.com/geco-nhm/NiN_QGIS_3.x/blob/master/NHM_Rapport_83_QGIS_NiN_2019.pdf">PDF Instructions</a></td>
+<td style="text-align: left;">• <a href="https://github.com/geco-nhm/NiN_QGIS_3.x">QGIS Template</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Biodiversity Metric 4.0</strong></td>
+<td style="text-align: left;">QGIS/QField</td>
+<td style="text-align: left;">• <a href="https://publications.naturalengland.org.uk/publication/6049804846366720">GIS tools User Guide (PDF)</a> <br> • <a href="https://publications.naturalengland.org.uk/publication/6049804846366720">Data Standard (XLSX)</a></td>
+<td style="text-align: left;">• <a href="https://publications.naturalengland.org.uk/publication/6049804846366720">QGIS Template (ZIP)</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Bluegreen Factor</strong></td>
+<td style="text-align: left;">QGIS/QField</td>
+<td style="text-align: left;"><em>under development</em></td>
+<td style="text-align: left;"><em>under development</em></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>CarbonViewer</strong></td>
+<td style="text-align: left;">RShiny</td>
+<td style="text-align: left;">• <a href="https://carbonviewer.nina.no/">App Instructions</a> <br> • <a href="https://ntnuopen.ntnu.no/ntnu-xmlui/bitstream/handle/11250/3099192/KyrkjeeideAcalculatorCarbonManagement2023gull.pdf?sequence=1&amp;isAllowed=y">Publication</a></td>
+<td style="text-align: left;">• <a href="https://github.com/NINAnor/carbonviewer/tree/v1.0.0">GitHub</a> <br> • <a href="https://carbonviewer.nina.no/">Web application</a></td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<section id="nin-2.0-naturtype-mapping" class="level2">
+<h2 class="anchored" data-anchor-id="nin-2.0-naturtype-mapping">NiN 2.0 Naturtype Mapping</h2>
+<p><em>short description here</em></p>
+<div class="note">
+<p><strong>Note</strong> that this QField Template is designed for mapping NiN 2.0. From 2026 onwards NiN 3.0 will be used as mapping protocol. As of today, there is no QGIS Template available for NiN 3.0.</p>
 </div>
-<div id="process1" class="flowchart-box">
-Process 1
+<section id="install-nin-qfield-on-your-tablet" class="level3">
+<h3 class="anchored" data-anchor-id="install-nin-qfield-on-your-tablet">Install NiN QField on your tablet</h3>
+<p>The <strong>NiN 2.0</strong> QGIS template is uploaded to NINA’s QField Cloud account. For general instructions on QGIS, QField and QField Cloud follow the guide: <a href="../../data-collection/field-surveys/intro-to-qfield.html">QGIS and QField introduciton</a>.</p>
+</section>
+<section id="nina-contacts" class="level3">
+<h3 class="anchored">NINA Contacts</h3>
+<div class="columns">
+<div class="column">
+<p><strong>NiN:</strong></p>
+<ul>
+<li>Trond Simensen</li>
+<li>Erik Stange</li>
+<li>Anders Lyngstad</li>
+</ul>
+</div><div class="column">
+<p><strong>QGIS/QField Cloud managers:</strong></p>
+<ul>
+<li>Willeke A’Campo</li>
+<li>Stig Claussen</li>
+</ul>
+</div><section id="biodiversity-metric-4.0" class="level2">
+<h2 class="anchored" data-anchor-id="biodiversity-metric-4.0">Biodiversity Metric 4.0</h2>
+<p><em>short description here</em></p>
+<section id="nina-contacts-1" class="level3">
+<h3 class="anchored" data-anchor-id="nina-contacts-1">NINA Contacts</h3>
+<p>::: {.columns} ::: {.column} <strong>Biodiversity Metrics:</strong></p>
+<ul>
+<li>Trond Simensen</li>
+<li>Erik Stange</li>
+</ul>
+</section>
+</section>
 </div>
-<div id="decision" class="flowchart-box">
-Decision
+<div class="column">
+<p><strong>QGIS/QField Cloud managers:</strong></p>
+<ul>
+<li>Willeke A’Campo</li>
+<li>Stig Claussen</li>
+</ul>
 </div>
-<div id="process2" class="flowchart-box">
-Process 2
+<p><br></p>
+</section>
+</section>
+<section id="bluegreen-factor" class="level2">
+<h2 class="anchored" data-anchor-id="bluegreen-factor">Bluegreen Factor</h2>
+<p><em>short description here</em></p>
+<section id="nina-contacts-2" class="level3">
+<h3 class="anchored">NINA Contacts</h3>
+<div class="columns">
+<div class="column">
+<p><strong>BGF:</strong></p>
+<ul>
+<li>David Barton</li>
+<li>Bart Immerzeel</li>
+<li>Maria Korkou</li>
+</ul>
+</div><div class="column">
+<p><strong>QGIS/QField Cloud Managers:</strong></p>
+<ul>
+<li>Willeke A’Campo</li>
+<li>Stig Claussen</li>
+</ul>
+</div><p><br></p><section id="carbonviewer" class="level2">
+<h2 class="anchored" data-anchor-id="carbonviewer">CarbonViewer</h2>
+<p>The CarbonViewer app calculates the <strong>total volume of peat (m3)</strong> and the <strong>total carbon content (Tons C)</strong> in a peatland area. To be able to calculate those values the peatland area must be sampled for peat depth and the peatland type must be recorded.</p>
+<div class="note">
+<p><strong>Note</strong> that <a href="https://carbonviewer.nina.no/">CarbonViewer</a> is not a field application! The user must go out in the field and record peat depth (cm) and the coordinates of the measurements before using CarbonViewer.</p>
 </div>
-<div id="end" class="flowchart-box">
-End
+<section id="nina-contacts-3" class="level3">
+<h3 class="anchored" data-anchor-id="nina-contacts-3">NINA Contacts</h3>
+<p>::: {.columns} ::: {.column} <strong>CarbonViewer:</strong></p>
+<ul>
+<li>Magni Olsen Kyrkjeeide</li>
+<li>Anders Lyngstad</li>
+</ul>
+</section>
+</section>
 </div>
-</div>
-<p><strong>Example using DiagrammerR:</strong></p>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>graph <span class="ot">&lt;-</span> <span class="fu">create_graph</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_node</span>(<span class="at">label=</span><span class="st">"Node A"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_node</span>(<span class="at">label =</span> <span class="st">" I have a</span><span class="sc">\n</span><span class="st">hyperlink"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_edge</span>(<span class="at">from =</span> <span class="dv">1</span>, <span class="at">to =</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select_last_nodes_created</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_node_attrs_ws</span>(<span class="at">node_attr =</span> URL, <span class="at">value =</span> <span class="st">"https://nrk.no"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_node</span>(<span class="at">label =</span> <span class="st">"Looooooooooooooooooooong name"</span>, <span class="at">from =</span> <span class="dv">1</span>, <span class="at">to =</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_node_attrs</span>(<span class="at">node_attr =</span> shape, <span class="at">values =</span>  <span class="st">"box"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select_nodes_by_id</span>(<span class="at">nodes =</span> <span class="dv">3</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_node_attrs_ws</span>(<span class="at">node_attr =</span> shape, <span class="at">value =</span> <span class="st">"rectangle"</span>)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Export the graph to a PNG file</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">export_graph</span>(graph, <span class="at">file_name =</span> <span class="st">"graph.png"</span>, <span class="at">width =</span> <span class="dv">400</span>, <span class="at">height =</span> <span class="dv">400</span>)</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Include the PNG file in your HTML document</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">include_graphics</span>(<span class="st">"graph.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="graph.png" class="img-fluid figure-img" width="200"></p>
-</figure>
-</div>
-</div>
-</div>
-<p><strong>Example using Mermaid:</strong></p>
-<p>For mermaid instructions see <a href="https://mermaid.js.org/syntax/flowchart.html">here</a>.</p>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart LR
-    A--&gt;B
-    B--&gt;C
-    B--&gt;D
-    C--&gt;D
-    click A callback "Tooltip for a callback"
-    click B "https://www.github.com" "This is a tooltip for a link"
-    click C call callback() "Tooltip for a callback"
-    click D href "https://www.github.com" "This is a tooltip for a link"
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
+<div class="column">
+<p><strong>RShiny Developers:</strong></p>
+<ul>
+<li>Benjamin Cretois</li>
+<li>Willeke A’Campo</li>
+</ul>
 </div>
 
 
@@ -815,8 +818,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../data-collection/remote-sensing/remote-sensing.html" class="pagination-link" aria-label="Remote sensing">
-        <span class="nav-page-text"><span class="chapter-title">Remote sensing</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../data-collection/field-surveys/intro-to-qfield.html" class="pagination-link" aria-label="QGIS and QField introduction">
+        <span class="nav-page-text"><span class="chapter-title">QGIS and QField introduction</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

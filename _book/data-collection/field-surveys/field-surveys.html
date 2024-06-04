@@ -4858,18 +4858,8 @@ vertical-align: -.125em;
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#nin-2.0-naturtype-mapping" id="toc-nin-2.0-naturtype-mapping" class="nav-link active" data-scroll-target="#nin-2.0-naturtype-mapping">NiN 2.0 Naturtype Mapping</a>
-  <ul class="collapse">
-  <li><a href="#install-nin-qfield-on-your-tablet" id="toc-install-nin-qfield-on-your-tablet" class="nav-link" data-scroll-target="#install-nin-qfield-on-your-tablet">Install NiN QField on your tablet</a></li>
-  <li><a href="#nina-contacts" id="toc-nina-contacts" class="nav-link" data-scroll-target="#nina-contacts">NINA Contacts</a></li>
-  </ul></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/NINAnor/EAguide/edit/main/data-collection/field-surveys/field-surveys.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -4941,6 +4931,54 @@ vertical-align: -.125em;
 <section id="install-nin-qfield-on-your-tablet" class="level3">
 <h3 class="anchored" data-anchor-id="install-nin-qfield-on-your-tablet">Install NiN QField on your tablet</h3>
 <p>The <strong>NiN 2.0</strong> QGIS template is uploaded to NINA’s QField Cloud account. For general instructions on QGIS, QField and QField Cloud follow the guide: <a href="../../data-collection/field-surveys/intro-to-qfield.html">QGIS and QField introduciton</a>.</p>
+<ol type="1">
+<li>Open QField on your tablet and go to <code>QFieldCloud projects</code> &gt; <code>My Projects</code></li>
+<li>Select the project and the latest version of the project will be downloaded to your tablet.
+<ul>
+<li><strong>nin2_project_name_year</strong>: project specific NiN mapping template.</li>
+<li><strong>nin2_norge_2024</strong>: NiN mapping template for the whole of Norway.</li>
+</ul></li>
+<li>Set your user name in the QField app. This ensures that your name is automatically added to the <code>kartlegger</code> field in the attribute table, every time you map a new naturtype.
+<ul>
+<li>Go to <code>Settings</code> &gt; <code>Settings</code> &gt; <code>Variables</code></li>
+<li>Add a new variable <code>qfield_user_name</code> with your name <code>firstname.lastname</code></li>
+</ul></li>
+</ol>
+</section>
+<section id="how-to-create-a-new-nin-2.0-project" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-create-a-new-nin-2.0-project">How to create a new NiN 2.0 project?</h3>
+<ol start="0" type="1">
+<li><p>Read the PDF instructions, especially chapter 2 “Installering og oppstart” and chapter 3 “Kartlegging av NiN-Naturtyper”.</p></li>
+<li><p>In the folder <code>vector</code> create the GPKG-files:</p>
+<ul>
+<li>%project_name%_misc.gpkg</li>
+<li>%project_name%_extent.gpkg</li>
+<li>%project_name%_condition.gpkg <em>(only if you plan to record additional condition parameters, such as soil depth)</em></li>
+<li>%project_name%_service.gpkg <em>(only if you plan to record additional service parameters)</em></li>
+</ul></li>
+<li><p>Create a new polygon layer <code>study_area</code> and save it to <code>misc</code> GPKG and add it to the <code>Area</code> group.</p></li>
+<li><p>Download raster files in <code>GeoTIFF</code> format from <a href="https://hoydedata.no/">høydedata.no</a> and <a href="https://www.norgeibilder.no/">norgeibilder.no</a>.</p>
+<ul>
+<li>DTMs and DSMs: <a href="https://hoydedata.no/">høydedata.no</a></li>
+<li>Ortophotos (RGB and CIR): <a href="https://www.norgeibilder.no/">norgeibilder.no</a>
+<ul>
+<li>Login with your Geonorge GeoID</li>
+<li>enter study area bounding box coordinates</li>
+<li>Coordinate system: UTM 33</li>
+<li>clip by bounding box</li>
+<li>send order</li>
+</ul></li>
+</ul></li>
+<li><p>Add your downloaded raster files as offline map layers in QField.</p></li>
+</ol>
+<p>Changes compared to the orignal file - NiN shp-files are saved in the GPKG - admin field is added for “kartlegger” - possibility to add points for soil depth measurements</p>
+<ul>
+<li>add user name:
+<ul>
+<li>qfield app &gt; setttings &gt; settings &gt; variables</li>
+<li>new variable <code>qfield_user_name</code> with your name</li>
+</ul></li>
+</ul>
 </section>
 <section id="nina-contacts" class="level3">
 <h3 class="anchored">NINA Contacts</h3>
@@ -4976,7 +5014,7 @@ vertical-align: -.125em;
 <li>Willeke A’Campo</li>
 <li>Stig Claussen</li>
 </ul>
-</div><p><br></p><section id="bluegreen-factor" class="level2">
+</div><section id="bluegreen-factor" class="level2">
 <h2 class="anchored" data-anchor-id="bluegreen-factor">Bluegreen Factor</h2>
 <p><em>short description here</em></p>
 <section id="nina-contacts-2" class="level3">
@@ -4995,7 +5033,7 @@ vertical-align: -.125em;
 <li>Willeke A’Campo</li>
 <li>Stig Claussen</li>
 </ul>
-</div><p><br></p><section id="carbonviewer" class="level2">
+</div><section id="carbonviewer" class="level2">
 <h2 class="anchored" data-anchor-id="carbonviewer">CarbonViewer</h2>
 <p>The CarbonViewer app calculates the <strong>total volume of peat (m3)</strong> and the <strong>total carbon content (Tons C)</strong> in a peatland area. To be able to calculate those values the peatland area must be sampled for peat depth and the peatland type must be recorded.</p>
 <div class="note">
@@ -5468,4 +5506,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/NINAnor/EAguide/edit/main/data-collection/field-surveys/field-surveys.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/NINAnor/EAguide/edit/main/data-collection/field-surveys/field-surveys.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>

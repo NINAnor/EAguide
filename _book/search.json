@@ -146,7 +146,7 @@
     "section": "",
     "text": "Step-by-step guide for submitting data",
     "crumbs": [
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Data Publishing</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Data Publishing</span>"
     ]
   },
   {
@@ -156,7 +156,7 @@
     "section": "",
     "text": "Organize your data\n\n\nCreate a folder nina_map_catalog within your project folder (P:/)\nGroup your data into Ecosystem Accounting Framework groups: services, extent, condition, misc.\nRaster data:\n\nsave each raster as a single-band GeoTIFF into the nina_map_catalog folder.\nuse underscore as spaces (air_pollution_0301.tif)\n\nVector data:\n\nsave all vector layers of one group into one GeoPackage and save it in the nina_map_catalog folder.\n%project_name%_service.gpkg\n%project_name%_extent.gpkg\n%project_name%_condition.gpkg\n%project_name%_misc.gpkg\n\n\n\nFill out the import schema\n\nDownload import schema\nA filled out example can be found here.\nEnsure to read the README-sheet and fill out all required (*) fields.\nImportant: Check the data source of each data layer. If the data source is not owned by NINA, provide the WMS link to the original source and the link of where users can download this data (for example GeoNorge). In other words, we do not add AR5 data into the gpkg’s! Instead we show the map as a WMS layer and point the users to NIBIO for downloading the data.\n\nLayer styling\n\nIn your prefrerred GIS-software create a style for each layer.\nNote: we try to make the styling as similar as possible, but know that the MapLibre library we use is not as advanced as for example ArcGIS Pro. So customized colormaps might look slightly different in the NINA Maps Portal.\n\nRequest for publishing a new project within the EA NINA map portal\n\nSend the following information to Miljødata:\n\nthe filled out import-schema\nthe path to your cleaned and organized data: P:/…/nina_map_catalog\na qgis file, a arcgispro layer file, an agol app, an R or python file that displays your preferred styling of the map layers.\n\n\n\n\nExample structure of nina_map_catalog folder:\nP:/.../nina_map_catalog\n├── NINA_naturregnskap_metadata_importskjema_PROSJEKTNAVN.xlsx    (import schema)\n├── *%project_name%*_layer_styling.qgz                            (qgis project with preferred styling)\n├── *%project_name%*_condition.gpkg                               (vector layers grouped by EA framework)  \n├── *%project_name%*_extent.gpkg\n├── *%project_name%*_misc.gpkg\n|    ├── study_area\n|    └── vector_layer\n├── *%project_name%*_service.gpkg\n├── air_pollution_0301.tif                                        (single band raster layers)\n└── raster_layer.tif",
     "crumbs": [
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Data Publishing</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Data Publishing</span>"
     ]
   },
   {
@@ -166,7 +166,7 @@
     "section": "Guide for developers",
     "text": "Guide for developers\nDevelopers:\n\nNiccolò Cantù\nFrancesco Frassinelli\n\nDocumentation: https://ninanor.github.io/nina-catalogue\nNINA’s catalogue includes a Map Module for storing maps, accesible at maps.nina.no, and a Datasets Module for storing data and metadata, accesible via PyGeoAPI. For the Local Ecosystem Accounts dataset (Finskala Naturregnskap), maps are uploaded to the Map Catalogue. In the future, these maps may also be uploaded as a dataset thus be accesible via the PyGeoAPI.\nBelow is a brief guide for setting up a local installation of the Catalogue on your machine. For detailed information and inquiries, please refer to the documentation or contact the developers. This is meant for development and testing, the production environment is managed by Niccolò Cantù.\n\nInstallation instructions\nPrerequisites:\n\nLinux OS\nDocker\n\nGitHub repositories:\n\n\n\nRepository\nDescription\nTechnologies\n\n\n\n\nnina-catalogue\nBackend architecture\nDjango and PostgreSQL\n\n\nnina-map-explorer\nFrontend map application\nMapLibre with PM Tiles\n\n\nnaturregnskap_maps_uploader\nAPI, specifically designed for uploading map data and metadata to the Local Ecosystem Accounts dataset using the import schema.\nPython\n\n\n\nInstallation steps:\n\nInstall the backend architecture\n\nFollow the instructions in the README of the nina-catalogue\n\nCreate secrets in the secrets folder\ncd setup\ndocker compose up --build\nstart all services in dev mode\n# source the helper functions\n. helpers.sh\n\n# alias in helpers.sh\n# run the docker-compose file in the dev profile\n# env variables are loaded from secrets \ndpcli_dev up --build\ncreate an admin user\ndjcli_dev migrate\ndjcli_dev createsuperuser\nSet the admin email and password, and remember them to later login to the Django admin: localhost:8000/admin/\nstart the Django admin interface\nxdg-open http://localhost:8000/admin\ngenerate a token for your user in Django admin GUI: Tokens -&gt; Add token\n\n\n\n\n\n\n\nDjango Admin GUI\n\n\n\nInstall the frontend map application\n\nFollow the instructions in the README of the nina-map-explorer\n\nstart the web service in prod mode\n# Start all services defined in the docker-compose.yml\n# -d run in detached mode (background)\ndocker compose --profile prod up\nstart the web app\nxdg-open http://localhost:3000\n\n\n\n\nErrors in the web application can be inspected in the browser console using: right-click -&gt; inspect -&gt; console or ctrl+shift+j.\n\n\nInstall the Naturregnskap API\n\nFollow the instructions in the README of the naturregnskap_maps_uploader\n\nInstall the Python environment\n\npython3 -m venv .venv\nsource .venv/bin/activate\n\npip install -e .\n\ntouch .env\n\nConfigure the API with the Django backend\n\nCopy the token generated in Django admin (step 1)\nAdd the token to the .env file\n\nAUTH_TOKEN=my_token\nDEBUG=True\n\n\n\nNow you have a local installation of the NINA Catalogue and the following services are available:\n\n\n\nService\nURL\n\n\n\n\nMetadata catalogue\nlocalhost:8000\n\n\nDjango admin\nlocalhost:8000/admin/\n\n\nMap application\nlocalhost:3000\n\n\nDocumentation\nlocalhost:3001",
     "crumbs": [
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Data Publishing</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Data Publishing</span>"
     ]
   },
   {
@@ -207,10 +207,10 @@
     "href": "data-collection/remote-sensing/remote-sensing.html",
     "title": "Remote sensing",
     "section": "",
-    "text": "GIS tools\nblablabla",
+    "text": "Maybe we want to have a chapter in this?\n\nFlowcharts\nExample using html:\nNote that the classes are defined in the NINAstyle.scss\n\n\nStart\n\n\nProcess 1\n\n\nDecision\n\n\nProcess 2\n\n\nEnd\n\n\nExample using DiagrammerR:\n\n\nCode\ngraph &lt;- create_graph() %&gt;%\n  add_node(label=\"Node A\") %&gt;%\n  add_node(label = \" I have a\\nhyperlink\") %&gt;%\n  add_edge(from = 1, to = 2) %&gt;%\n  select_last_nodes_created() %&gt;%\n  set_node_attrs_ws(node_attr = URL, value = \"https://nrk.no\") %&gt;%\n  add_node(label = \"Looooooooooooooooooooong name\", from = 1, to = 2) %&gt;%\n  set_node_attrs(node_attr = shape, values =  \"box\") %&gt;%\n  select_nodes_by_id(nodes = 3) %&gt;%\n  set_node_attrs_ws(node_attr = shape, value = \"rectangle\")\n\n# Export the graph to a PNG file\nexport_graph(graph, file_name = \"graph.png\", width = 400, height = 400)\n\n# Include the PNG file in your HTML document\ninclude_graphics(\"graph.png\")\n\n\n\n\n\n\n\n\n\nExample using Mermaid:\nFor mermaid instructions see here.\n\n\n\n\n\nflowchart LR\n    A--&gt;B\n    B--&gt;C\n    B--&gt;D\n    C--&gt;D\n    click A callback \"Tooltip for a callback\"\n    click B \"https://www.github.com\" \"This is a tooltip for a link\"\n    click C call callback() \"Tooltip for a callback\"\n    click D href \"https://www.github.com\" \"This is a tooltip for a link\"",
     "crumbs": [
       "Data Collection",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Remote sensing</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Remote sensing</span>"
     ]
   },
   {
@@ -220,7 +220,7 @@
     "section": "",
     "text": "comparison of methods\nrefer to previous project methods\nbest practices",
     "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Data analysis</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data analysis</span>"
     ]
   },
   {
@@ -241,7 +241,7 @@
     "section": "How to create a map and upload data to the NINA Catalogue",
     "text": "How to create a map and upload data to the NINA Catalogue\nBelow are the steps to create a map for the Local Ecosystem Accounts dataset and upload the data to the NINA Catalogue from scratch. You only need to create a map once, and then you can upload data to the same map multiple times using the API.\n\nDjango admin - Create a Map\n\nDjango admin -&gt; Maps -&gt; Add map\nFill out the form and save. An error will be shown if the form is not filled out correctly.\nThe field Extras can be used to directly pass a JSON object to the MapLibre Frontend. For example, to set the initial map view, you can pass the following JSON object: {\"center\": [10.7, 59.9]}.\n\nDjango admin - Add background layer to the map.\n\nadd raster source\n\nMaps &gt; Raster sources\nSet tile-URL, zoom and size in extras:\n\n{\n\"tiles\": [\"https://a.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png\"], \n\"maxZoom\": 20, \n\"tileSize\": 256\n}\nadd source to the Map as Layer\n\nMaps &gt; Layers &gt; Add layer\nSet style: {\"type\": \"raster\"}\ncheck basemap box\n\n\nPrepare your data\n\nPrepare the raster data\n\nadd the metadata to your geotiff\nconvert GEOTiff to a Cloud Optimized GEOTIFF (COG) using generate_cog.sh\ndefine raster style and legend in style.json\n\nPrepare the vector data\n\nconvert the GeoPackages to PMTiles using GDAL &gt;= 3.8.\n\n\nsource scripts/generate_pmtiles.h\n\n\n```bash\ndocker run --rm -ti -v $PWD:/host --workdir /host ghcr.io/osgeo/gdal \\\n    ogr2ogr -skipfailures -f PMTiles converted.pmtiles original.gpkg -dsco MAXZOOM=15\n\ndefine the vector style and legend in style.json\ndocs: gdal.org/drivers/vector/pmtiles.html.\n\nNaturregnskaps API - Upload map layers and metadata\n\nCheck the import schema (provided by the projects data manager)\nCheck the style file\nUpload the data and metadata using the API\ncommand: naturregnskap_maps_uploader_start http://server:port map_slug --wd /path/to/data/\nexample: naturregnskap_maps_uploader_start http://localhost:8000 localEA --wd ~/temp/nina-map-catalog\nThe API will read the import schema and upload the data to the NINA Catalogue.\n\n\n\nGDAL is needed to convert rasters to COG and vectors to PMTiles. Here is an example of how to execute a GDAL command inside a container.\n#!/bin/bash exec docker run –rm –pid=host -v /tmp/.X11-unix:/tmp/.X11-unix:ro -e DISPLAY=\\(DISPLAY     -v \"\\)PWD”:/host –workdir /host -v /tmp:/tmp –entrypoint=“” “osgeo/gdal:alpine-small-3.6.2” “gdal_translate” “$@”",
     "crumbs": [
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Data Publishing</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Data Publishing</span>"
     ]
   },
   {
@@ -252,7 +252,7 @@
     "text": "Flowcharts\nExample using html:\nNote that the classes are defined in the NINAstyle.scss\n\n\nStart\n\n\nProcess 1\n\n\nDecision\n\n\nProcess 2\n\n\nEnd\n\n\nExample using DiagrammerR:\n\n\nCode\ngraph &lt;- create_graph() %&gt;%\n  add_node(label=\"Node A\") %&gt;%\n  add_node(label = \" I have a\\nhyperlink\") %&gt;%\n  add_edge(from = 1, to = 2) %&gt;%\n  select_last_nodes_created() %&gt;%\n  set_node_attrs_ws(node_attr = URL, value = \"https://nrk.no\") %&gt;%\n  add_node(label = \"Looooooooooooooooooooong name\", from = 1, to = 2) %&gt;%\n  set_node_attrs(node_attr = shape, values =  \"box\") %&gt;%\n  select_nodes_by_id(nodes = 3) %&gt;%\n  set_node_attrs_ws(node_attr = shape, value = \"rectangle\")\n\n# Export the graph to a PNG file\nexport_graph(graph, file_name = \"graph.png\", width = 400, height = 400)\n\n# Include the PNG file in your HTML document\ninclude_graphics(\"graph.png\")\n\n\n\n\n\n\n\n\n\nExample using Mermaid:\nFor mermaid instructions see here.\n\n\n\n\n\nflowchart LR\n    A--&gt;B\n    B--&gt;C\n    B--&gt;D\n    C--&gt;D\n    click A callback \"Tooltip for a callback\"\n    click B \"https://www.github.com\" \"This is a tooltip for a link\"\n    click C call callback() \"Tooltip for a callback\"\n    click D href \"https://www.github.com\" \"This is a tooltip for a link\"",
     "crumbs": [
       "Data Collection",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Remote sensing</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Remote sensing</span>"
     ]
   },
   {
@@ -293,7 +293,7 @@
     "href": "data-collection/field-surveys/field-surveys.html#nin-2.0-naturtype-mapping",
     "title": "Field surveys",
     "section": "Biodiversity Metric 4.0",
-    "text": "Note that this QField Template is designed for mapping NiN 2.0. From 2026 onwards NiN 3.0 will be used as mapping protocol. As of today, there is no QGIS Template available for NiN 3.0.\n\n\nInstall NiN QField on your tablet\nThe NiN 2.0 QGIS template is uploaded to NINA’s QField Cloud account. For general instructions on QGIS, QField and QField Cloud follow the guide: QGIS and QField introduciton.\n\n\nNINA Contacts\n\n\nNiN:\n\nTrond Simensen\nErik Stange\nAnders Lyngstad\n\n\nQGIS/QField Cloud managers:\n\nWilleke A’Campo\nStig Claussen\n\n\nBiodiversity Metric 4.0\nshort description here\n\nNINA Contacts\n\n\nBiodiversity Metrics:\n\nTrond Simensen\nErik Stange\n\n\nQGIS/QField Cloud managers:\n\nWilleke A’Campo\nStig Claussen\n\n\nBluegreen Factor\nshort description here\n\nNINA Contacts\n\n\nBGF:\n\nDavid Barton\nBart Immerzeel\nMaria Korkou\n\n\nQGIS/QField Cloud Managers:\n\nWilleke A’Campo\nStig Claussen\n\n\nCarbonViewer\nThe CarbonViewer app calculates the total volume of peat (m3) and the total carbon content (Tons C) in a peatland area. To be able to calculate those values the peatland area must be sampled for peat depth and the peatland type must be recorded.\n\nNote that CarbonViewer is not a field application! The user must go out in the field and record peat depth (cm) and the coordinates of the measurements before using CarbonViewer.\n\n\nNINA Contacts\n\n\nCarbonViewer:\n\nMagni Olsen Kyrkjeeide\nAnders Lyngstad\n\n\nRShiny Developers:\n\nBenjamin Cretois\nWilleke A’Campo",
+    "text": "Note that this QField Template is designed for mapping NiN 2.0. From 2026 onwards NiN 3.0 will be used as mapping protocol. As of today, there is no QGIS Template available for NiN 3.0.\n\n\nInstall NiN QField on your tablet\nThe NiN 2.0 QGIS template is uploaded to NINA’s QField Cloud account. For general instructions on QGIS, QField and QField Cloud follow the guide: QGIS and QField introduciton.\n\nOpen QField on your tablet and go to QFieldCloud projects &gt; My Projects\nSelect the project and the latest version of the project will be downloaded to your tablet.\n\nnin2_project_name_year: project specific NiN mapping template.\nnin2_norge_2024: NiN mapping template for the whole of Norway.\n\nSet your user name in the QField app. This ensures that your name is automatically added to the kartlegger field in the attribute table, every time you map a new naturtype.\n\nGo to Settings &gt; Settings &gt; Variables\nAdd a new variable qfield_user_name with your name firstname.lastname\n\n\n\n\nHow to create a new NiN 2.0 project?\n\nRead the PDF instructions, especially chapter 2 “Installering og oppstart” and chapter 3 “Kartlegging av NiN-Naturtyper”.\nIn the folder vector create the GPKG-files:\n\n%project_name%_misc.gpkg\n%project_name%_extent.gpkg\n%project_name%_condition.gpkg (only if you plan to record additional condition parameters, such as soil depth)\n%project_name%_service.gpkg (only if you plan to record additional service parameters)\n\nCreate a new polygon layer study_area and save it to misc GPKG and add it to the Area group.\nDownload raster files in GeoTIFF format from høydedata.no and norgeibilder.no.\n\nDTMs and DSMs: høydedata.no\nOrtophotos (RGB and CIR): norgeibilder.no\n\nLogin with your Geonorge GeoID\nenter study area bounding box coordinates\nCoordinate system: UTM 33\nclip by bounding box\nsend order\n\n\nAdd your downloaded raster files as offline map layers in QField.\n\nChanges compared to the orignal file - NiN shp-files are saved in the GPKG - admin field is added for “kartlegger” - possibility to add points for soil depth measurements\n\nadd user name:\n\nqfield app &gt; setttings &gt; settings &gt; variables\nnew variable qfield_user_name with your name\n\n\n\n\nNINA Contacts\n\n\nNiN:\n\nTrond Simensen\nErik Stange\nAnders Lyngstad\n\n\nQGIS/QField Cloud managers:\n\nWilleke A’Campo\nStig Claussen\n\n\nBiodiversity Metric 4.0\nshort description here\n\nNINA Contacts\n\n\nBiodiversity Metrics:\n\nTrond Simensen\nErik Stange\n\n\nQGIS/QField Cloud managers:\n\nWilleke A’Campo\nStig Claussen\n\n\nBluegreen Factor\nshort description here\n\nNINA Contacts\n\n\nBGF:\n\nDavid Barton\nBart Immerzeel\nMaria Korkou\n\n\nQGIS/QField Cloud Managers:\n\nWilleke A’Campo\nStig Claussen\n\n\nCarbonViewer\nThe CarbonViewer app calculates the total volume of peat (m3) and the total carbon content (Tons C) in a peatland area. To be able to calculate those values the peatland area must be sampled for peat depth and the peatland type must be recorded.\n\nNote that CarbonViewer is not a field application! The user must go out in the field and record peat depth (cm) and the coordinates of the measurements before using CarbonViewer.\n\n\nNINA Contacts\n\n\nCarbonViewer:\n\nMagni Olsen Kyrkjeeide\nAnders Lyngstad\n\n\nRShiny Developers:\n\nBenjamin Cretois\nWilleke A’Campo",
     "crumbs": [
       "Data Collection",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Field surveys</span>"
@@ -308,6 +308,39 @@
     "crumbs": [
       "Data Collection",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Field surveys</span>"
+    ]
+  },
+  {
+    "objectID": "data-collection/field-surveys/intro-to-qfield.html",
+    "href": "data-collection/field-surveys/intro-to-qfield.html",
+    "title": "QGIS and QField introduction",
+    "section": "",
+    "text": "Prerequisites\nOnce you have installed QGIS on your computer. Go to Plugins &gt; Manage and Install Plugins &gt; All and install the following plugins in QGIS:\nOther useful plugins:\nTable: overview of QField projects available on NINAnor’s QField Cloud organization.",
+    "crumbs": [
+      "Data Collection",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>QGIS and QField introduction</span>"
+    ]
+  },
+  {
+    "objectID": "data-collection/field-surveys/intro-to-qfield.html#prerequisites",
+    "href": "data-collection/field-surveys/intro-to-qfield.html#prerequisites",
+    "title": "QGIS and QField introduction",
+    "section": "",
+    "text": "QGIS v3.x installed on your computer.\nQField installed on your device.\n\nGoogle Play\nApple App Store.\n\nA QField Cloud account.\n\nSign up for an account using your NINA email address here.\nSend and email to NINA’s datahjelp for access to the NINAnor QField Cloud organization and ask to be added to the Fieldwork group.\n\n\n\n\nQFieldSync: a QGIS plugin that allows you to synchronize your QGIS projects with QField Cloud.\n\n\n\nNiB-ortofoto-prosjekt: a Q GIS plugin that allows you to add high-resolution aerial photos from the Norwegian Mapping Authority (Kartverket) and use them as a background (WMS) layer in your QGIS project. It finds all available aerial photos for the area you are working in and adds them to your project.\n…\n…\n\n\n\n\n\nProject name\nDescription\nInstructions\n\n\n\n\nQField project 1\nDescription of project 1\nInstructions\n\n\nQField project 2\nDescription of project 2\nInstructions\n\n\nQField project 3\nDescription of project 3\nInstructions",
+    "crumbs": [
+      "Data Collection",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>QGIS and QField introduction</span>"
+    ]
+  },
+  {
+    "objectID": "data-collection/field-surveys/intro-to-qfield.html#overview-of-qfield-projects-available-on-ninanors-organization-on-qfield-cloud",
+    "href": "data-collection/field-surveys/intro-to-qfield.html#overview-of-qfield-projects-available-on-ninanors-organization-on-qfield-cloud",
+    "title": "QGIS and QField introduction",
+    "section": "Overview of QField projects available on NINAnor’s organization on QField Cloud",
+    "text": "Overview of QField projects available on NINAnor’s organization on QField Cloud\n\n\n\nProject name\nDescription\nInstructions\n\n\n\n\nQField project 1\nDescription of project 1\nInstructions\n\n\nQField project 2\nDescription of project 2\nInstructions\n\n\nQField project 3\nDescription of project 3\nInstructions",
+    "crumbs": [
+      "Data Collection",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>QGIS and QField introduction</span>"
     ]
   }
 ]

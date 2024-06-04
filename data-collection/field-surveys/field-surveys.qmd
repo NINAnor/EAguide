@@ -25,6 +25,49 @@ This page presents a list of field surveys and applications usefull for ecosyste
 
 The **NiN 2.0** QGIS template is uploaded to NINA's QField Cloud account. For general instructions on QGIS, QField and QField Cloud follow the guide: [QGIS and QField introduciton](intro-to-qfield.qmd).
 
+1. Open QField on your tablet and go to `QFieldCloud projects` > `My Projects` 
+2. Select the project and the latest version of the project will be downloaded to your tablet.
+    - **nin2_project_name_year**: project specific NiN mapping template.
+    - **nin2_norge_2024**: NiN mapping template for the whole of Norway.
+
+    *It can take up to several minutes to download your project*
+
+3. Set your user name in the QField app. This ensures that your name is automatically added to the `kartlegger` field in the attribute table, every time you map a new naturtype.
+    - Go to `Settings` > `Settings` > `Variables` 
+    - Add a new variable `qfield_user_name` with your name `firstname.lastname`
+
+### How to create a new NiN 2.0 project? 
+
+0. Read the PDF instructions, especially chapter 2 "Installering og oppstart" and chapter 3 "Kartlegging av NiN-Naturtyper".
+1. In the folder `vector` create the GPKG-files:
+    - %project_name%_misc.gpkg
+    - %project_name%_extent.gpkg 
+    - %project_name%_condition.gpkg *(only if you plan to record additional condition parameters, such as soil depth)*
+    - %project_name%_service.gpkg *(only if you plan to record additional service parameters)*
+
+1. Create a new polygon layer `study_area` and save it to `misc` GPKG and add it to the `Area` group. 
+
+2. Download raster files in `GeoTIFF` format from [høydedata.no](https://hoydedata.no/) and [norgeibilder.no](https://www.norgeibilder.no/). 
+    - DTMs and DSMs: [høydedata.no](https://hoydedata.no/)
+    - Ortophotos (RGB and CIR): [norgeibilder.no](https://www.norgeibilder.no/)
+        - Login with your Geonorge GeoID
+        - enter study area bounding box coordinates 
+        - Coordinate system: UTM 33
+        - clip by bounding box 
+        - send order
+3. Add your downloaded raster files as offline map layers in QField. 
+
+
+
+Changes compared to the orignal file
+- NiN shp-files are saved in the GPKG
+- admin field is added for "kartlegger"
+- possibility to add points for soil depth measurements 
+
+- add user name:
+    - qfield app > setttings > settings > variables
+    - new variable `qfield_user_name` with your name 
+
 ### NINA Contacts
 
 ::: {.columns}

@@ -3,7 +3,6 @@
 Maybe we want to have a chapter in this?
 
 
-
 ```{r setup}
 #| include: false
 #| warning: false
@@ -12,10 +11,6 @@ library(tidyverse)
 library(knitr)
 library(DiagrammeR)
 ```
-
-## GIS tools
-
-blablabla
 
 ### Flowcharts
 

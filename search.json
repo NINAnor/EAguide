@@ -45,7 +45,7 @@
     "href": "data-collection/field-surveys/field-surveys.html#nin-2.0-naturtype-mapping",
     "title": "Field surveys",
     "section": "Biodiversity Metric 4.0",
-    "text": "Note that this QField Template is designed for mapping NiN 2.0. From 2026 onwards NiN 3.0 will be used as mapping protocol. As of today, there is no QGIS Template available for NiN 3.0.\n\n\nInstall NiN QField on your tablet\nThe NiN 2.0 QGIS template is uploaded to NINA’s QField Cloud account. For general instructions on QGIS, QField and QField Cloud follow the guide: QGIS and QField introduciton.\n\n\nNINA Contacts\n\n\nNiN:\n\nTrond Simensen\nErik Stange\nAnders Lyngstad\n\n\nQGIS/QField Cloud managers:\n\nWilleke A’Campo\nStig Claussen\n\n\nBiodiversity Metric 4.0\nshort description here\n\nNINA Contacts\n::: {.columns} ::: {.column} Biodiversity Metrics:\n\nTrond Simensen\nErik Stange\n\n\n\n\n\nQGIS/QField Cloud managers:\n\nWilleke A’Campo\nStig Claussen",
+    "text": "Note that this QField Template is designed for mapping NiN 2.0. From 2026 onwards NiN 3.0 will be used as mapping protocol. As of today, there is no QGIS Template available for NiN 3.0.\n\n\nInstall NiN QField on your tablet\nThe NiN 2.0 QGIS template is uploaded to NINA’s QField Cloud account. For general instructions on QGIS, QField and QField Cloud follow the guide: QGIS and QField introduciton.\n\nOpen QField on your tablet and go to QFieldCloud projects &gt; My Projects\nSelect the project and the latest version of the project will be downloaded to your tablet.\n\nnin2_project_name_year: project specific NiN mapping template.\nnin2_norge_2024: NiN mapping template for the whole of Norway.\n\nIt can take up to several minutes to download your project\nSet your user name in the QField app. This ensures that your name is automatically added to the kartlegger field in the attribute table, every time you map a new naturtype.\n\nGo to Settings &gt; Settings &gt; Variables\nAdd a new variable qfield_user_name with your name firstname.lastname\n\n\n\n\nHow to create a new NiN 2.0 project?\n\nRead the PDF instructions, especially chapter 2 “Installering og oppstart” and chapter 3 “Kartlegging av NiN-Naturtyper”.\nIn the folder vector create the GPKG-files:\n\n%project_name%_misc.gpkg\n%project_name%_extent.gpkg\n%project_name%_condition.gpkg (only if you plan to record additional condition parameters, such as soil depth)\n%project_name%_service.gpkg (only if you plan to record additional service parameters)\n\nCreate a new polygon layer study_area and save it to misc GPKG and add it to the Area group.\nDownload raster files in GeoTIFF format from høydedata.no and norgeibilder.no.\n\nDTMs and DSMs: høydedata.no\nOrtophotos (RGB and CIR): norgeibilder.no\n\nLogin with your Geonorge GeoID\nenter study area bounding box coordinates\nCoordinate system: UTM 33\nclip by bounding box\nsend order\n\n\nAdd your downloaded raster files as offline map layers in QField.\n\nChanges compared to the orignal file - NiN shp-files are saved in the GPKG - admin field is added for “kartlegger” - possibility to add points for soil depth measurements\n\nadd user name:\n\nqfield app &gt; setttings &gt; settings &gt; variables\nnew variable qfield_user_name with your name\n\n\n\n\nNINA Contacts\n\n\nNiN:\n\nTrond Simensen\nErik Stange\nAnders Lyngstad\n\n\nQGIS/QField Cloud managers:\n\nWilleke A’Campo\nStig Claussen\n\n\nBiodiversity Metric 4.0\nshort description here\n\nNINA Contacts\n::: {.columns} ::: {.column} Biodiversity Metrics:\n\nTrond Simensen\nErik Stange\n\n\n\n\n\nQGIS/QField Cloud managers:\n\nWilleke A’Campo\nStig Claussen",
     "crumbs": [
       "Data Collection",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Field surveys</span>"
@@ -85,22 +85,33 @@
     ]
   },
   {
+    "objectID": "data-collection/field-surveys/intro-to-qfield.html",
+    "href": "data-collection/field-surveys/intro-to-qfield.html",
+    "title": "QGIS and QField introduction",
+    "section": "",
+    "text": "Prerequisites\nOnce you have installed QGIS on your computer. Go to Plugins &gt; Manage and Install Plugins &gt; All and install the following plugins in QGIS:\nOther useful plugins:\nTable: overview of QField projects available on NINAnor’s QField Cloud organization.",
+    "crumbs": [
+      "Data Collection",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>QGIS and QField introduction</span>"
+    ]
+  },
+  {
+    "objectID": "data-collection/field-surveys/intro-to-qfield.html#prerequisites",
+    "href": "data-collection/field-surveys/intro-to-qfield.html#prerequisites",
+    "title": "QGIS and QField introduction",
+    "section": "",
+    "text": "QGIS v3.x installed on your computer.\nQField installed on your device.\n\nGoogle Play\nApple App Store.\n\nA QField Cloud account.\n\nSign up for an account using your NINA email address here.\nSend and email to NINA’s datahjelp for access to the NINAnor QField Cloud organization and ask to be added to the Fieldwork group.\n\n\n\n\nQFieldSync: a QGIS plugin that allows you to synchronize your QGIS projects with QField Cloud.\n\n\n\nNiB-ortofoto-prosjekt: a Q GIS plugin that allows you to add high-resolution aerial photos from the Norwegian Mapping Authority (Kartverket) and use them as a background (WMS) layer in your QGIS project. It finds all available aerial photos for the area you are working in and adds them to your project.\n…\n…\n\n\n\n\n\nProject name\nDescription\nInstructions\n\n\n\n\nQField project 1\nDescription of project 1\nInstructions\n\n\nQField project 2\nDescription of project 2\nInstructions\n\n\nQField project 3\nDescription of project 3\nInstructions",
+    "crumbs": [
+      "Data Collection",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>QGIS and QField introduction</span>"
+    ]
+  },
+  {
     "objectID": "data-collection/remote-sensing/remote-sensing.html",
     "href": "data-collection/remote-sensing/remote-sensing.html",
     "title": "Remote sensing",
     "section": "",
-    "text": "GIS tools\nblablabla",
-    "crumbs": [
-      "Data Collection",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Remote sensing</span>"
-    ]
-  },
-  {
-    "objectID": "data-collection/remote-sensing/remote-sensing.html#gis-tools",
-    "href": "data-collection/remote-sensing/remote-sensing.html#gis-tools",
-    "title": "Remote sensing",
-    "section": "",
-    "text": "Flowcharts\nExample using html:\nNote that the classes are defined in the NINAstyle.scss\n\n\nStart\n\n\nProcess 1\n\n\nDecision\n\n\nProcess 2\n\n\nEnd\n\n\nExample using DiagrammerR:\n\n\nCode\ngraph &lt;- create_graph() %&gt;%\n  add_node(label=\"Node A\") %&gt;%\n  add_node(label = \" I have a\\nhyperlink\") %&gt;%\n  add_edge(from = 1, to = 2) %&gt;%\n  select_last_nodes_created() %&gt;%\n  set_node_attrs_ws(node_attr = URL, value = \"https://nrk.no\") %&gt;%\n  add_node(label = \"Looooooooooooooooooooong name\", from = 1, to = 2) %&gt;%\n  set_node_attrs(node_attr = shape, values =  \"box\") %&gt;%\n  select_nodes_by_id(nodes = 3) %&gt;%\n  set_node_attrs_ws(node_attr = shape, value = \"rectangle\")\n\n# Export the graph to a PNG file\nexport_graph(graph, file_name = \"graph.png\", width = 400, height = 400)\n\n# Include the PNG file in your HTML document\ninclude_graphics(\"graph.png\")\n\n\n\n\n\n\n\n\n\nExample using Mermaid:\nFor mermaid instructions see here.\n\n\n\n\n\nflowchart LR\n    A--&gt;B\n    B--&gt;C\n    B--&gt;D\n    C--&gt;D\n    click A callback \"Tooltip for a callback\"\n    click B \"https://www.github.com\" \"This is a tooltip for a link\"\n    click C call callback() \"Tooltip for a callback\"\n    click D href \"https://www.github.com\" \"This is a tooltip for a link\"",
+    "text": "Maybe we want to have a chapter in this?\n\nFlowcharts\nExample using html:\nNote that the classes are defined in the NINAstyle.scss\n\n\nStart\n\n\nProcess 1\n\n\nDecision\n\n\nProcess 2\n\n\nEnd\n\n\nExample using DiagrammerR:\n\n\nCode\ngraph &lt;- create_graph() %&gt;%\n  add_node(label=\"Node A\") %&gt;%\n  add_node(label = \" I have a\\nhyperlink\") %&gt;%\n  add_edge(from = 1, to = 2) %&gt;%\n  select_last_nodes_created() %&gt;%\n  set_node_attrs_ws(node_attr = URL, value = \"https://nrk.no\") %&gt;%\n  add_node(label = \"Looooooooooooooooooooong name\", from = 1, to = 2) %&gt;%\n  set_node_attrs(node_attr = shape, values =  \"box\") %&gt;%\n  select_nodes_by_id(nodes = 3) %&gt;%\n  set_node_attrs_ws(node_attr = shape, value = \"rectangle\")\n\n# Export the graph to a PNG file\nexport_graph(graph, file_name = \"graph.png\", width = 400, height = 400)\n\n# Include the PNG file in your HTML document\ninclude_graphics(\"graph.png\")\n\n\n\n\n\n\n\n\n\nExample using Mermaid:\nFor mermaid instructions see here.\n\n\n\n\n\nflowchart LR\n    A--&gt;B\n    B--&gt;C\n    B--&gt;D\n    C--&gt;D\n    click A callback \"Tooltip for a callback\"\n    click B \"https://www.github.com\" \"This is a tooltip for a link\"\n    click C call callback() \"Tooltip for a callback\"\n    click D href \"https://www.github.com\" \"This is a tooltip for a link\"",
     "crumbs": [
       "Data Collection",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Remote sensing</span>"

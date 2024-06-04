@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.554">
+<meta name="generator" content="quarto-1.4.555">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -254,7 +254,7 @@ ul.task-list li input[type="checkbox"] {
 
 <p>This page presents a list of field surveys and applications usefull for ecosystem accounting projects.</p>
 <p><br></p>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: left;">Field Application</th>
@@ -300,6 +300,55 @@ ul.task-list li input[type="checkbox"] {
 <section id="install-nin-qfield-on-your-tablet" class="level3">
 <h3 class="anchored" data-anchor-id="install-nin-qfield-on-your-tablet">Install NiN QField on your tablet</h3>
 <p>The <strong>NiN 2.0</strong> QGIS template is uploaded to NINA’s QField Cloud account. For general instructions on QGIS, QField and QField Cloud follow the guide: <a href="../../data-collection/field-surveys/intro-to-qfield.html">QGIS and QField introduciton</a>.</p>
+<ol type="1">
+<li><p>Open QField on your tablet and go to <code>QFieldCloud projects</code> &gt; <code>My Projects</code></p></li>
+<li><p>Select the project and the latest version of the project will be downloaded to your tablet.</p>
+<ul>
+<li><strong>nin2_project_name_year</strong>: project specific NiN mapping template.</li>
+<li><strong>nin2_norge_2024</strong>: NiN mapping template for the whole of Norway.</li>
+</ul>
+<p><em>It can take up to several minutes to download your project</em></p></li>
+<li><p>Set your user name in the QField app. This ensures that your name is automatically added to the <code>kartlegger</code> field in the attribute table, every time you map a new naturtype.</p>
+<ul>
+<li>Go to <code>Settings</code> &gt; <code>Settings</code> &gt; <code>Variables</code></li>
+<li>Add a new variable <code>qfield_user_name</code> with your name <code>firstname.lastname</code></li>
+</ul></li>
+</ol>
+</section>
+<section id="how-to-create-a-new-nin-2.0-project" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-create-a-new-nin-2.0-project">How to create a new NiN 2.0 project?</h3>
+<ol start="0" type="1">
+<li><p>Read the PDF instructions, especially chapter 2 “Installering og oppstart” and chapter 3 “Kartlegging av NiN-Naturtyper”.</p></li>
+<li><p>In the folder <code>vector</code> create the GPKG-files:</p>
+<ul>
+<li>%project_name%_misc.gpkg</li>
+<li>%project_name%_extent.gpkg</li>
+<li>%project_name%_condition.gpkg <em>(only if you plan to record additional condition parameters, such as soil depth)</em></li>
+<li>%project_name%_service.gpkg <em>(only if you plan to record additional service parameters)</em></li>
+</ul></li>
+<li><p>Create a new polygon layer <code>study_area</code> and save it to <code>misc</code> GPKG and add it to the <code>Area</code> group.</p></li>
+<li><p>Download raster files in <code>GeoTIFF</code> format from <a href="https://hoydedata.no/">høydedata.no</a> and <a href="https://www.norgeibilder.no/">norgeibilder.no</a>.</p>
+<ul>
+<li>DTMs and DSMs: <a href="https://hoydedata.no/">høydedata.no</a></li>
+<li>Ortophotos (RGB and CIR): <a href="https://www.norgeibilder.no/">norgeibilder.no</a>
+<ul>
+<li>Login with your Geonorge GeoID</li>
+<li>enter study area bounding box coordinates</li>
+<li>Coordinate system: UTM 33</li>
+<li>clip by bounding box</li>
+<li>send order</li>
+</ul></li>
+</ul></li>
+<li><p>Add your downloaded raster files as offline map layers in QField.</p></li>
+</ol>
+<p>Changes compared to the orignal file - NiN shp-files are saved in the GPKG - admin field is added for “kartlegger” - possibility to add points for soil depth measurements</p>
+<ul>
+<li>add user name:
+<ul>
+<li>qfield app &gt; setttings &gt; settings &gt; variables</li>
+<li>new variable <code>qfield_user_name</code> with your name</li>
+</ul></li>
+</ul>
 </section>
 <section id="nina-contacts" class="level3">
 <h3 class="anchored">NINA Contacts</h3>

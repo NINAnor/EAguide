@@ -27,6 +27,7 @@ vignettes/*.pdf
 # R Environment Variables
 .Renviron
 /.quarto/
-#/_book/
+/_book/
 NINA-ebook-template.Rproj
 EAguide.Rproj
+

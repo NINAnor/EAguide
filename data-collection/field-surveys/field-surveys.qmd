@@ -2,11 +2,11 @@
 
 This page presents a list of field surveys and applications usefull for ecosystem accounting projects.   
 
-<br>
+**Available Field Applications:**
 
 | Field Application | Tool | Instructions | Download |
 | :---------------- | :--- | :----------- | :------- |
-| **NiN 2.0** <br> **Naturetype Mapping** | QGIS/QField | • [PDF Instructions](https://github.com/geco-nhm/NiN_QGIS_3.x/blob/master/NHM_Rapport_83_QGIS_NiN_2019.pdf) | • [QGIS Template](https://github.com/geco-nhm/NiN_QGIS_3.x) |
+| **NiN 2.0** <br> **Naturetype Mapping** | QGIS/QField | • [PDF Instructions](https://github.com/geco-nhm/NiN_QGIS_3.x/blob/master/NHM_Rapport_83_QGIS_NiN_2019.pdf) | • [QGIS Template](https://github.com/NINAnor/NiN_QGIS_3.x) |
 | **Biodiversity Metric 4.0** | QGIS/QField | • [GIS tools User Guide (PDF)](https://publications.naturalengland.org.uk/publication/6049804846366720) <br> • [Data Standard (XLSX)](https://publications.naturalengland.org.uk/publication/6049804846366720) | • [QGIS Template (ZIP)](https://publications.naturalengland.org.uk/publication/6049804846366720) |
 | **Bluegreen Factor** | QGIS/QField | *under development* | *under development* |
 | **CarbonViewer** | RShiny | • [App Instructions](https://carbonviewer.nina.no/)  <br> • [Publication](https://ntnuopen.ntnu.no/ntnu-xmlui/bitstream/handle/11250/3099192/KyrkjeeideAcalculatorCarbonManagement2023gull.pdf?sequence=1&isAllowed=y) | • [GitHub](https://github.com/NINAnor/carbonviewer/tree/v1.0.0) <br> • [Web application](https://carbonviewer.nina.no/)|
@@ -15,13 +15,15 @@ This page presents a list of field surveys and applications usefull for ecosyste
 
 ## NiN 2.0 Naturtype Mapping
 
-*short description here*
+The NiN 2.0 mapping protocol is used to map and register naturetypes in Norway. Knowledge on species and naturtype mapping is a prerequisite for mapping NiN. This guide provides a technical overview of the QField app used for fieldmapping. Official documentation on the NiN 2.0 mapping protocol can be found on the [Artsdatabanken website](https://www.artsdatabanken.no/Pages/266884/Veiledere_for_terrestrisk_kartlegging).
 
 :::{.note}
 **Note** that this QField Template is designed for mapping NiN 2.0. From 2026 onwards NiN 3.0 will be used as mapping protocol. As of today, there is no QGIS Template available for NiN 3.0. 
 :::
 
-### Install NiN QField on your tablet
+### User Guide
+
+#### Install NiN QField on your tablet
 
 The **NiN 2.0** QGIS template is uploaded to NINA's QField Cloud account. For general instructions on QGIS, QField and QField Cloud follow the guide: [QGIS and QField introduciton](intro-to-qfield.qmd).
 
@@ -36,18 +38,21 @@ The **NiN 2.0** QGIS template is uploaded to NINA's QField Cloud account. For ge
     - Go to `Settings` > `Settings` > `Variables` 
     - Add a new variable `qfield_user_name` with your name `firstname.lastname`
 
-### How to create a new NiN 2.0 project? 
+4. Read the PDF instructions, especially chapter 3 "Kartlegging av NiN-Naturtyper"
 
-0. Read the PDF instructions, especially chapter 2 "Installering og oppstart" and chapter 3 "Kartlegging av NiN-Naturtyper".
-1. In the folder `vector` create the GPKG-files:
-    - %project_name%_misc.gpkg
-    - %project_name%_extent.gpkg 
-    - %project_name%_condition.gpkg *(only if you plan to record additional condition parameters, such as soil depth)*
-    - %project_name%_service.gpkg *(only if you plan to record additional service parameters)*
+### Developer Guide
 
-1. Create a new polygon layer `study_area` and save it to `misc` GPKG and add it to the `Area` group. 
+#### How to create a new NiN 2.0 template for a new project area? 
 
-2. Download raster files in `GeoTIFF` format from [høydedata.no](https://hoydedata.no/) and [norgeibilder.no](https://www.norgeibilder.no/). 
+You can create a new template for a new mapping area by using the NiN 2.0 mapping template for the whole of Norway. Here you need to add your study area polygon and offline background maps. 
+
+0. Read the PDF instructions, especially chapter 2 "Installering og oppstart".
+
+1. Download the qfield_nin2_norge QField template from [NiN_QGIS_3.x](https://github.com/NINAnor/NiN_QGIS_3.x) repository.
+
+2. Create a new polygon layer `study_area` and save it to `vector/%project_name%_misc.gpkg` GPKG and add it to the `Area` group. 
+
+3. Download raster files in `GeoTIFF` format from [høydedata.no](https://hoydedata.no/) and [norgeibilder.no](https://www.norgeibilder.no/). 
     - DTMs and DSMs: [høydedata.no](https://hoydedata.no/)
     - Ortophotos (RGB and CIR): [norgeibilder.no](https://www.norgeibilder.no/)
         - Login with your Geonorge GeoID
@@ -55,18 +60,19 @@ The **NiN 2.0** QGIS template is uploaded to NINA's QField Cloud account. For ge
         - Coordinate system: UTM 33
         - clip by bounding box 
         - send order
-3. Add your downloaded raster files as offline map layers in QField. 
 
+4. Convert your rasters to Cloud Optimized GeoTiffs. Shell scripts can be found [here](https://github.com/ac-willeke/pygdal-geo-engineer/blob/main/src/shell_scripts/generate_cog.sh).
 
+5. Add your downloaded raster files as offline map layers in QField. 
 
-Changes compared to the orignal file
-- NiN shp-files are saved in the GPKG
-- admin field is added for "kartlegger"
-- possibility to add points for soil depth measurements 
+6. Upload your new project to QField Cloud and invite the fieldworkers (collaborators) to the project. 
 
-- add user name:
-    - qfield app > setttings > settings > variables
-    - new variable `qfield_user_name` with your name 
+#### Change log: 
+
+We forked the NiN 2.0 Template from the [GitHub ](https://github.com/geco-nhm/NiN_QGIS_3.x) repository developed by the University of Oslo. We made the following changes:
+- All vector files are saved in GPKG instead of .shp
+- Rasters are uploaded as COGs not GeoTIFF to improve performance
+- admin field is added for "qfield_user_name" (Kartlegger).
 
 ### NINA Contacts
 
@@ -134,7 +140,7 @@ Changes compared to the orignal file
 The CarbonViewer app calculates the **total volume of peat (m3)** and the **total carbon content (Tons C)** in a peatland area. To be able to calculate those values the peatland area must be sampled for peat depth and the peatland type must be recorded. 
 
 :::{.note}
-**Note** that [CarbonViewer](https://carbonviewer.nina.no/) is not a field application! The user must go out in the field and record peat depth (cm) and the coordinates of the measurements before using CarbonViewer.
+**Note** that [CarbonViewer](https://carbonviewer.nina.no/) is not a field application! The user must go out in the field and record peat depth (cm) and the coordinates of the measurements before using CarbonViewer. Monica Ruano can be contacted to set up a field schema used for mapping. 
 :::
 
 ### NINA Contacts

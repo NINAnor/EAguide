@@ -38,9 +38,8 @@ format:
     - cosmo
     - NINAstyle.scss
     number-sections: false 
-    
     code-link: true
-    toc-depth: 1
+    toc-depth: 2
 
 bibliography: references.bib
 csl: NINArefStyle.csl

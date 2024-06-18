@@ -217,47 +217,55 @@ Below are the steps to create a map for the Local Ecosystem Accounts dataset and
 
 3. Prepare your data
 
-    a. Prepare the raster data
+    - Prepare the **raster** data
+        - [raster_operations.sh](https://github.com/NINAnor/nina-map-explorer/blob/main/scripts/raster_operations.sh)
+            - mosaic rasters (if raster is split into multiple files)
+            - clip the raster to your study area, set a NoData value, and set the coordinate system
+        - [generate_cog.sh](https://github.com/NINAnor/nina-map-explorer/blob/main/scripts/generate_cog.sh)
+            - convert a GeoTIFF to a Cloud Optimized GeoTIFF (COG)
 
-        - add the metadata to your geotiff
-        - convert GEOTiff to a Cloud Optimized GEOTIFF (COG) using `generate_cog.sh`
-        - define raster style and legend in `style.json`
+        ```{bash}
+        # source the helper functions
+        source raster_operations.sh
+        source generate_cog.sh
 
-    b. Prepare the vector data
+        # mosaic rasters
+        mosaic_rasters /path/to/input_dir /path/to/mosaic_output.tif
 
-        - convert the GeoPackages to PMTiles using GDAL >= 3.8.
+        # clip the raster
+        clip_raster input.tif input.gpkg clip_layer output.tif NODATA EPSG 
 
-    ```
-    source scripts/generate_pmtiles.h
+        # convert to COG (using default method, see the script for more options)
+        to_cog /path/to/input.tif default
+        ```
 
+    - Prepare the **vector** data
+        - [generate_pmtiles.sh](https://github.com/NINAnor/nina-map-explorer/blob/main/scripts/generate_pmtiles.sh)
+            - convert the GPKGs to PMTiles using GDAL >= 3.8.
+            - MAXZOOM and MINZOOM influence the level of detail in the map and the size of the tiles (higher values = more detail, larger tiles). 
+            - docs: [gdal.org/drivers/vector/pmtiles.html](https://gdal.org/drivers/vector/pmtiles.html).
 
-    ```bash
-    docker run --rm -ti -v $PWD:/host --workdir /host ghcr.io/osgeo/gdal \
-        ogr2ogr -skipfailures -f PMTiles converted.pmtiles original.gpkg -dsco MAXZOOM=15
-    ```
+        ```{bash}
+        source generate_pmtiles.sh
+        generate_pmtiles /path/to/input.gpkg /path/to/output.pmtiles MINZOOM MAXZOOM
+        ```
 
-    - define the vector style and legend in `style.json`
+4. Style your data
 
-    - docs: [gdal.org/drivers/vector/pmtiles.html](https://gdal.org/drivers/vector/pmtiles.html).
+    - Style template: [style.json](https://github.com/NINAnor/naturregnskap_maps_uploader/blob/main/style.yml)
+       
+
 3. Naturregnskaps API - Upload map layers and metadata 
 
     a. Check the import schema (*provided by the projects data manager*)
 
     b. Check the style file 
 
-    e. Upload the data and metadata using the API
+    c. Upload the data and metadata using the API
 
         command: `naturregnskap_maps_uploader_start http://server:port map_slug --wd /path/to/data/`
 
         example: `naturregnskap_maps_uploader_start http://localhost:8000 localEA --wd ~/temp/nina-map-catalog`
 
         The API will read the import schema and upload the data to the NINA Catalogue.
-
-:::{.note}
-GDAL is needed to convert rasters to COG and vectors to PMTiles. Here is an example of how to execute a GDAL command inside a container. 
-
-#!/bin/bash
-exec docker run --rm --pid=host     -v /tmp/.X11-unix:/tmp/.X11-unix:ro -e DISPLAY=$DISPLAY     -v "$PWD":/host --workdir /host     -v /tmp:/tmp     --entrypoint="" "osgeo/gdal:alpine-small-3.6.2" "gdal_translate" "$@"
-
-:::
 

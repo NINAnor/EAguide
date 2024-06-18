@@ -228,7 +228,14 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul class="collapse">
+  <li><a href="#nin-2.0-naturtype-mapping" id="toc-nin-2.0-naturtype-mapping" class="nav-link active" data-scroll-target="#nin-2.0-naturtype-mapping">NiN 2.0 Naturtype Mapping</a></li>
+  <li><a href="#bluegreen-factor" id="toc-bluegreen-factor" class="nav-link" data-scroll-target="#bluegreen-factor">Bluegreen Factor</a></li>
+  </ul>
+<div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/NINAnor/EAguide/edit/main/data-collection/field-surveys/field-surveys.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -253,7 +260,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>This page presents a list of field surveys and applications usefull for ecosystem accounting projects.</p>
-<p><br></p>
+<p><strong>Available Field Applications:</strong></p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -268,7 +275,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: left;"><strong>NiN 2.0</strong> <br> <strong>Naturetype Mapping</strong></td>
 <td style="text-align: left;">QGIS/QField</td>
 <td style="text-align: left;">• <a href="https://github.com/geco-nhm/NiN_QGIS_3.x/blob/master/NHM_Rapport_83_QGIS_NiN_2019.pdf">PDF Instructions</a></td>
-<td style="text-align: left;">• <a href="https://github.com/geco-nhm/NiN_QGIS_3.x">QGIS Template</a></td>
+<td style="text-align: left;">• <a href="https://github.com/NINAnor/NiN_QGIS_3.x">QGIS Template</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><strong>Biodiversity Metric 4.0</strong></td>
@@ -293,12 +300,14 @@ ul.task-list li input[type="checkbox"] {
 <p><br></p>
 <section id="nin-2.0-naturtype-mapping" class="level2">
 <h2 class="anchored" data-anchor-id="nin-2.0-naturtype-mapping">NiN 2.0 Naturtype Mapping</h2>
-<p><em>short description here</em></p>
+<p>The NiN 2.0 mapping protocol is used to map and register naturetypes in Norway. Knowledge on species and naturtype mapping is a prerequisite for mapping NiN. This guide provides a technical overview of the QField app used for fieldmapping. Official documentation on the NiN 2.0 mapping protocol can be found on the <a href="https://www.artsdatabanken.no/Pages/266884/Veiledere_for_terrestrisk_kartlegging">Artsdatabanken website</a>.</p>
 <div class="note">
 <p><strong>Note</strong> that this QField Template is designed for mapping NiN 2.0. From 2026 onwards NiN 3.0 will be used as mapping protocol. As of today, there is no QGIS Template available for NiN 3.0.</p>
 </div>
-<section id="install-nin-qfield-on-your-tablet" class="level3">
-<h3 class="anchored" data-anchor-id="install-nin-qfield-on-your-tablet">Install NiN QField on your tablet</h3>
+<section id="user-guide" class="level3">
+<h3 class="anchored" data-anchor-id="user-guide">User Guide</h3>
+<section id="install-nin-qfield-on-your-tablet" class="level4">
+<h4 class="anchored" data-anchor-id="install-nin-qfield-on-your-tablet">Install NiN QField on your tablet</h4>
 <p>The <strong>NiN 2.0</strong> QGIS template is uploaded to NINA’s QField Cloud account. For general instructions on QGIS, QField and QField Cloud follow the guide: <a href="../../data-collection/field-surveys/intro-to-qfield.html">QGIS and QField introduciton</a>.</p>
 <ol type="1">
 <li><p>Open QField on your tablet and go to <code>QFieldCloud projects</code> &gt; <code>My Projects</code></p></li>
@@ -313,20 +322,19 @@ ul.task-list li input[type="checkbox"] {
 <li>Go to <code>Settings</code> &gt; <code>Settings</code> &gt; <code>Variables</code></li>
 <li>Add a new variable <code>qfield_user_name</code> with your name <code>firstname.lastname</code></li>
 </ul></li>
+<li><p>Read the PDF instructions, especially chapter 3 “Kartlegging av NiN-Naturtyper”</p></li>
 </ol>
 </section>
-<section id="how-to-create-a-new-nin-2.0-project" class="level3">
-<h3 class="anchored" data-anchor-id="how-to-create-a-new-nin-2.0-project">How to create a new NiN 2.0 project?</h3>
+</section>
+<section id="developer-guide" class="level3">
+<h3 class="anchored" data-anchor-id="developer-guide">Developer Guide</h3>
+<section id="how-to-create-a-new-nin-2.0-template-for-a-new-project-area" class="level4">
+<h4 class="anchored" data-anchor-id="how-to-create-a-new-nin-2.0-template-for-a-new-project-area">How to create a new NiN 2.0 template for a new project area?</h4>
+<p>You can create a new template for a new mapping area by using the NiN 2.0 mapping template for the whole of Norway. Here you need to add your study area polygon and offline background maps.</p>
 <ol start="0" type="1">
-<li><p>Read the PDF instructions, especially chapter 2 “Installering og oppstart” and chapter 3 “Kartlegging av NiN-Naturtyper”.</p></li>
-<li><p>In the folder <code>vector</code> create the GPKG-files:</p>
-<ul>
-<li>%project_name%_misc.gpkg</li>
-<li>%project_name%_extent.gpkg</li>
-<li>%project_name%_condition.gpkg <em>(only if you plan to record additional condition parameters, such as soil depth)</em></li>
-<li>%project_name%_service.gpkg <em>(only if you plan to record additional service parameters)</em></li>
-</ul></li>
-<li><p>Create a new polygon layer <code>study_area</code> and save it to <code>misc</code> GPKG and add it to the <code>Area</code> group.</p></li>
+<li><p>Read the PDF instructions, especially chapter 2 “Installering og oppstart”.</p></li>
+<li><p>Download the qfield_nin2_norge QField template from <a href="https://github.com/NINAnor/NiN_QGIS_3.x">NiN_QGIS_3.x</a> repository.</p></li>
+<li><p>Create a new polygon layer <code>study_area</code> and save it to <code>vector/%project_name%_misc.gpkg</code> GPKG and add it to the <code>Area</code> group.</p></li>
 <li><p>Download raster files in <code>GeoTIFF</code> format from <a href="https://hoydedata.no/">høydedata.no</a> and <a href="https://www.norgeibilder.no/">norgeibilder.no</a>.</p>
 <ul>
 <li>DTMs and DSMs: <a href="https://hoydedata.no/">høydedata.no</a></li>
@@ -339,16 +347,15 @@ ul.task-list li input[type="checkbox"] {
 <li>send order</li>
 </ul></li>
 </ul></li>
+<li><p>Convert your rasters to Cloud Optimized GeoTiffs. Shell scripts can be found <a href="https://github.com/ac-willeke/pygdal-geo-engineer/blob/main/src/shell_scripts/generate_cog.sh">here</a>.</p></li>
 <li><p>Add your downloaded raster files as offline map layers in QField.</p></li>
+<li><p>Upload your new project to QField Cloud and invite the fieldworkers (collaborators) to the project.</p></li>
 </ol>
-<p>Changes compared to the orignal file - NiN shp-files are saved in the GPKG - admin field is added for “kartlegger” - possibility to add points for soil depth measurements</p>
-<ul>
-<li>add user name:
-<ul>
-<li>qfield app &gt; setttings &gt; settings &gt; variables</li>
-<li>new variable <code>qfield_user_name</code> with your name</li>
-</ul></li>
-</ul>
+</section>
+<section id="change-log" class="level4">
+<h4 class="anchored" data-anchor-id="change-log">Change log:</h4>
+<p>We forked the NiN 2.0 Template from the <a href="https://github.com/geco-nhm/NiN_QGIS_3.x">GitHub</a> repository developed by the University of Oslo. We made the following changes: - All vector files are saved in GPKG instead of .shp - Rasters are uploaded as COGs not GeoTIFF to improve performance - admin field is added for “qfield_user_name” (Kartlegger).</p>
+</section>
 </section>
 <section id="nina-contacts" class="level3">
 <h3 class="anchored">NINA Contacts</h3>
@@ -411,7 +418,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="carbonviewer">CarbonViewer</h2>
 <p>The CarbonViewer app calculates the <strong>total volume of peat (m3)</strong> and the <strong>total carbon content (Tons C)</strong> in a peatland area. To be able to calculate those values the peatland area must be sampled for peat depth and the peatland type must be recorded.</p>
 <div class="note">
-<p><strong>Note</strong> that <a href="https://carbonviewer.nina.no/">CarbonViewer</a> is not a field application! The user must go out in the field and record peat depth (cm) and the coordinates of the measurements before using CarbonViewer.</p>
+<p><strong>Note</strong> that <a href="https://carbonviewer.nina.no/">CarbonViewer</a> is not a field application! The user must go out in the field and record peat depth (cm) and the coordinates of the measurements before using CarbonViewer. Monica Ruano can be contacted to set up a field schema used for mapping.</p>
 </div>
 <section id="nina-contacts-3" class="level3">
 <h3 class="anchored" data-anchor-id="nina-contacts-3">NINA Contacts</h3>
@@ -862,4 +869,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/NINAnor/EAguide/edit/main/data-collection/field-surveys/field-surveys.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/NINAnor/EAguide/edit/main/data-collection/field-surveys/field-surveys.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>

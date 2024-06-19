@@ -233,6 +233,10 @@ ul.task-list li input[type="checkbox"] {
    
   <ul class="collapse">
   <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link active" data-scroll-target="#prerequisites">Prerequisites</a></li>
+  <li><a href="#download-a-project-from-qfield-cloud" id="toc-download-a-project-from-qfield-cloud" class="nav-link" data-scroll-target="#download-a-project-from-qfield-cloud">Download a project from QField Cloud</a></li>
+  <li><a href="#manual-installation-of-a-qfield-project" id="toc-manual-installation-of-a-qfield-project" class="nav-link" data-scroll-target="#manual-installation-of-a-qfield-project">Manual installation of a QField project</a></li>
+  <li><a href="#overview-of-ninanor-qfield-cloud-projects" id="toc-overview-of-ninanor-qfield-cloud-projects" class="nav-link" data-scroll-target="#overview-of-ninanor-qfield-cloud-projects">Overview of NINAnor QField Cloud projects</a></li>
+  <li><a href="#official-documentation" id="toc-official-documentation" class="nav-link" data-scroll-target="#official-documentation">Official Documentation</a></li>
   </ul>
 <div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/NINAnor/EAguide/edit/main/data-collection/field-surveys/intro-to-qfield.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
@@ -283,38 +287,121 @@ ul.task-list li input[type="checkbox"] {
 <p>Other useful plugins:</p>
 <ul>
 <li><a href="https://plugins.qgis.org/plugins/get_nib-main/">NiB-ortofoto-prosjekt</a>: a Q GIS plugin that allows you to add high-resolution aerial photos from the Norwegian Mapping Authority (Kartverket) and use them as a background (WMS) layer in your QGIS project. It finds all available aerial photos for the area you are working in and adds them to your project.</li>
-<li>…</li>
-<li>…</li>
 </ul>
-<p><strong>Table: overview of QField projects available on NINAnor’s QField Cloud organization.</strong></p>
+</section>
+<section id="download-a-project-from-qfield-cloud" class="level2">
+<h2 class="anchored" data-anchor-id="download-a-project-from-qfield-cloud">Download a project from QField Cloud</h2>
+<section id="download-to-qfield-application" class="level4">
+<h4 class="anchored" data-anchor-id="download-to-qfield-application">Download to QField application</h4>
+<ol type="1">
+<li>Ensure that the mobile QField application is installed on your device.</li>
+<li>Ensure that you have enough free space (&gt; 3 GB).</li>
+<li>Open the QField App &gt; <code>QFieldCloud projects</code></li>
+<li>Select a project from <code>NINAnor</code> or from your personal user.</li>
+<li>Now your Cloud project will open within your app!</li>
+</ol>
+</section>
+<section id="download-to-qgis-desktop" class="level4">
+<h4 class="anchored" data-anchor-id="download-to-qgis-desktop">Download to QGIS Desktop</h4>
+<ol type="1">
+<li>Ensure QField Sync Plugin is installed and enabled.</li>
+<li>Login to QField cloud: click on the blue <code>Cloud-icon</code>.</li>
+<li>Choose your project from your project overview</li>
+<li>Click on the <code>Folder-icon</code> to either open your existing local project or create a local version of the project.</li>
+<li>Now your Cloud project will open within your QGIS desktop version!</li>
+</ol>
+<br>
+<figure style="width: 100%; max-width: 650px; display: block; margin-left: auto; margin-right: auto;" class="figure">
+<img src="qfield_cloud_desktop.PNG" alt="Download QField Cloud project to QGIS desktop." style="width: 100%; height: auto;" class="figure-img">
+<figcaption style="text-align: center;">
+Download QField Cloud project to QGIS desktop.
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="manual-installation-of-a-qfield-project" class="level2">
+<h2 class="anchored" data-anchor-id="manual-installation-of-a-qfield-project">Manual installation of a QField project</h2>
+<p>Manually add a QField project to your mobile device:</p>
+<ol type="1">
+<li>Package your QGIS project to a ZIP-file using the <code>Package Project for QField</code> tool.</li>
+<li>Connect your Android device to your PC using a USB cable.</li>
+<li>Copy and extract the ZIP file from your PC to your tablet/phone:
+<ul>
+<li>Samsung phone: <code>This PC\Samsung XXX\Internal storage\Documents\QField_zip_folder</code></li>
+<li>Samsung tablet: <code>This PC\Tablet\Documents\QField_zip_folder</code></li>
+</ul></li>
+<li>Open the QField app on your mobile device.
+<ul>
+<li>Click on <code>Open local file</code></li>
+<li>Click on the green <code>plus sign</code></li>
+<li>Click on <code>Import project from folder</code></li>
+<li>Navigate to the path where you extracted the QField folder in step 3.</li>
+<li>Select the folder and choose <code>Use this folder</code>.</li>
+<li>The QField project folder is now availalbe in <code>Imported Projects</code></li>
+<li>Click on <code>Imported Projects</code> &gt; <code>Project Folder</code> &gt; the project located under <code>Projects</code></li>
+</ul></li>
+<li>Now the project will open within your app! The next time you can find it under <code>Recent Projects</code>.</li>
+</ol>
+<br>
+<figure style="width: 100%; max-width: 650px; display: block; margin-left: auto; margin-right: auto;" class="figure">
+<img src="qfield_cloud_phone.PNG" alt="Manually add a QField project to your mobile device." style="width: 100%; height: auto;" class="figure-img">
+<figcaption style="text-align: center;">
+Manually add a QField project to your mobile device.
+</figcaption>
+</figure>
+</section>
+<section id="overview-of-ninanor-qfield-cloud-projects" class="level2">
+<h2 class="anchored" data-anchor-id="overview-of-ninanor-qfield-cloud-projects">Overview of NINAnor QField Cloud projects</h2>
 <table class="caption-top table">
 <thead>
 <tr class="header">
 <th>Project name</th>
 <th>Description</th>
-<th>Instructions</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="#sec-qfield-project-1">QField project 1</a></td>
-<td>Description of project 1</td>
-<td><a href="#sec-qfield-project-1">Instructions</a></td>
+<td><a href="https://app.qfield.cloud/a/NINAnor/bm_2024_ecogaps/">bm_2024_ecogaps</a></td>
+<td>Biodiversity Metrics 4.0 mapping in Nordre Follo. EcoGaps-project.</td>
 </tr>
 <tr class="even">
-<td><a href="#sec-qfield-project-2">QField project 2</a></td>
-<td>Description of project 2</td>
-<td><a href="#sec-qfield-project-2">Instructions</a></td>
+<td><a href="https://app.qfield.cloud/a/NINAnor/nin2_2024_ecogaps/">nin2_2024_ecogaps</a></td>
+<td>NiN 2.0 naturetype mapping in Nordre Follo. EcoGaps-project.</td>
 </tr>
 <tr class="odd">
-<td><a href="#sec-qfield-project-3">QField project 3</a></td>
-<td>Description of project 3</td>
-<td><a href="#sec-qfield-project-3">Instructions</a></td>
+<td><a href="https://app.qfield.cloud/a/NINAnor/nin2_2024_envisol/">nin2_2024_envisol</a></td>
+<td>NiN 2.0 naturetype mapping in Stor Elvdal. EnviSol-project.</td>
+</tr>
+<tr class="even">
+<td><a href="https://app.qfield.cloud/a/NINAnor/nin2_2024_norge/">nin2_2024_norge</a></td>
+<td>NiN 2.0 naturetype mapping. A template for the whole of Norway.</td>
 </tr>
 </tbody>
 </table>
+</section>
+<section id="official-documentation" class="level2">
+<h2 class="anchored" data-anchor-id="official-documentation">Official Documentation</h2>
+<p>Official QField documentation: <a href="https://docs.qfield.org/">docs.qfield.org</a></p>
+<section id="usefull-how-to-guides" class="level4">
+<h4 class="anchored" data-anchor-id="usefull-how-to-guides">Usefull how to guides:</h4>
+<ul>
+<li>Map controls: <a href="https://docs.qfield.org/how-to/map-interaction/">map-interaction</a>
+<ul>
+<li>visibility of layers</li>
+<li>select features</li>
+</ul></li>
+<li>Digitize features: <a href="https://docs.qfield.org/how-to/digitize/">digitize</a>
+<ul>
+<li>Note that you <strong>must</strong> be in editing mode to change feature and their attributes, otherwise your changes are not saved!</li>
+</ul></li>
+<li>Attribute forms: <a href="https://docs.qfield.org/how-to/attributes-form/">attributes-form</a>
+<ul>
+<li>How to create attribute forms in QGIS Desktop</li>
+</ul></li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

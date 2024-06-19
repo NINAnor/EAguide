@@ -45,7 +45,7 @@
     "href": "data-collection/field-surveys/field-surveys.html#nin-2.0-naturtype-mapping",
     "title": "Field surveys",
     "section": "Biodiversity Metric 4.0",
-    "text": "Note that this QField Template is designed for mapping NiN 2.0. From 2026 onwards NiN 3.0 will be used as mapping protocol. As of today, there is no QGIS Template available for NiN 3.0.\n\n\nUser Guide\n\nInstall NiN QField on your tablet\nThe NiN 2.0 QGIS template is uploaded to NINA’s QField Cloud account. For general instructions on QGIS, QField and QField Cloud follow the guide: QGIS and QField introduciton.\n\nOpen QField on your tablet and go to QFieldCloud projects &gt; My Projects\nSelect the project and the latest version of the project will be downloaded to your tablet.\n\nnin2_project_name_year: project specific NiN mapping template.\nnin2_norge_2024: NiN mapping template for the whole of Norway.\n\nIt can take up to several minutes to download your project\nSet your user name in the QField app. This ensures that your name is automatically added to the kartlegger field in the attribute table, every time you map a new naturtype.\n\nGo to Settings &gt; Settings &gt; Variables\nAdd a new variable qfield_user_name with your name firstname.lastname\n\nRead the PDF instructions, especially chapter 3 “Kartlegging av NiN-Naturtyper”\n\n\n\n\nDeveloper Guide\n\nHow to create a new NiN 2.0 template for a new project area?\nYou can create a new template for a new mapping area by using the NiN 2.0 mapping template for the whole of Norway. Here you need to add your study area polygon and offline background maps.\n\nRead the PDF instructions, especially chapter 2 “Installering og oppstart”.\nDownload the qfield_nin2_norge QField template from NiN_QGIS_3.x repository.\nCreate a new polygon layer study_area and save it to vector/%project_name%_misc.gpkg GPKG and add it to the Area group.\nDownload raster files in GeoTIFF format from høydedata.no and norgeibilder.no.\n\nDTMs and DSMs: høydedata.no\nOrtophotos (RGB and CIR): norgeibilder.no\n\nLogin with your Geonorge GeoID\nenter study area bounding box coordinates\nCoordinate system: UTM 33\nclip by bounding box\nsend order\n\n\nConvert your rasters to Cloud Optimized GeoTiffs. Shell scripts can be found here.\nAdd your downloaded raster files as offline map layers in QField.\nUpload your new project to QField Cloud and invite the fieldworkers (collaborators) to the project.\n\n\n\nChange log:\nWe forked the NiN 2.0 Template from the GitHub repository developed by the University of Oslo. We made the following changes: - All vector files are saved in GPKG instead of .shp - Rasters are uploaded as COGs not GeoTIFF to improve performance - admin field is added for “qfield_user_name” (Kartlegger).\n\n\n\nNINA Contacts\n\n\nNiN:\n\nTrond Simensen\nErik Stange\nAnders Lyngstad\n\n\nQGIS/QField Cloud managers:\n\nWilleke A’Campo\nStig Claussen\n\n\nBiodiversity Metric 4.0\nshort description here\n\nNINA Contacts\n::: {.columns} ::: {.column} Biodiversity Metrics:\n\nTrond Simensen\nErik Stange\n\n\n\n\n\nQGIS/QField Cloud managers:\n\nWilleke A’Campo\nStig Claussen",
+    "text": "Note that this QField Template is designed for mapping NiN 2.0. From 2026 onwards NiN 3.0 will be used as mapping protocol. As of today, there is no QGIS Template available for NiN 3.0.\n\n\nUser Guide\n\nInstall NiN QField on your tablet\nThe NiN 2.0 QGIS template is uploaded to NINA’s QField Cloud account. For general instructions on QGIS, QField and QField Cloud follow the guide: QGIS and QField introduciton.\n\nOpen QField on your tablet and go to QFieldCloud projects &gt; My Projects\nSelect the project and the latest version of the project will be downloaded to your tablet.\n\nnin2_project_name_year: project specific NiN mapping template.\nnin2_norge_2024: NiN mapping template for the whole of Norway.\n\nIt can take up to several minutes to download your project\nSet your user name in the QField app. This ensures that your name is automatically added to the kartlegger field in the attribute table, every time you map a new naturtype.\n\nGo to Settings &gt; Settings &gt; Variables\nAdd a new variable qfield_user_name with your name firstname.lastname\n\nRead the PDF instructions, especially chapter 3 “Kartlegging av NiN-Naturtyper”\n\n\n\n\nDeveloper Guide\n\nHow to create a new NiN 2.0 template for a new project area?\nYou can create a new template for a new mapping area by using the NiN 2.0 mapping template for the whole of Norway. Here you need to add your study area polygon and offline background maps.\n\nRead the PDF instructions, especially chapter 2 “Installering og oppstart”.\nDownload the qfield_nin2_norge QField template from NiN_QGIS_3.x repository.\nCreate a new polygon layer study_area and save it to vector/%project_name%_misc.gpkg GPKG and add it to the Area group.\nDownload raster files in GeoTIFF format from høydedata.no and norgeibilder.no.\n\nDTMs and DSMs: høydedata.no\nOrtophotos (RGB and CIR): norgeibilder.no\n\nLogin with your Geonorge GeoID\nenter study area bounding box coordinates\nCoordinate system: UTM 33\nclip by bounding box\nsend order\n\n\nConvert your rasters to Cloud Optimized GeoTiffs. Shell scripts can be found here.\nAdd your downloaded raster files as offline map layers in QField.\nUpload your new project to QField Cloud and invite the fieldworkers (collaborators) to the project.\n\n\n\nChange log:\nWe forked the NiN 2.0 Template from the GitHub repository developed by the University of Oslo. Changes made to orginal template are documented here.\n\n\n\nNINA Contacts\n\n\nNiN:\n\nTrond Simensen\nErik Stange\nAnders Lyngstad\n\n\nQGIS/QField Cloud managers:\n\nWilleke A’Campo\nStig Claussen\n\n\nBiodiversity Metric 4.0\nshort description here\n\nNINA Contacts\n::: {.columns} ::: {.column} Biodiversity Metrics:\n\nTrond Simensen\nErik Stange\n\n\n\n\n\nQGIS/QField Cloud managers:\n\nWilleke A’Campo\nStig Claussen",
     "crumbs": [
       "Data Collection",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Field surveys</span>"
@@ -89,7 +89,7 @@
     "href": "data-collection/field-surveys/intro-to-qfield.html",
     "title": "QGIS and QField introduction",
     "section": "",
-    "text": "Prerequisites\nOnce you have installed QGIS on your computer. Go to Plugins &gt; Manage and Install Plugins &gt; All and install the following plugins in QGIS:\nOther useful plugins:\nTable: overview of QField projects available on NINAnor’s QField Cloud organization.",
+    "text": "Prerequisites\nOnce you have installed QGIS on your computer. Go to Plugins &gt; Manage and Install Plugins &gt; All and install the following plugins in QGIS:\nOther useful plugins:",
     "crumbs": [
       "Data Collection",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>QGIS and QField introduction</span>"
@@ -100,7 +100,51 @@
     "href": "data-collection/field-surveys/intro-to-qfield.html#prerequisites",
     "title": "QGIS and QField introduction",
     "section": "",
-    "text": "QGIS v3.x installed on your computer.\nQField installed on your device.\n\nGoogle Play\nApple App Store.\n\nA QField Cloud account.\n\nSign up for an account using your NINA email address here.\nSend and email to NINA’s datahjelp for access to the NINAnor QField Cloud organization and ask to be added to the Fieldwork group.\n\n\n\n\nQFieldSync: a QGIS plugin that allows you to synchronize your QGIS projects with QField Cloud.\n\n\n\nNiB-ortofoto-prosjekt: a Q GIS plugin that allows you to add high-resolution aerial photos from the Norwegian Mapping Authority (Kartverket) and use them as a background (WMS) layer in your QGIS project. It finds all available aerial photos for the area you are working in and adds them to your project.\n…\n…\n\n\n\n\n\nProject name\nDescription\nInstructions\n\n\n\n\nQField project 1\nDescription of project 1\nInstructions\n\n\nQField project 2\nDescription of project 2\nInstructions\n\n\nQField project 3\nDescription of project 3\nInstructions",
+    "text": "QGIS v3.x installed on your computer.\nQField installed on your device.\n\nGoogle Play\nApple App Store.\n\nA QField Cloud account.\n\nSign up for an account using your NINA email address here.\nSend and email to NINA’s datahjelp for access to the NINAnor QField Cloud organization and ask to be added to the Fieldwork group.\n\n\n\n\nQFieldSync: a QGIS plugin that allows you to synchronize your QGIS projects with QField Cloud.\n\n\n\nNiB-ortofoto-prosjekt: a Q GIS plugin that allows you to add high-resolution aerial photos from the Norwegian Mapping Authority (Kartverket) and use them as a background (WMS) layer in your QGIS project. It finds all available aerial photos for the area you are working in and adds them to your project.",
+    "crumbs": [
+      "Data Collection",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>QGIS and QField introduction</span>"
+    ]
+  },
+  {
+    "objectID": "data-collection/field-surveys/intro-to-qfield.html#download-a-project-from-qfield-cloud",
+    "href": "data-collection/field-surveys/intro-to-qfield.html#download-a-project-from-qfield-cloud",
+    "title": "QGIS and QField introduction",
+    "section": "Download a project from QField Cloud",
+    "text": "Download a project from QField Cloud\n\nDownload to QField application\n\nEnsure that the mobile QField application is installed on your device.\nEnsure that you have enough free space (&gt; 3 GB).\nOpen the QField App &gt; QFieldCloud projects\nSelect a project from NINAnor or from your personal user.\nNow your Cloud project will open within your app!\n\n\n\nDownload to QGIS Desktop\n\nEnsure QField Sync Plugin is installed and enabled.\nLogin to QField cloud: click on the blue Cloud-icon.\nChoose your project from your project overview\nClick on the Folder-icon to either open your existing local project or create a local version of the project.\nNow your Cloud project will open within your QGIS desktop version!\n\n\n\n\n\nDownload QField Cloud project to QGIS desktop.",
+    "crumbs": [
+      "Data Collection",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>QGIS and QField introduction</span>"
+    ]
+  },
+  {
+    "objectID": "data-collection/field-surveys/intro-to-qfield.html#manual-installation-of-a-qfield-project",
+    "href": "data-collection/field-surveys/intro-to-qfield.html#manual-installation-of-a-qfield-project",
+    "title": "QGIS and QField introduction",
+    "section": "Manual installation of a QField project",
+    "text": "Manual installation of a QField project\nManually add a QField project to your mobile device:\n\nPackage your QGIS project to a ZIP-file using the Package Project for QField tool.\nConnect your Android device to your PC using a USB cable.\nCopy and extract the ZIP file from your PC to your tablet/phone:\n\nSamsung phone: This PC\\Samsung XXX\\Internal storage\\Documents\\QField_zip_folder\nSamsung tablet: This PC\\Tablet\\Documents\\QField_zip_folder\n\nOpen the QField app on your mobile device.\n\nClick on Open local file\nClick on the green plus sign\nClick on Import project from folder\nNavigate to the path where you extracted the QField folder in step 3.\nSelect the folder and choose Use this folder.\nThe QField project folder is now availalbe in Imported Projects\nClick on Imported Projects &gt; Project Folder &gt; the project located under Projects\n\nNow the project will open within your app! The next time you can find it under Recent Projects.\n\n\n\n\n\nManually add a QField project to your mobile device.",
+    "crumbs": [
+      "Data Collection",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>QGIS and QField introduction</span>"
+    ]
+  },
+  {
+    "objectID": "data-collection/field-surveys/intro-to-qfield.html#overview-of-ninanor-qfield-cloud-projects",
+    "href": "data-collection/field-surveys/intro-to-qfield.html#overview-of-ninanor-qfield-cloud-projects",
+    "title": "QGIS and QField introduction",
+    "section": "Overview of NINAnor QField Cloud projects",
+    "text": "Overview of NINAnor QField Cloud projects\n\n\n\nProject name\nDescription\n\n\n\n\nbm_2024_ecogaps\nBiodiversity Metrics 4.0 mapping in Nordre Follo. EcoGaps-project.\n\n\nnin2_2024_ecogaps\nNiN 2.0 naturetype mapping in Nordre Follo. EcoGaps-project.\n\n\nnin2_2024_envisol\nNiN 2.0 naturetype mapping in Stor Elvdal. EnviSol-project.\n\n\nnin2_2024_norge\nNiN 2.0 naturetype mapping. A template for the whole of Norway.",
+    "crumbs": [
+      "Data Collection",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>QGIS and QField introduction</span>"
+    ]
+  },
+  {
+    "objectID": "data-collection/field-surveys/intro-to-qfield.html#official-documentation",
+    "href": "data-collection/field-surveys/intro-to-qfield.html#official-documentation",
+    "title": "QGIS and QField introduction",
+    "section": "Official Documentation",
+    "text": "Official Documentation\nOfficial QField documentation: docs.qfield.org\n\nUsefull how to guides:\n\nMap controls: map-interaction\n\nvisibility of layers\nselect features\n\nDigitize features: digitize\n\nNote that you must be in editing mode to change feature and their attributes, otherwise your changes are not saved!\n\nAttribute forms: attributes-form\n\nHow to create attribute forms in QGIS Desktop",
     "crumbs": [
       "Data Collection",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>QGIS and QField introduction</span>"

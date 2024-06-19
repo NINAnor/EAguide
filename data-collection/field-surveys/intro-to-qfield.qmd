@@ -7,6 +7,8 @@ A QField project (also called a QField or QGIS template) is a QGIS project file 
 
 The page [Field Surveys](#sec-field-surveys) provides a list of QField projects that are useful for ecosystem accounting and their specific instructions on how to install and use them. This page provides a general introduction to QGIS, QField and QField Cloud and how they can be used to transfer your project data between QGIS and QField.
 
+
+
 ## Prerequisites
 
 - [QGIS v3.x](https://qgis.org/en/site/index.html) installed on your computer.
@@ -24,18 +26,75 @@ Once you have installed QGIS on your computer. Go to  *Plugins > Manage and Inst
 Other useful plugins:
 
 - [NiB-ortofoto-prosjekt](https://plugins.qgis.org/plugins/get_nib-main/): a Q GIS plugin that allows you to add high-resolution aerial photos from the Norwegian Mapping Authority (Kartverket) and use them as a background (WMS) layer  in your QGIS project. It finds all available aerial photos for the area you are working in and adds them to your project.
-- ...
-- ...
 
-**Table: overview of QField projects available on NINAnor's QField Cloud organization.**
+## Download a project from QField Cloud
 
-| Project name | Description | Instructions |
-|--------------|-------------|--------------|
-| [QField project 1](#sec-qfield-project-1) | Description of project 1 | [Instructions](#sec-qfield-project-1) |
-| [QField project 2](#sec-qfield-project-2) | Description of project 2 | [Instructions](#sec-qfield-project-2) |
-| [QField project 3](#sec-qfield-project-3) | Description of project 3 | [Instructions](#sec-qfield-project-3) |
+#### Download to QField application 
 
+1. Ensure that the mobile QField application is installed on your device.
+2. Ensure that you have enough free space (> 3 GB). 
+3. Open the QField App > `QFieldCloud projects`
+4. Select a project from `NINAnor` or from your personal user. 
+5. Now your Cloud project will open within your app!
 
+#### Download to QGIS Desktop
 
+1. Ensure QField Sync Plugin is installed and enabled.
+2. Login to QField cloud: click on the blue `Cloud-icon`. 
+3. Choose your project from your project overview
+4. Click on the `Folder-icon` to either open your existing local project or create a local version of the project. 
+5. Now your Cloud project will open within your QGIS desktop version! 
 
+<br>
+<figure style="width: 100%; max-width: 650px; display: block; margin-left: auto; margin-right: auto;">
+  <img src="qfield_cloud_desktop.PNG" alt="Download QField Cloud project to QGIS desktop." style="width: 100%; height: auto;"/>
+  <figcaption style="text-align: center;">Download QField Cloud project to QGIS desktop.</figcaption>
+</figure>
 
+## Manual installation of a QField project 
+
+Manually add a QField project to your mobile device:
+
+1. Package your QGIS project to a ZIP-file using the `Package Project for QField` tool. 
+2. Connect your Android device to your PC using a USB cable.
+3. Copy and extract the ZIP file from your PC to your tablet/phone:
+    - Samsung phone: `This PC\Samsung XXX\Internal storage\Documents\QField_zip_folder`
+    - Samsung tablet: `This PC\Tablet\Documents\QField_zip_folder`
+4. Open the QField app on your mobile device.
+    - Click on `Open local file`
+    - Click on the green `plus sign`
+    - Click on `Import project from folder`
+    - Navigate to the path where you extracted the QField folder in step 3.
+    - Select the folder and choose `Use this folder`. 
+    - The QField project folder is now availalbe in `Imported Projects`
+    - Click on `Imported Projects` > `Project Folder` > the project located under `Projects` 
+5. Now the project will open within your app! The next time you can find it under `Recent Projects`. 
+
+<br>
+<figure style="width: 100%; max-width: 650px; display: block; margin-left: auto; margin-right: auto;">
+  <img src="qfield_cloud_phone.PNG" alt="Manually add a QField project to your mobile device." style="width: 100%; height: auto;"/>
+  <figcaption style="text-align: center;">Manually add a QField project to your mobile device.</figcaption>
+</figure>
+
+## Overview of NINAnor QField Cloud projects 
+
+| Project name | Description |
+|--------------|-------------|
+| [bm_2024_ecogaps](https://app.qfield.cloud/a/NINAnor/bm_2024_ecogaps/) | Biodiversity Metrics 4.0 mapping in Nordre Follo. EcoGaps-project. | 
+| [nin2_2024_ecogaps](https://app.qfield.cloud/a/NINAnor/nin2_2024_ecogaps/) | NiN 2.0 naturetype mapping in Nordre Follo. EcoGaps-project. | 
+| [nin2_2024_envisol](https://app.qfield.cloud/a/NINAnor/nin2_2024_envisol/) | NiN 2.0 naturetype mapping in Stor Elvdal. EnviSol-project.| 
+| [nin2_2024_norge](https://app.qfield.cloud/a/NINAnor/nin2_2024_norge/) | NiN 2.0 naturetype mapping. A template for the whole of Norway. |
+
+## Official Documentation
+
+Official QField documentation: [docs.qfield.org](https://docs.qfield.org/)
+
+#### Usefull how to guides:
+
+- Map controls: [map-interaction](https://docs.qfield.org/how-to/map-interaction/)
+    - visibility of layers 
+    - select features
+- Digitize features: [digitize](https://docs.qfield.org/how-to/digitize/)
+    - Note that you **must** be in editing mode to change feature and their attributes, otherwise your changes are not saved! 
+- Attribute forms: [attributes-form](https://docs.qfield.org/how-to/attributes-form/)
+    - How to create attribute forms in QGIS Desktop 

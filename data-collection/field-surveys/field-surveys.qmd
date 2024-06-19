@@ -6,10 +6,10 @@ This page presents a list of field surveys and applications usefull for ecosyste
 
 | Field Application | Tool | Instructions | Download |
 | :---------------- | :--- | :----------- | :------- |
-| **NiN 2.0** <br> **Naturetype Mapping** | QGIS/QField | • [PDF Instructions](https://github.com/geco-nhm/NiN_QGIS_3.x/blob/master/NHM_Rapport_83_QGIS_NiN_2019.pdf) | • [QGIS Template](https://github.com/NINAnor/NiN_QGIS_3.x) |
-| **Biodiversity Metric 4.0** | QGIS/QField | • [GIS tools User Guide (PDF)](https://publications.naturalengland.org.uk/publication/6049804846366720) <br> • [Data Standard (XLSX)](https://publications.naturalengland.org.uk/publication/6049804846366720) | • [QGIS Template (ZIP)](https://publications.naturalengland.org.uk/publication/6049804846366720) |
+| **NiN 2.0** <br> **Naturetype Mapping** | QGIS/QField | [PDF Instructions](https://github.com/geco-nhm/NiN_QGIS_3.x/blob/master/NHM_Rapport_83_QGIS_NiN_2019.pdf) | [NINAnor/NiN_QGIS_3.x](https://github.com/NINAnor/NiN_QGIS_3.x) |
+| **Biodiversity Metric 4.0** | QGIS/QField | • [GIS tools User Guide (PDF)](https://publications.naturalengland.org.uk/publication/6049804846366720) <br> • [Data Standard (XLSX)](https://publications.naturalengland.org.uk/publication/6049804846366720) | [NINAnor/BiodiversityMetric_QGIS_3.x](https://github.com/NINAnor/BiodiversityMetric_QGIS_3.x) |
 | **Bluegreen Factor** | QGIS/QField | *under development* | *under development* |
-| **CarbonViewer** | RShiny | • [App Instructions](https://carbonviewer.nina.no/)  <br> • [Publication](https://ntnuopen.ntnu.no/ntnu-xmlui/bitstream/handle/11250/3099192/KyrkjeeideAcalculatorCarbonManagement2023gull.pdf?sequence=1&isAllowed=y) | • [GitHub](https://github.com/NINAnor/carbonviewer/tree/v1.0.0) <br> • [Web application](https://carbonviewer.nina.no/)|
+| **CarbonViewer** | RShiny | • [App Instructions](https://carbonviewer.nina.no/)  <br> • [Publication](https://ntnuopen.ntnu.no/ntnu-xmlui/bitstream/handle/11250/3099192/KyrkjeeideAcalculatorCarbonManagement2023gull.pdf?sequence=1&isAllowed=y) | • [NINAnor/carbonviewer](https://github.com/NINAnor/carbonviewer) <br> • [carbonviewer.nina.no](https://carbonviewer.nina.no/)|
 
 <br>
 
@@ -69,10 +69,9 @@ You can create a new template for a new mapping area by using the NiN 2.0 mappin
 
 #### Change log: 
 
-We forked the NiN 2.0 Template from the [GitHub ](https://github.com/geco-nhm/NiN_QGIS_3.x) repository developed by the University of Oslo. We made the following changes:
-- All vector files are saved in GPKG instead of .shp
-- Rasters are uploaded as COGs not GeoTIFF to improve performance
-- admin field is added for "qfield_user_name" (Kartlegger).
+We forked the NiN 2.0 Template from the [GitHub ](https://github.com/geco-nhm/NiN_QGIS_3.x) repository developed by the University of Oslo. Changes made to orginal template are documented [here](https://github.com/NINAnor/NiN_QGIS_3.x/blob/master/CHANGELOG.md). 
+
+
 
 ### NINA Contacts
 

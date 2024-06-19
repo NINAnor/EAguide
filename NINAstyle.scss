@@ -35,6 +35,22 @@ table thead tr {
     background-color: white;
   }
 
+/*-- codeblock styling --*/
+pre, code {
+  border: 1px solid #ccc; // Light grey border
+  background-color: #f8f8f8; // Light grey background
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); // Optional: adds a subtle shadow
+  border-radius: 0; // Rounded corners
+  padding: 10px; // Some padding inside the box
+  overflow: auto; // Adds a scrollbar if the content is wider than the box
+
+  // If you want to style code within pre differently
+  code {
+      background-color: transparent; // Ensures nested code elements don't have a different background
+  }
+}
+
+
 /*-- scss:rules --*/
 
 /* Example of a note class for adding textboxes. 

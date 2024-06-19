@@ -162,14 +162,14 @@ Errors in the web application can be inspected in the browser console using: `ri
 
     - Follow the instructions in the README of the [naturregnskap_maps_uploader](https://github.com/NINAnor/naturregnskap_maps_uploader)
         - Install the Python environment
-        ```{bash}	
-        python3 -m venv .venv
-        source .venv/bin/activate
+                ```{bash}	
+                python3 -m venv .venv
+                source .venv/bin/activate
 
-        pip install -e .
+                pip install -e .
 
-        touch .env
-        ```
+                touch .env
+                ```
         - Configure the API with the Django backend
             - Copy the token generated in Django admin (step 1)
             - Add the token to the `.env` file 
@@ -203,13 +203,13 @@ Below are the steps to create a map for the Local Ecosystem Accounts dataset and
         - Maps > Raster sources
         - Set tile-URL, zoom and size in extras:
 
-        ```{bash}
-        {
-        "tiles": ["https://a.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png"], 
-        "maxZoom": 20, 
-        "tileSize": 256
-        }
-        ```
+            ```{bash}
+            {
+            "tiles": ["https://a.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png"], 
+            "maxZoom": 20, 
+            "tileSize": 256
+            }
+            ```
     - add source to the Map as Layer
         - Maps > Layers > Add layer 
         - Set style: `{"type": "raster"}`
@@ -224,20 +224,20 @@ Below are the steps to create a map for the Local Ecosystem Accounts dataset and
         - [generate_cog.sh](https://github.com/NINAnor/nina-map-explorer/blob/main/scripts/generate_cog.sh)
             - convert a GeoTIFF to a Cloud Optimized GeoTIFF (COG)
 
-        ```{bash}
-        # source the helper functions
-        source raster_operations.sh
-        source generate_cog.sh
+                ```{bash}
+                # source the helper functions
+                source raster_operations.sh
+                source generate_cog.sh
 
-        # mosaic rasters
-        mosaic_rasters /path/to/input_dir /path/to/mosaic_output.tif
+                # mosaic rasters
+                mosaic_rasters /path/to/input_dir /path/to/mosaic_output.tif
 
-        # clip the raster
-        clip_raster input.tif input.gpkg clip_layer output.tif NODATA EPSG 
+                # clip the raster
+                clip_raster input.tif input.gpkg clip_layer output.tif NODATA EPSG 
 
-        # convert to COG (using default method, see the script for more options)
-        to_cog /path/to/input.tif default
-        ```
+                # convert to COG (using default method, see the script for more options)
+                to_cog /path/to/input.tif default
+                ```
 
     - Prepare the **vector** data
         - [generate_pmtiles.sh](https://github.com/NINAnor/nina-map-explorer/blob/main/scripts/generate_pmtiles.sh)
@@ -245,10 +245,10 @@ Below are the steps to create a map for the Local Ecosystem Accounts dataset and
             - MAXZOOM and MINZOOM influence the level of detail in the map and the size of the tiles (higher values = more detail, larger tiles). 
             - docs: [gdal.org/drivers/vector/pmtiles.html](https://gdal.org/drivers/vector/pmtiles.html).
 
-        ```{bash}
-        source generate_pmtiles.sh
-        generate_pmtiles /path/to/input.gpkg /path/to/output.pmtiles MINZOOM MAXZOOM
-        ```
+                ```{bash}
+                source generate_pmtiles.sh
+                generate_pmtiles /path/to/input.gpkg /path/to/output.pmtiles MINZOOM MAXZOOM
+                ```
 
 4. Style your data
 

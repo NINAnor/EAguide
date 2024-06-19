@@ -431,16 +431,16 @@ docker compose --profile prod up</code></pre></li>
 <ul>
 <li>Follow the instructions in the README of the <a href="https://github.com/NINAnor/naturregnskap_maps_uploader">naturregnskap_maps_uploader</a>
 <ul>
-<li>Install the Python environment</li>
-</ul>
-<pre class="{bash}"><code>python3 -m venv .venv
-source .venv/bin/activate
+<li><p>Install the Python environment</p>
+<pre><code>  ```{bash}   
+  python3 -m venv .venv
+  source .venv/bin/activate
 
-pip install -e .
+  pip install -e .
 
-touch .env</code></pre>
-<ul>
-<li>Configure the API with the Django backend
+  touch .env
+  ```</code></pre></li>
+<li><p>Configure the API with the Django backend</p>
 <ul>
 <li>Copy the token generated in Django admin (step 1)</li>
 <li>Add the token to the <code>.env</code> file</li>
@@ -493,14 +493,14 @@ DEBUG=True</code></pre></li>
 <ul>
 <li>add raster source
 <ul>
-<li>Maps &gt; Raster sources</li>
-<li>Set tile-URL, zoom and size in extras:</li>
-</ul>
+<li><p>Maps &gt; Raster sources</p></li>
+<li><p>Set tile-URL, zoom and size in extras:</p>
 <pre class="{bash}"><code>{
 "tiles": ["https://a.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png"], 
 "maxZoom": 20, 
 "tileSize": 256
 }</code></pre></li>
+</ul></li>
 <li>add source to the Map as Layer
 <ul>
 <li>Maps &gt; Layers &gt; Add layer</li>
@@ -519,9 +519,7 @@ DEBUG=True</code></pre></li>
 </ul></li>
 <li><a href="https://github.com/NINAnor/nina-map-explorer/blob/main/scripts/generate_cog.sh">generate_cog.sh</a>
 <ul>
-<li>convert a GeoTIFF to a Cloud Optimized GeoTIFF (COG)</li>
-</ul></li>
-</ul>
+<li><p>convert a GeoTIFF to a Cloud Optimized GeoTIFF (COG)</p>
 <pre class="{bash}"><code># source the helper functions
 source raster_operations.sh
 source generate_cog.sh
@@ -534,17 +532,19 @@ clip_raster input.tif input.gpkg clip_layer output.tif NODATA EPSG
 
 # convert to COG (using default method, see the script for more options)
 to_cog /path/to/input.tif default</code></pre></li>
+</ul></li>
+</ul></li>
 <li>Prepare the <strong>vector</strong> data
 <ul>
 <li><a href="https://github.com/NINAnor/nina-map-explorer/blob/main/scripts/generate_pmtiles.sh">generate_pmtiles.sh</a>
 <ul>
-<li>convert the GPKGs to PMTiles using GDAL &gt;= 3.8.</li>
-<li>MAXZOOM and MINZOOM influence the level of detail in the map and the size of the tiles (higher values = more detail, larger tiles).</li>
-<li>docs: <a href="https://gdal.org/drivers/vector/pmtiles.html">gdal.org/drivers/vector/pmtiles.html</a>.</li>
-</ul></li>
-</ul>
+<li><p>convert the GPKGs to PMTiles using GDAL &gt;= 3.8.</p></li>
+<li><p>MAXZOOM and MINZOOM influence the level of detail in the map and the size of the tiles (higher values = more detail, larger tiles).</p></li>
+<li><p>docs: <a href="https://gdal.org/drivers/vector/pmtiles.html">gdal.org/drivers/vector/pmtiles.html</a>.</p>
 <pre class="{bash}"><code>source generate_pmtiles.sh
 generate_pmtiles /path/to/input.gpkg /path/to/output.pmtiles MINZOOM MAXZOOM</code></pre></li>
+</ul></li>
+</ul></li>
 </ul></li>
 <li><p>Style your data</p>
 <ul>

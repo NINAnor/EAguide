@@ -72,7 +72,7 @@ Manually add a QField project to your mobile device:
 
 <br>
 <figure style="width: 100%; max-width: 650px; display: block; margin-left: auto; margin-right: auto;">
-  <img src="qfield_cloud_phone.png" alt="Manually add a QField project to your mobile device." style="width: 100%; height: auto;"/>
+  <img src="qfield_cloud_phone_2.PNG" alt="Manually add a QField project to your mobile device." style="width: 100%; height: auto;"/>
   <figcaption style="text-align: center;">Manually add a QField project to your mobile device.</figcaption>
 </figure>
 

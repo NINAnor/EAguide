@@ -10,4 +10,6 @@ Imports:
   tidyverse,
   DiagrammeR,
   DiagrammeRsvg,
-  rsvg
+  rsvg, 
+  downlit,
+  xml2

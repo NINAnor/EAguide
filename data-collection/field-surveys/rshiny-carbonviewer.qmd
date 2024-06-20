@@ -1,0 +1,24 @@
+# CarbonViewer 
+
+The CarbonViewer app calculates the **total volume of peat (m3)** and the **total carbon content (Tons C)** in a peatland area. To be able to calculate those values the peatland area must be sampled for peat depth and the peatland type must be recorded. 
+
+:::{.note}
+**Note** that [CarbonViewer](https://carbonviewer.nina.no/) is not a field application! The user must go out in the field and record peat depth (cm) and the coordinates of the measurements before using CarbonViewer. Monica Ruano can be contacted to set up a field schema used for mapping. 
+:::
+
+### NINA Contacts
+
+::: {.columns}
+::: {.column}
+**CarbonViewer:**
+
+- Magni Olsen Kyrkjeeide
+- Anders Lyngstad
+:::
+
+::: {.column}
+**RShiny Developers:**
+
+- Benjamin Cretois
+- Willeke A'Campo 
+:::

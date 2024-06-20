@@ -17,11 +17,13 @@ book:
   chapters:
     - index.qmd
     - project-management/project-management.qmd
-    - part: Data Collection
+    - part: data-collection/data-collection.qmd
       chapters:
-        - data-collection/field-surveys/field-surveys.qmd
         - data-collection/field-surveys/intro-to-qfield.qmd
-        - data-collection/remote-sensing/remote-sensing.qmd
+        - data-collection/field-surveys/qfield-nin.qmd
+        - data-collection/field-surveys/qfield-bm.qmd
+        - data-collection/field-surveys/qfield-bgf.qmd
+        - data-collection/field-surveys/rshiny-carbonviewer.qmd
     - data-analysis/data-analysis.qmd
     - data-publishing/data-publishing.qmd
     - documentation/documentation.qmd

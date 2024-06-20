@@ -1,0 +1,21 @@
+# Bluegreen Factor 
+
+*short description here*
+
+### NINA Contacts
+
+::: {.columns}
+::: {.column}
+**BGF:**
+
+- David Barton
+- Bart Immerzeel
+- Maria Korkou
+:::
+
+::: {.column}
+**QGIS/QField Cloud Managers:**
+
+- Willeke A'Campo 
+- Stig Claussen
+:::

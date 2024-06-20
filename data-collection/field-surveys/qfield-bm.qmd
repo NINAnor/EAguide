@@ -1,0 +1,73 @@
+
+# Biodiversity Metric 4.0 
+
+## User Guide
+
+#### Install the Biodiversity Metric app on your tablet
+
+The **Biodiversity Metric 4.0** QGIS template is uploaded to NINA's QField Cloud account. 
+
+1. Open QField on your tablet and go to `QFieldCloud projects` > `My Projects` 
+2. Select the project and the latest version of the project will be downloaded to your tablet.
+    - **bm4_project_name_year**: project specific NiN mapping template.
+
+    *It can take up to several minutes to download your project*
+
+3. Set your user name in the QField app. This ensures that your name is automatically added to the `Mapped by` field in the attribute table, every time you map a new naturtype.
+    - Go to `Settings` > `Settings` > `Variables` 
+    - Add a new variable `qfield_user_name` with your name `firstname.lastname`
+
+4. Read the PDF instructions [here](https://github.com/NINAnor/BiodiversityMetric_QGIS_3.x/blob/main/docs/Biodiversity%20Metric%20and%20SSM%20-%20GIS%20tools%20User%20Guide.pdf).
+
+<br>
+<figure style="width: 100%; max-width: 650px; display: block; margin-left: auto; margin-right: auto;">
+  <img src="qfield_bm.PNG" alt="BM example" style="width: 100%; height: auto;"/>
+  <figcaption style="text-align: center;">Example of the Biodiveristy Metrics template opened in QGIS Desktop.</figcaption>
+</figure>
+
+## Developer Guide
+
+#### How to create a new Biodiveristy Metric template for a new project area? 
+
+You can create a new template for a new mapping area by using the Biodiveristy Mapping template for Norway. Here you need to add your study area polygon and offline background maps. 
+
+
+1. Download the QField template from the [BiodiversityMetric_QGIS_3.x](https://github.com/NINAnor/BiodiversityMetric_QGIS_3.x) repository.
+
+2. Create a new polygon layer `study_area` and save it to `vector/%project_name%_misc.gpkg` GPKG and source it to the `Red Line Boundary(Kartleggingsgrense)` group. 
+
+3. Download raster files in `GeoTIFF` format from [høydedata.no](https://hoydedata.no/) and [norgeibilder.no](https://www.norgeibilder.no/). 
+    - DTMs and DSMs: [høydedata.no](https://hoydedata.no/)
+    - Ortophotos (RGB and CIR): [norgeibilder.no](https://www.norgeibilder.no/)
+        - Login with your Geonorge GeoID
+        - enter study area bounding box coordinates 
+        - Coordinate system: UTM 33
+        - clip by bounding box 
+        - send order
+
+4. Convert your rasters to Cloud Optimized GeoTiffs. Shell scripts can be found [here](https://github.com/NINAnor/BiodiversityMetric_QGIS_3.x/tree/main/scripts).
+
+5. Add your downloaded raster files as offline map layers in QField. 
+
+6. Upload your new project to QField Cloud and invite the fieldworkers (collaborators) to the project. 
+
+#### Change log: 
+
+We adapted the template from The Statutory Biodiversity Metric - QGIS template, developed and published by Natural England (JP039) under the Open Government Licence - OGLv3.0. Changes made to orginal template are documented [here](https://github.com/NINAnor/BiodiversityMetric_QGIS_3.x/blob/main/CHANGELOG.md). 
+
+### NINA Contacts
+
+::: {.columns}
+::: {.column}
+**Biodiversity Metrics:**
+
+- Trond Simensen
+- Erik Stange
+:::
+
+::: {.column}
+**QGIS/QField Cloud managers:**
+
+- Willeke A'Campo 
+- Stig Claussen
+:::

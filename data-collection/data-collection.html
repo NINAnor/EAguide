@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.4.555">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
 <meta name="description" content="NINAs Technical Guidebook for Local-Scale Ecosystem Accounting Projects">
-<title>Local Ecosystem accounts - a technical guidebook - Remote sensing</title>
+
+<title>Local Ecosystem accounts - a technical guidebook - Data Collection</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -18,60 +21,28 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../data-analysis/data-analysis.html" rel="next">
-<link href="../../data-collection/field-surveys/intro-to-qfield.html" rel="prev">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../data-collection/field-surveys/intro-to-qfield.html" rel="next">
+<link href="../project-management/project-management.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -97,52 +68,61 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><script src="../../site_libs/quarto-diagram/mermaid.min.js"></script><script src="../../site_libs/quarto-diagram/mermaid-init.js"></script><link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+}</script>
+
+
 </head>
+
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../data-collection/field-surveys/field-surveys.html">Data Collection</a></li><li class="breadcrumb-item"><a href="../../data-collection/remote-sensing/remote-sensing.html"><span class="chapter-title">Remote sensing</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../data-collection/data-collection.html">Data Collection</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../../">Local Ecosystem accounts - a technical guidebook</a> 
+      <a href="../">Local Ecosystem accounts - a technical guidebook</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/NINAnor/EAguide" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
       <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
-<li>
-            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=%7Curl%7C">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
               <i class="bi bi-bi-twitter pe-1"></i>
             Twitter
             </a>
           </li>
           <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=%7Curl%7C">
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
               <i class="bi bi-bi-facebook pe-1"></i>
             Facebook
             </a>
           </li>
           <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=%7Curl%7C">
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
               <i class="bi bi-bi-linkedin pe-1"></i>
             LinkedIn
             </a>
           </li>
       </ul>
-</div>
+    </div>
 </div>
     </div>
       </div>
@@ -153,56 +133,66 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-<li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../project-management/project-management.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Project Management</span></a>
+  <a href="../project-management/project-management.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Project Management</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a href="../data-collection/data-collection.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Data Collection</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../data-collection/field-surveys/field-surveys.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Field surveys</span></a>
+  <a href="../data-collection/field-surveys/intro-to-qfield.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">QGIS and QField introduction</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../data-collection/field-surveys/intro-to-qfield.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">QGIS and QField introduction</span></a>
+  <a href="../data-collection/field-surveys/qfield-nin.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">NiN 2.0 Naturtype Mapping</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../data-collection/remote-sensing/remote-sensing.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Remote sensing</span></a>
+  <a href="../data-collection/field-surveys/qfield-bm.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Biodiversity Metric 4.0</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data-collection/field-surveys/qfield-bgf.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Bluegreen Factor</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data-collection/field-surveys/rshiny-carbonviewer.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">CarbonViewer</span></a>
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../data-analysis/data-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data analysis</span></a>
+  <a href="../data-analysis/data-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data analysis</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../data-publishing/data-publishing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Publishing</span></a>
+  <a href="../data-publishing/data-publishing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Publishing</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../documentation/documentation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Documentation</span></a>
+  <a href="../documentation/documentation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Documentation</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -213,19 +203,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../fair-data/fair-principles.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">FAIR Principles</span></a>
+  <a href="../fair-data/fair-principles.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">FAIR Principles</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../fair-data/naming-convention.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Naming Convention</span></a>
+  <a href="../fair-data/naming-convention.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Naming Convention</span></a>
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
@@ -234,24 +224,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../appendix/appendix-notes.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Additional Notes</span></a>
+  <a href="../appendix/appendix-notes.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Additional Notes</span></a>
   </div>
 </li>
       </ul>
-</li>
+  </li>
     </ul>
-</div>
-</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul class="collapse">
+  <li><a href="#sec-field-surveys" id="toc-sec-field-surveys" class="nav-link active" data-scroll-target="#sec-field-surveys">Field surveys</a></li>
+  <li><a href="#sec-remote-sensing" id="toc-sec-remote-sensing" class="nav-link" data-scroll-target="#sec-remote-sensing">Remote sensing</a></li>
+  </ul>
+<div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/NINAnor/EAguide/edit/main/data-collection/data-collection.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../data-collection/field-surveys/field-surveys.html">Data Collection</a></li><li class="breadcrumb-item"><a href="../../data-collection/remote-sensing/remote-sensing.html"><span class="chapter-title">Remote sensing</span></a></li></ol></nav><div class="quarto-title">
-<h1 class="title"><span id="sec-remote-sensing" class="quarto-section-identifier"><span class="chapter-title">Remote sensing</span></span></h1>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-data-collection" class="quarto-section-identifier">Data Collection</span></h1>
 </div>
 
 
@@ -265,77 +266,70 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><p>Maybe we want to have a chapter in this?</p>
-<section id="flowcharts" class="level3"><h3 class="anchored" data-anchor-id="flowcharts">Flowcharts</h3>
-<p><strong>Example using html:</strong></p>
-<p>Note that the classes are defined in the NINAstyle.scss</p>
-<div class="flowchart">
-<div id="start" class="flowchart-box">
-Start
-</div>
-<div id="process1" class="flowchart-box">
-Process 1
-</div>
-<div id="decision" class="flowchart-box">
-Decision
-</div>
-<div id="process2" class="flowchart-box">
-Process 2
-</div>
-<div id="end" class="flowchart-box">
-End
-</div>
-</div>
-<p><strong>Example using DiagrammerR:</strong></p>
-<div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">graph</span> <span class="op">&lt;-</span> <span class="fu">create_graph</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">add_node</span><span class="op">(</span>label<span class="op">=</span><span class="st">"Node A"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">add_node</span><span class="op">(</span>label <span class="op">=</span> <span class="st">" I have a\nhyperlink"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">add_edge</span><span class="op">(</span>from <span class="op">=</span> <span class="fl">1</span>, to <span class="op">=</span> <span class="fl">2</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">select_last_nodes_created</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">set_node_attrs_ws</span><span class="op">(</span>node_attr <span class="op">=</span> <span class="va">URL</span>, value <span class="op">=</span> <span class="st">"https://nrk.no"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">add_node</span><span class="op">(</span>label <span class="op">=</span> <span class="st">"Looooooooooooooooooooong name"</span>, from <span class="op">=</span> <span class="fl">1</span>, to <span class="op">=</span> <span class="fl">2</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">set_node_attrs</span><span class="op">(</span>node_attr <span class="op">=</span> <span class="va">shape</span>, values <span class="op">=</span>  <span class="st">"box"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">select_nodes_by_id</span><span class="op">(</span>nodes <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">set_node_attrs_ws</span><span class="op">(</span>node_attr <span class="op">=</span> <span class="va">shape</span>, value <span class="op">=</span> <span class="st">"rectangle"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Export the graph to a PNG file</span></span>
-<span><span class="fu">export_graph</span><span class="op">(</span><span class="va">graph</span>, file_name <span class="op">=</span> <span class="st">"graph.png"</span>, width <span class="op">=</span> <span class="fl">400</span>, height <span class="op">=</span> <span class="fl">400</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Include the PNG file in your HTML document</span></span>
-<span><span class="fu">include_graphics</span><span class="op">(</span><span class="st">"graph.png"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="graph.png" class="img-fluid figure-img" width="200"></p>
-</figure>
-</div>
-</div>
-</div>
-<p><strong>Example using Mermaid:</strong></p>
-<p>For mermaid instructions see <a href="https://mermaid.js.org/syntax/flowchart.html">here</a>.</p>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"></figure><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart LR
-    A--&gt;B
-    B--&gt;C
-    B--&gt;D
-    C--&gt;D
-    click A callback "Tooltip for a callback"
-    click B "https://www.github.com" "This is a tooltip for a link"
-    click C call callback() "Tooltip for a callback"
-    click D href "https://www.github.com" "This is a tooltip for a link"
-</pre>
-</div>
-<p></p>
-</div>
-</div>
-</div>
+</header>
 
 
-</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+<p>This page presents a list of field surveys and remote sensing data sources usefull for ecosystem accounting projects.</p>
+<section id="sec-field-surveys" class="level2">
+<h2 class="anchored" data-anchor-id="sec-field-surveys">Field surveys</h2>
+<p>This page presents a list of field surveys and applications usefull for ecosystem accounting projects.</p>
+<p><strong>Available Field Applications:</strong></p>
+<ul>
+<li><a href="../data-collection/field-surveys/qfield-nin.html">NiN 2.0 Naturetype Mapping</a></li>
+<li><a href="../data-collection/field-surveys/qfield-bm.html">Biodiversity Metric 4.0</a></li>
+<li><a href="../data-collection/field-surveys/qfield-bgf.html">Blue Green Factor</a></li>
+<li><a href="../data-collection/field-surveys/rshiny-carbonviewer.html">Carbon Viewer</a></li>
+</ul>
+<p><br></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Field Application</th>
+<th style="text-align: left;">Tool</th>
+<th style="text-align: left;">Instructions</th>
+<th style="text-align: left;">Download</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>NiN 2.0</strong> <br> <strong>Naturetype Mapping</strong></td>
+<td style="text-align: left;">QGIS/QField</td>
+<td style="text-align: left;"><a href="https://github.com/geco-nhm/NiN_QGIS_3.x/blob/master/NHM_Rapport_83_QGIS_NiN_2019.pdf">PDF Instructions</a></td>
+<td style="text-align: left;"><a href="https://github.com/NINAnor/NiN_QGIS_3.x">NINAnor/NiN_QGIS_3.x</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Biodiversity Metric 4.0</strong></td>
+<td style="text-align: left;">QGIS/QField</td>
+<td style="text-align: left;">• <a href="https://publications.naturalengland.org.uk/publication/6049804846366720">GIS tools User Guide (PDF)</a> <br> • <a href="https://publications.naturalengland.org.uk/publication/6049804846366720">Data Standard (XLSX)</a></td>
+<td style="text-align: left;"><a href="https://github.com/NINAnor/BiodiversityMetric_QGIS_3.x">NINAnor/BiodiversityMetric_QGIS_3.x</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Bluegreen Factor</strong></td>
+<td style="text-align: left;">QGIS/QField</td>
+<td style="text-align: left;"><em>under development</em></td>
+<td style="text-align: left;"><em>under development</em></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>CarbonViewer</strong></td>
+<td style="text-align: left;">RShiny</td>
+<td style="text-align: left;">• <a href="https://carbonviewer.nina.no/">App Instructions</a> <br> • <a href="https://ntnuopen.ntnu.no/ntnu-xmlui/bitstream/handle/11250/3099192/KyrkjeeideAcalculatorCarbonManagement2023gull.pdf?sequence=1&amp;isAllowed=y">Publication</a></td>
+<td style="text-align: left;">• <a href="https://github.com/NINAnor/carbonviewer">NINAnor/carbonviewer</a> <br> • <a href="https://carbonviewer.nina.no/">carbonviewer.nina.no</a></td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+</section>
+<section id="sec-remote-sensing" class="level2">
+<h2 class="anchored" data-anchor-id="sec-remote-sensing">Remote sensing</h2>
+<ul>
+<li>Add usefull sources for EA.</li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -743,14 +737,16 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="../../data-collection/field-surveys/intro-to-qfield.html" class="pagination-link" aria-label="QGIS and QField introduction">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">QGIS and QField introduction</span></span>
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../project-management/project-management.html" class="pagination-link" aria-label="Project Management">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Project Management</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../data-analysis/data-analysis.html" class="pagination-link" aria-label="Data analysis">
-        <span class="nav-page-text"><span class="chapter-title">Data analysis</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../data-collection/field-surveys/intro-to-qfield.html" class="pagination-link" aria-label="QGIS and QField introduction">
+        <span class="nav-page-text"><span class="chapter-title">QGIS and QField introduction</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -758,4 +754,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/NINAnor/EAguide/edit/main/data-collection/remote-sensing/remote-sensing.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/NINAnor/EAguide/edit/main/data-collection/data-collection.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>

@@ -71,3 +71,4 @@ We adapted the template from The Statutory Biodiversity Metric - QGIS template, 
 - Willeke A'Campo 
 - Stig Claussen
 :::
+:::

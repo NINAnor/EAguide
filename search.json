@@ -30,36 +30,6 @@
     ]
   },
   {
-    "objectID": "data-collection/data-collection.html",
-    "href": "data-collection/data-collection.html",
-    "title": "Data Collection",
-    "section": "",
-    "text": "Field surveys\nThis page presents a list of field surveys and applications usefull for ecosystem accounting projects.\nAvailable Field Applications:",
-    "crumbs": [
-      "Data Collection"
-    ]
-  },
-  {
-    "objectID": "data-collection/data-collection.html#sec-field-surveys",
-    "href": "data-collection/data-collection.html#sec-field-surveys",
-    "title": "Data Collection",
-    "section": "",
-    "text": "NiN 2.0 Naturetype Mapping\nBiodiversity Metric 4.0\nBlue Green Factor\nCarbon Viewer\n\n\n\n\n\nField Application\nTool\nInstructions\nDownload\n\n\n\n\nNiN 2.0  Naturetype Mapping\nQGIS/QField\nPDF Instructions\nNINAnor/NiN_QGIS_3.x\n\n\nBiodiversity Metric 4.0\nQGIS/QField\n• GIS tools User Guide (PDF)  • Data Standard (XLSX)\nNINAnor/BiodiversityMetric_QGIS_3.x\n\n\nBluegreen Factor\nQGIS/QField\nunder development\nunder development\n\n\nCarbonViewer\nRShiny\n• App Instructions  • Publication\n• NINAnor/carbonviewer  • carbonviewer.nina.no",
-    "crumbs": [
-      "Data Collection"
-    ]
-  },
-  {
-    "objectID": "data-collection/data-collection.html#sec-remote-sensing",
-    "href": "data-collection/data-collection.html#sec-remote-sensing",
-    "title": "Data Collection",
-    "section": "Remote sensing",
-    "text": "Remote sensing\n\nAdd usefull sources for EA.",
-    "crumbs": [
-      "Data Collection"
-    ]
-  },
-  {
     "objectID": "data-collection/field-surveys/intro-to-qfield.html",
     "href": "data-collection/field-surveys/intro-to-qfield.html",
     "title": "QGIS and QField introduction",
@@ -152,7 +122,7 @@
     "href": "data-collection/field-surveys/qfield-nin.html#developer-guide",
     "title": "NiN 2.0 Naturtype Mapping",
     "section": "Developer Guide",
-    "text": "Developer Guide\n\nHow to create a new NiN 2.0 template for a new project area?\nYou can create a new template for a new mapping area by using the NiN 2.0 mapping template for the whole of Norway. Here you need to add your study area polygon and offline background maps.\n\nRead the PDF instructions, especially chapter 2 “Installering og oppstart”.\nDownload the qfield_nin2_norge QField template from NiN_QGIS_3.x repository.\nCreate a new polygon layer study_area and save it to vector/%project_name%_misc.gpkg GPKG and add it to the Area group.\nDownload raster files in GeoTIFF format from høydedata.no and norgeibilder.no.\n\nDTMs and DSMs: høydedata.no\nOrtophotos (RGB and CIR): norgeibilder.no\n\nLogin with your Geonorge GeoID\nenter study area bounding box coordinates\nCoordinate system: UTM 33\nclip by bounding box\nsend order\n\n\nConvert your rasters to Cloud Optimized GeoTiffs. Shell scripts can be found here.\nAdd your downloaded raster files as offline map layers in QField.\nUpload your new project to QField Cloud and invite the fieldworkers (collaborators) to the project.\n\n\n\nChange log:\nWe forked the NiN 2.0 Template from the GitHub repository developed by the University of Oslo. Changes made to orginal template are documented here.\n\n\nNINA Contacts\n::: {.columns} ::: {.column} NiN:\n\nTrond Simensen\nErik Stange\nAnders Lyngstad :::\n\n\nQGIS/QField Cloud managers:\n\nWilleke A’Campo\nStig Claussen",
+    "text": "Developer Guide\n\nHow to create a new NiN 2.0 template for a new project area?\nYou can create a new template for a new mapping area by using the NiN 2.0 mapping template for the whole of Norway. Here you need to add your study area polygon and offline background maps.\n\nRead the PDF instructions, especially chapter 2 “Installering og oppstart”.\nDownload the qfield_nin2_norge QField template from NiN_QGIS_3.x repository.\nCreate a new polygon layer study_area and save it to vector/%project_name%_misc.gpkg GPKG and add it to the Area group.\nDownload raster files in GeoTIFF format from høydedata.no and norgeibilder.no.\n\nDTMs and DSMs: høydedata.no\nOrtophotos (RGB and CIR): norgeibilder.no\n\nLogin with your Geonorge GeoID\nenter study area bounding box coordinates\nCoordinate system: UTM 33\nclip by bounding box\nsend order\n\n\nConvert your rasters to Cloud Optimized GeoTiffs. Shell scripts can be found here.\nAdd your downloaded raster files as offline map layers in QField.\nUpload your new project to QField Cloud and invite the fieldworkers (collaborators) to the project.\n\n\n\nChange log:\nWe forked the NiN 2.0 Template from the GitHub repository developed by the University of Oslo. Changes made to orginal template are documented here.\n\n\nNINA Contacts\n\n\nNiN:\n\nTrond Simensen\nErik Stange\nAnders Lyngstad\n\n\nQGIS/QField Cloud managers:\n\nWilleke A’Campo\nStig Claussen",
     "crumbs": [
       "Data Collection",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>NiN 2.0 Naturtype Mapping</span>"
@@ -185,7 +155,7 @@
     "href": "data-collection/field-surveys/qfield-bm.html#developer-guide",
     "title": "Biodiversity Metric 4.0",
     "section": "Developer Guide",
-    "text": "Developer Guide\n\nHow to create a new Biodiveristy Metric template for a new project area?\nYou can create a new template for a new mapping area by using the Biodiveristy Mapping template for Norway. Here you need to add your study area polygon and offline background maps.\n\nDownload the QField template from the BiodiversityMetric_QGIS_3.x repository.\nCreate a new polygon layer study_area and save it to vector/%project_name%_misc.gpkg GPKG and source it to the Red Line Boundary(Kartleggingsgrense) group.\nDownload raster files in GeoTIFF format from høydedata.no and norgeibilder.no.\n\nDTMs and DSMs: høydedata.no\nOrtophotos (RGB and CIR): norgeibilder.no\n\nLogin with your Geonorge GeoID\nenter study area bounding box coordinates\nCoordinate system: UTM 33\nclip by bounding box\nsend order\n\n\nConvert your rasters to Cloud Optimized GeoTiffs. Shell scripts can be found here.\nAdd your downloaded raster files as offline map layers in QField.\nUpload your new project to QField Cloud and invite the fieldworkers (collaborators) to the project.\n\n\n\nChange log:\nWe adapted the template from The Statutory Biodiversity Metric - QGIS template, developed and published by Natural England (JP039) under the Open Government Licence - OGLv3.0. Changes made to orginal template are documented here.\n\n\nNINA Contacts\n::: {.columns} ::: {.column} Biodiversity Metrics:\n\nTrond Simensen\nErik Stange :::\n\n\nQGIS/QField Cloud managers:\n\nWilleke A’Campo\nStig Claussen",
+    "text": "Developer Guide\n\nHow to create a new Biodiveristy Metric template for a new project area?\nYou can create a new template for a new mapping area by using the Biodiveristy Mapping template for Norway. Here you need to add your study area polygon and offline background maps.\n\nDownload the QField template from the BiodiversityMetric_QGIS_3.x repository.\nCreate a new polygon layer study_area and save it to vector/%project_name%_misc.gpkg GPKG and source it to the Red Line Boundary(Kartleggingsgrense) group.\nDownload raster files in GeoTIFF format from høydedata.no and norgeibilder.no.\n\nDTMs and DSMs: høydedata.no\nOrtophotos (RGB and CIR): norgeibilder.no\n\nLogin with your Geonorge GeoID\nenter study area bounding box coordinates\nCoordinate system: UTM 33\nclip by bounding box\nsend order\n\n\nConvert your rasters to Cloud Optimized GeoTiffs. Shell scripts can be found here.\nAdd your downloaded raster files as offline map layers in QField.\nUpload your new project to QField Cloud and invite the fieldworkers (collaborators) to the project.\n\n\n\nChange log:\nWe adapted the template from The Statutory Biodiversity Metric - QGIS template, developed and published by Natural England (JP039) under the Open Government Licence - OGLv3.0. Changes made to orginal template are documented here.\n\n\nNINA Contacts\n\n\nBiodiversity Metrics:\n\nTrond Simensen\nErik Stange\n\n\nQGIS/QField Cloud managers:\n\nWilleke A’Campo\nStig Claussen",
     "crumbs": [
       "Data Collection",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Biodiversity Metric 4.0</span>"
@@ -196,7 +166,7 @@
     "href": "data-collection/field-surveys/qfield-bgf.html",
     "title": "Bluegreen Factor",
     "section": "",
-    "text": "short description here\n\nNINA Contacts\n::: {.columns} ::: {.column} BGF:\n\nDavid Barton\nBart Immerzeel\nMaria Korkou :::\n\n\nQGIS/QField Cloud Managers:\n\nWilleke A’Campo\nStig Claussen",
+    "text": "short description here\n\nNINA Contacts\n\n\nBGF:\n\nDavid Barton\nBart Immerzeel\nMaria Korkou\n\n\nQGIS/QField Cloud Managers:\n\nWilleke A’Campo\nStig Claussen",
     "crumbs": [
       "Data Collection",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Bluegreen Factor</span>"
@@ -207,7 +177,7 @@
     "href": "data-collection/field-surveys/rshiny-carbonviewer.html",
     "title": "CarbonViewer",
     "section": "",
-    "text": "The CarbonViewer app calculates the total volume of peat (m3) and the total carbon content (Tons C) in a peatland area. To be able to calculate those values the peatland area must be sampled for peat depth and the peatland type must be recorded.\n\nNote that CarbonViewer is not a field application! The user must go out in the field and record peat depth (cm) and the coordinates of the measurements before using CarbonViewer. Monica Ruano can be contacted to set up a field schema used for mapping.\n\n\nNINA Contacts\n::: {.columns} ::: {.column} CarbonViewer:\n\nMagni Olsen Kyrkjeeide\nAnders Lyngstad :::\n\n\nRShiny Developers:\n\nBenjamin Cretois\nWilleke A’Campo",
+    "text": "The CarbonViewer app calculates the total volume of peat (m3) and the total carbon content (Tons C) in a peatland area. To be able to calculate those values the peatland area must be sampled for peat depth and the peatland type must be recorded.\n\nNote that CarbonViewer is not a field application! The user must go out in the field and record peat depth (cm) and the coordinates of the measurements before using CarbonViewer. Monica Ruano can be contacted to set up a field schema used for mapping.\n\n\nNINA Contacts\n\n\nCarbonViewer:\n\nMagni Olsen Kyrkjeeide\nAnders Lyngstad\n\n\nRShiny Developers:\n\nBenjamin Cretois\nWilleke A’Campo",
     "crumbs": [
       "Data Collection",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>CarbonViewer</span>"
@@ -283,6 +253,36 @@
     "crumbs": [
       "Appendices",
       "<span class='chapter-number'>A</span>  <span class='chapter-title'>Additional Notes</span>"
+    ]
+  },
+  {
+    "objectID": "data-collection/data-collection.html",
+    "href": "data-collection/data-collection.html",
+    "title": "Data Collection",
+    "section": "",
+    "text": "Field surveys\nThis page presents a list of field surveys and applications usefull for ecosystem accounting projects.\nAvailable Field Applications:",
+    "crumbs": [
+      "Data Collection"
+    ]
+  },
+  {
+    "objectID": "data-collection/data-collection.html#sec-field-surveys",
+    "href": "data-collection/data-collection.html#sec-field-surveys",
+    "title": "Data Collection",
+    "section": "",
+    "text": "NiN 2.0 Naturetype Mapping\nBiodiversity Metric 4.0\nBlue Green Factor\nCarbon Viewer\n\n\n\n\n\nField Application\nTool\nInstructions\nDownload\n\n\n\n\nNiN 2.0  Naturetype Mapping\nQGIS/QField\nPDF Instructions\nNINAnor/NiN_QGIS_3.x\n\n\nBiodiversity Metric 4.0\nQGIS/QField\n• GIS tools User Guide (PDF)  • Data Standard (XLSX)\nNINAnor/BiodiversityMetric_QGIS_3.x\n\n\nBluegreen Factor\nQGIS/QField\nunder development\nunder development\n\n\nCarbonViewer\nRShiny\n• App Instructions  • Publication\n• NINAnor/carbonviewer  • carbonviewer.nina.no",
+    "crumbs": [
+      "Data Collection"
+    ]
+  },
+  {
+    "objectID": "data-collection/data-collection.html#sec-remote-sensing",
+    "href": "data-collection/data-collection.html#sec-remote-sensing",
+    "title": "Data Collection",
+    "section": "Remote sensing",
+    "text": "Remote sensing\n\nAdd usefull sources for EA.",
+    "crumbs": [
+      "Data Collection"
     ]
   }
 ]

@@ -30,10 +30,9 @@ The **Local Ecosystem Accounts Dataset** is structured as follows: maps are cate
 
 2. Fill out the import schema 
 
-    - [Download import schema](NINA_naturregnskap_metadata_importskjema_TEMPLATE.xlsx)
-    - A filled out example can be found [here](NINA_naturregnskap_metadata_importskjema_EXAMPLE_SPARE.xlsx).
+    - [Download import schema](TEMPLATE_NINA_naturregnskap_metadata_importskjema.xlsx)
     - Ensure to read the **README**-sheet and fill out all required (*) fields. 
-    - **Important**: Check the data source of each data layer. If the data source is not owned by NINA, provide the WMS link to the original source and the link of where users can download this data (for example GeoNorge). In other words, we do not add AR5 data into the gpkg's! Instead we show the map as a WMS layer and point the users to NIBIO for downloading the data.
+    - **Important**: Check the data source of each data layer. If the data source is not owned by NINA, provide the WMS link to the original source and the link of where users can download this data (for example GeoNorge). For example, we do not add AR5 data into the gpkg's! Instead we show the map as a WMS layer and point the users to NIBIO for downloading the data.
 
 3. Layer styling
 

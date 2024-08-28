@@ -1,0 +1,14 @@
+# QGIS plugins {#sec-qgis-plugins}
+
+
+Install plugins in QGIS by going to *Plugins > Manage and Install Plugins > All* and search for the plugin you want to install.
+
+
+| <small>Plugin</small> | <small>Description</small> |
+|--------|-------------|
+| <small>[QFieldSync](https://plugins.qgis.org/plugins/qfieldsync/)</small> | <small>A QGIS plugin that allows you to synchronize your QGIS projects with QField Cloud.</small> |
+| <small>[NiB-ortofoto-prosjekt](https://plugins.qgis.org/plugins/get_nib-main/)</small> | <small>A QGIS plugin that allows you to add high-resolution aerial photos from the Norwegian Mapping Authority (Kartverket) and use them as a background (WMS) layer in your QGIS project. It finds all available aerial photos for the area you are working in and adds them to your project.</small> |
+
+<br>
+
+*Please add more plugins to this list by clicking on:* `Edit this page.`

@@ -1,4 +1,4 @@
-# QGIS and QField introduction {#sec-intro-to-qfield}
+# QField and QCloud setup {#sec-qfield-intro}
 
 **QGIS** is an open-source desktop GIS application and **QField** is it's mobile twin that allows you to take your QGIS projects into the field and collect data. **QField Cloud** is a cloud-based service that allows you to synchronize your QGIS projects with your QField projects. 
 
@@ -7,11 +7,9 @@ A QField project (also called a QField or QGIS template) is a QGIS project file 
 
 The page [Field Surveys](#sec-field-surveys) provides a list of QField projects that are useful for ecosystem accounting and their specific instructions on how to install and use them. This page provides a general introduction to QGIS, QField and QField Cloud and how they can be used to transfer your project data between QGIS and QField.
 
-
-
 ## Prerequisites
 
-- [QGIS v3.x](https://qgis.org/en/site/index.html) installed on your computer.
+- [QGIS v3.x](qgis-installation-guide.qmd) installed on your computer.
 - [QField](https://qfield.org/) installed on your device.
     - [Google Play](https://play.google.com/store/apps/details?id=ch.opengis.qfield) 
     - [Apple App Store](https://apps.apple.com/us/app/qfield-for-qgis/id1531726814).
@@ -23,9 +21,7 @@ Once you have installed QGIS on your computer. Go to  *Plugins > Manage and Inst
 
 - [QFieldSync](https://plugins.qgis.org/plugins/qfieldsync/): a QGIS plugin that allows you to synchronize your QGIS projects with QField Cloud.
 
-Other useful plugins:
-
-- [NiB-ortofoto-prosjekt](https://plugins.qgis.org/plugins/get_nib-main/): a Q GIS plugin that allows you to add high-resolution aerial photos from the Norwegian Mapping Authority (Kartverket) and use them as a background (WMS) layer  in your QGIS project. It finds all available aerial photos for the area you are working in and adds them to your project.
+See [QGIS plugins](qgis-plugins.md) for other useful plugins.
 
 ## Download a project from QField Cloud
 

@@ -1,0 +1,77 @@
+# Install QGIS {#sec-install-qgis}
+**Official QGIS installation guide:** [https://www.qgis.org/resources/installation-guide/](https://www.qgis.org/resources/installation-guide/)
+
+Short guide on how to install QGIS on Windows and Linux. If you need to install older version of QGIS (e.g. 2.18), we recommend using the Nix package manager on Linux.
+
+## Windows QGIS Installation
+
+Install QGIS on Windows using NINA's Firmaportal or by downloading the installer from the QGIS website or using the OSGeo4W installer. 
+
+## Linux QGIS Installation
+
+#### Nix Installation
+
+[Nix](https://nix.dev/tutorials/first-steps/) is a package manager that allows you to install software without admin rights. You can install software in a temporary environment or in your personal profile.
+
+**Installation:**
+
+1. Install Portable Nix-Shell
+
+    `wget https://github.com/DavHau/nix-portable/releases/download/v010/nix-portable -O nix-shell` 
+
+2. Add permissions to Nix-Shell
+
+    `chmod +x nix-shell`
+
+3. Start Nix-Shell and Install Software
+
+    `./nix-shell -p <software-name>`
+
+4. Start the default Nix-Shell
+
+    `./nix-shell`
+
+    **Note:** You can define which software is installed in the default nix-shell in the `default.nix` file.
+
+    ```nix
+    # example default.nix
+    { pkgs ? import <nixpkgs> {} }:
+
+    pkgs.stdenv.mkDerivation {
+    name = "python-environment";
+    buildInputs = with pkgs; [
+        gdal
+        qgis-ltr
+    ];
+
+    shellHook = ''
+        echo "Default Portable nix-shell with latest QGIS:"
+    '';
+    }
+    ```
+
+| Software | Command |
+| --- | --- |
+| Latest QGIS | `./nix-shell -p qgis-ltr` |
+| QGIS 2.18 | `./nix-shell -p qgis -I nixpkgs=https://github.com/NixOS/nixpkgs/archive/d0192e295a65dc5688ed360866fff14851148db5.tar.gz`| 
+| QGIS 3.22.16 | `./nix-shell -p qgis-ltr -I nixpkgs=https://github.com/NixOS/nixpkgs/archive/1b7a6a6e57661d7d4e0775658930059b77ce94a4.tar.gz` |
+
+### Ubuntu Installation
+Install directly from ubuntu's package repo on to your system. Note that you need admin rights to install software using sudo commands. 
+
+**Repositories:**
+
+- [general software](https://packages.ubuntu.com/)
+- [gis stable](https://launchpad.net/~ubuntugis/+archive/ubuntu/ppa)
+- [gis unstable (beta-versions)](https://launchpad.net/~ubuntugis/+archive/ubuntu/ubuntugis-unstable)
+
+
+**Installation:**
+
+| Command | Description |
+| --- | --- |
+| `sudo apt update` | update all package list |
+| `sudo apt install <software-name>` | install software |
+| `sudo add-apt-repository ppa:ubuntugis/ppa` | add gis repo (not standard installed) |
+| `sudo apt list -a qgis` | list available versions |
+| `sudo apt install qgis=version-number` | install specific version |

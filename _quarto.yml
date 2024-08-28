@@ -17,9 +17,14 @@ book:
   chapters:
     - index.qmd
     - project-management/project-management.qmd
+    - part: QGIS
+      chapters:
+        - qgis/qgis-installation.qmd
+        - qgis/qfield-intro.qmd
+        - qgis/qgis-plugins.qmd
+        - qgis/qgis-background-maps.qmd
     - part: data-collection/data-collection.qmd
       chapters:
-        - data-collection/field-surveys/intro-to-qfield.qmd
         - data-collection/field-surveys/qfield-nin.qmd
         - data-collection/field-surveys/qfield-bm.qmd
         - data-collection/field-surveys/qfield-bgf.qmd

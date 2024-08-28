@@ -31,7 +31,6 @@ The **Biodiversity Metric 4.0** QGIS template is uploaded to NINA's QField Cloud
 
 You can create a new template for a new mapping area by using the Biodiveristy Mapping template for Norway. Here you need to add your study area polygon and offline background maps. 
 
-
 1. Download the QField template from the [BiodiversityMetric_QGIS_3.x](https://github.com/NINAnor/BiodiversityMetric_QGIS_3.x) repository.
 
 2. Create a new polygon layer `study_area` and save it to `vector/%project_name%_misc.gpkg` GPKG and source it to the `Red Line Boundary(Kartleggingsgrense)` group. 

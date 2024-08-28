@@ -1,0 +1,17 @@
+# Background layers
+
+A list of usefull *WMS/WMTS/XYZ* links that can be added as online background layers in QGIS. 
+
+| <small>**Name**</small> | <small>**description**</small> | <small>**url**</small> |
+|------|-------------|-----|
+| <small>**Kartverket N50 topo**</small> | <small>Topographic map of Norway.</small> | <small><http://opencache.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=topo4&zoom={z}&x={x}&y={y}></small> |
+| <small>**NiB Ortomosaic**</small> | <small>Norge i Bilder. Orthomosaic of Norway.</small> | <small><http://opencache.statkart.no/gatekeeper/gk/gk.open_nib_utm33_wmts_v2></small> |
+| <small>**Overflatemodel (DOM)**</small> | <small>Digital surface model of Norway.</small> | <small><https://wms.geonorge.no/skwms1/wms.hoyde-dom></small> |
+| <small>**Terrengmodell (DTM)**</small> | <small>Digital terrain model of Norway.</small> | <small><https://wms.geonorge.no/skwms1/wms.hoyde-dtm></small> |
+| <small>**Felles KartdataBase (FKB)**</small> | <small>Common map data base of Norway with among others building, roads and landuse data.</small> | <small><https://openwms.statkart.no/skwms1/wms.fkb></small> |
+| <small>**Matrikkel**</small> | <small>Cadastre data of Norway.</small> | <small><https://openwms.statkart.no/skwms1/wms.matrikkel></small> |
+| <small>**Grunnkart for Arealregnskap**</small> | <small>Base map for area accounting in Norway.</small> | <small><https://wms.nibio.no/cgi-bin/arealregnskap_grunnkart></small> |
+
+<br>
+
+*Please add more background layers to this list by clicking on:* `Edit this page.`

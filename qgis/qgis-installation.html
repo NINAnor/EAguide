@@ -8,7 +8,7 @@
 
 <meta name="description" content="NINAs Technical Guidebook for Local-Scale Ecosystem Accounting Projects">
 
-<title>NiN 2.0 Naturtype Mapping – Local Ecosystem accounts - a technical guidebook</title>
+<title>Install QGIS – Local Ecosystem accounts - a technical guidebook</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,27 +21,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../data-collection/field-surveys/qfield-bm.html" rel="next">
-<link href="../../data-collection/data-collection.html" rel="prev">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../qgis/qfield-intro.html" rel="next">
+<link href="../project-management/project-management.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -82,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../data-collection/data-collection.html">Data Collection</a></li><li class="breadcrumb-item"><a href="../../data-collection/field-surveys/qfield-nin.html"><span class="chapter-title">NiN 2.0 Naturtype Mapping</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qgis/qgis-installation.html">QGIS</a></li><li class="breadcrumb-item"><a href="../qgis/qgis-installation.html"><span class="chapter-title">Install QGIS</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -97,7 +131,7 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../../">Local Ecosystem accounts - a technical guidebook</a> 
+      <a href="../">Local Ecosystem accounts - a technical guidebook</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/NINAnor/EAguide" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
@@ -135,13 +169,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../project-management/project-management.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Project Management</span></a>
+  <a href="../project-management/project-management.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Project Management</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -155,29 +189,29 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../qgis/qgis-installation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Install QGIS</span></a>
+  <a href="../qgis/qgis-installation.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Install QGIS</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../qgis/qfield-intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">QField and QCloud setup</span></a>
+  <a href="../qgis/qfield-intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">QField and QCloud setup</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../qgis/qgis-plugins.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">QGIS plugins</span></a>
+  <a href="../qgis/qgis-plugins.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">QGIS plugins</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../qgis/qgis-background-maps.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Background layers</span></a>
+  <a href="../qgis/qgis-background-maps.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Background layers</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../data-collection/data-collection.html" class="sidebar-item-text sidebar-link">
+            <a href="../data-collection/data-collection.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data Collection</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -186,39 +220,39 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../data-collection/field-surveys/qfield-nin.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">NiN 2.0 Naturtype Mapping</span></a>
+  <a href="../data-collection/field-surveys/qfield-nin.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">NiN 2.0 Naturtype Mapping</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../data-collection/field-surveys/qfield-bm.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Biodiversity Metric 4.0</span></a>
+  <a href="../data-collection/field-surveys/qfield-bm.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Biodiversity Metric 4.0</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../data-collection/field-surveys/qfield-bgf.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Bluegreen Factor</span></a>
+  <a href="../data-collection/field-surveys/qfield-bgf.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Bluegreen Factor</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../data-collection/field-surveys/rshiny-carbonviewer.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">CarbonViewer</span></a>
+  <a href="../data-collection/field-surveys/rshiny-carbonviewer.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">CarbonViewer</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../data-analysis/data-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Analysis</span></a>
+  <a href="../data-analysis/data-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Analysis</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../data-publishing/data-publishing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Publishing</span></a>
+  <a href="../data-publishing/data-publishing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Publishing</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../documentation/documentation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Documentation</span></a>
+  <a href="../documentation/documentation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Documentation</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -232,12 +266,12 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../fair-data/fair-principles.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">FAIR Principles</span></a>
+  <a href="../fair-data/fair-principles.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">FAIR Principles</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../fair-data/naming-convention.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Naming Convention</span></a>
+  <a href="../fair-data/naming-convention.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Naming Convention</span></a>
   </div>
 </li>
       </ul>
@@ -253,7 +287,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../appendix/appendix-notes.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Additional Notes</span></a>
+  <a href="../appendix/appendix-notes.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Additional Notes</span></a>
   </div>
 </li>
       </ul>
@@ -268,17 +302,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#user-guide" id="toc-user-guide" class="nav-link active" data-scroll-target="#user-guide">User Guide</a></li>
-  <li><a href="#developer-guide" id="toc-developer-guide" class="nav-link" data-scroll-target="#developer-guide">Developer Guide</a></li>
+  <li><a href="#windows-qgis-installation" id="toc-windows-qgis-installation" class="nav-link active" data-scroll-target="#windows-qgis-installation">Windows QGIS Installation</a></li>
+  <li><a href="#linux-qgis-installation" id="toc-linux-qgis-installation" class="nav-link" data-scroll-target="#linux-qgis-installation">Linux QGIS Installation</a></li>
   </ul>
-<div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/NINAnor/EAguide/edit/main/data-collection/field-surveys/qfield-nin.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
+<div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/NINAnor/EAguide/edit/main/qgis/qgis-installation.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../data-collection/data-collection.html">Data Collection</a></li><li class="breadcrumb-item"><a href="../../data-collection/field-surveys/qfield-nin.html"><span class="chapter-title">NiN 2.0 Naturtype Mapping</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qgis/qgis-installation.html">QGIS</a></li><li class="breadcrumb-item"><a href="../qgis/qgis-installation.html"><span class="chapter-title">Install QGIS</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-nin" class="quarto-section-identifier"><span class="chapter-title">NiN 2.0 Naturtype Mapping</span></span></h1>
+<h1 class="title"><span id="sec-install-qgis" class="quarto-section-identifier"><span class="chapter-title">Install QGIS</span></span></h1>
 </div>
 
 
@@ -295,80 +329,114 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>The NiN 2.0 mapping protocol is used to map and register naturetypes in Norway. Knowledge on species and naturtype mapping is a prerequisite for mapping NiN. This guide provides a technical overview of the QField app used for fieldmapping. Official documentation on the NiN 2.0 mapping protocol can be found on the <a href="https://www.artsdatabanken.no/Pages/266884/Veiledere_for_terrestrisk_kartlegging">Artsdatabanken website</a>.</p>
-<div class="note">
-<p><strong>Note</strong> that this QField Template is designed for mapping NiN 2.0. From 2026 onwards NiN 3.0 will be used as mapping protocol. As of today, there is no QGIS Template available for NiN 3.0.</p>
-</div>
-<section id="user-guide" class="level2">
-<h2 class="anchored" data-anchor-id="user-guide">User Guide</h2>
-<section id="install-nin-qfield-on-your-tablet" class="level4">
-<h4 class="anchored" data-anchor-id="install-nin-qfield-on-your-tablet">Install NiN QField on your tablet</h4>
-<p>The <strong>NiN 2.0</strong> QGIS template is uploaded to NINA’s QField Cloud account. For general instructions on QGIS, QField and QField Cloud follow the guide: <a href="intro-to-qfield.qmd">QGIS and QField introduciton</a>.</p>
+<p><strong>Official QGIS installation guide:</strong> <a href="https://www.qgis.org/resources/installation-guide/">https://www.qgis.org/resources/installation-guide/</a></p>
+<p>Short guide on how to install QGIS on Windows and Linux. If you need to install older version of QGIS (e.g.&nbsp;2.18), we recommend using the Nix package manager on Linux.</p>
+<section id="windows-qgis-installation" class="level2">
+<h2 class="anchored" data-anchor-id="windows-qgis-installation">Windows QGIS Installation</h2>
+<p>Install QGIS on Windows using NINA’s Firmaportal or by downloading the installer from the QGIS website or using the OSGeo4W installer.</p>
+</section>
+<section id="linux-qgis-installation" class="level2">
+<h2 class="anchored" data-anchor-id="linux-qgis-installation">Linux QGIS Installation</h2>
+<section id="nix-installation" class="level4">
+<h4 class="anchored" data-anchor-id="nix-installation">Nix Installation</h4>
+<p><a href="https://nix.dev/tutorials/first-steps/">Nix</a> is a package manager that allows you to install software without admin rights. You can install software in a temporary environment or in your personal profile.</p>
+<p><strong>Installation:</strong></p>
 <ol type="1">
-<li><p>Open QField on your tablet and go to <code>QFieldCloud projects</code> &gt; <code>My Projects</code></p></li>
-<li><p>Select the project and the latest version of the project will be downloaded to your tablet.</p>
-<ul>
-<li><strong>nin2_project_name_year</strong>: project specific NiN mapping template.</li>
-<li><strong>nin2_norge_2024</strong>: NiN mapping template for the whole of Norway.</li>
-</ul>
-<p><em>It can take up to several minutes to download your project</em></p></li>
-<li><p>Set your user name in the QField app. This ensures that your name is automatically added to the <code>kartlegger</code> field in the attribute table, every time you map a new naturtype.</p>
-<ul>
-<li>Go to <code>Settings</code> &gt; <code>Settings</code> &gt; <code>Variables</code></li>
-<li>Add a new variable <code>qfield_user_name</code> with your name <code>firstname.lastname</code></li>
-</ul></li>
-<li><p>Read the PDF instructions, especially chapter 3 “Kartlegging av NiN-Naturtyper”</p></li>
+<li><p>Install Portable Nix-Shell</p>
+<p><code>wget https://github.com/DavHau/nix-portable/releases/download/v010/nix-portable -O nix-shell</code></p></li>
+<li><p>Add permissions to Nix-Shell</p>
+<p><code>chmod +x nix-shell</code></p></li>
+<li><p>Start Nix-Shell and Install Software</p>
+<p><code>./nix-shell -p &lt;software-name&gt;</code></p></li>
+<li><p>Start the default Nix-Shell</p>
+<p><code>./nix-shell</code></p>
+<p><strong>Note:</strong> You can define which software is installed in the default nix-shell in the <code>default.nix</code> file.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode nix code-with-copy"><code class="sourceCode nix"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># example default.nix</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span> <span class="va">pkgs</span> <span class="op">?</span> <span class="bu">import</span> &lt;nixpkgs&gt; <span class="op">{}</span> <span class="op">}</span>:</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>pkgs.stdenv.mkDerivation <span class="op">{</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="va">name</span> <span class="op">=</span> <span class="st">"python-environment"</span><span class="op">;</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="va">buildInputs</span> <span class="op">=</span> <span class="kw">with</span> pkgs<span class="op">;</span> <span class="op">[</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    gdal</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    qgis-ltr</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="op">];</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="va">shellHook</span> <span class="op">=</span> <span class="st">''</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="st">    echo "Default Portable nix-shell with latest QGIS:"</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="st">''</span><span class="op">;</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ol>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Software</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Latest QGIS</td>
+<td><code>./nix-shell -p qgis-ltr</code></td>
+</tr>
+<tr class="even">
+<td>QGIS 2.18</td>
+<td><code>./nix-shell -p qgis -I nixpkgs=https://github.com/NixOS/nixpkgs/archive/d0192e295a65dc5688ed360866fff14851148db5.tar.gz</code></td>
+</tr>
+<tr class="odd">
+<td>QGIS 3.22.16</td>
+<td><code>./nix-shell -p qgis-ltr -I nixpkgs=https://github.com/NixOS/nixpkgs/archive/1b7a6a6e57661d7d4e0775658930059b77ce94a4.tar.gz</code></td>
+</tr>
+</tbody>
+</table>
 </section>
-</section>
-<section id="developer-guide" class="level2">
-<h2 class="anchored" data-anchor-id="developer-guide">Developer Guide</h2>
-<section id="how-to-create-a-new-nin-2.0-template-for-a-new-project-area" class="level4">
-<h4 class="anchored" data-anchor-id="how-to-create-a-new-nin-2.0-template-for-a-new-project-area">How to create a new NiN 2.0 template for a new project area?</h4>
-<p>You can create a new template for a new mapping area by using the NiN 2.0 mapping template for the whole of Norway. Here you need to add your study area polygon and offline background maps.</p>
-<ol start="0" type="1">
-<li><p>Read the PDF instructions, especially chapter 2 “Installering og oppstart”.</p></li>
-<li><p>Download the qfield_nin2_norge QField template from <a href="https://github.com/NINAnor/NiN_QGIS_3.x">NiN_QGIS_3.x</a> repository.</p></li>
-<li><p>Create a new polygon layer <code>study_area</code> and save it to <code>vector/%project_name%_misc.gpkg</code> GPKG and add it to the <code>Area</code> group.</p></li>
-<li><p>Download raster files in <code>GeoTIFF</code> format from <a href="https://hoydedata.no/">høydedata.no</a> and <a href="https://www.norgeibilder.no/">norgeibilder.no</a>.</p>
+<section id="ubuntu-installation" class="level3">
+<h3 class="anchored" data-anchor-id="ubuntu-installation">Ubuntu Installation</h3>
+<p>Install directly from ubuntu’s package repo on to your system. Note that you need admin rights to install software using sudo commands.</p>
+<p><strong>Repositories:</strong></p>
 <ul>
-<li>DTMs and DSMs: <a href="https://hoydedata.no/">høydedata.no</a></li>
-<li>Ortophotos (RGB and CIR): <a href="https://www.norgeibilder.no/">norgeibilder.no</a>
-<ul>
-<li>Login with your Geonorge GeoID</li>
-<li>enter study area bounding box coordinates</li>
-<li>Coordinate system: UTM 33</li>
-<li>clip by bounding box</li>
-<li>send order</li>
-</ul></li>
-</ul></li>
-<li><p>Convert your rasters to Cloud Optimized GeoTiffs. Shell scripts can be found <a href="https://github.com/NINAnor/NiN_QGIS_3.x/tree/master/qfield_nin2_norge/scripts">here</a>.</p></li>
-<li><p>Add your downloaded raster files as offline map layers in QField.</p></li>
-<li><p>Upload your new project to QField Cloud and invite the fieldworkers (collaborators) to the project.</p></li>
-</ol>
-</section>
-<section id="change-log" class="level4">
-<h4 class="anchored" data-anchor-id="change-log">Change log:</h4>
-<p>We forked the NiN 2.0 Template from the <a href="https://github.com/geco-nhm/NiN_QGIS_3.x">GitHub</a> repository developed by the University of Oslo. Changes made to orginal template are documented <a href="https://github.com/NINAnor/NiN_QGIS_3.x/blob/master/CHANGELOG.md">here</a>.</p>
-</section>
-<section id="nina-contacts" class="level3">
-<h3 class="anchored" data-anchor-id="nina-contacts">NINA Contacts</h3>
-<div class="columns">
-<div class="column">
-<p><strong>NiN:</strong></p>
-<ul>
-<li>Trond Simensen</li>
-<li>Erik Stange</li>
-<li>Anders Lyngstad</li>
+<li><a href="https://packages.ubuntu.com/">general software</a></li>
+<li><a href="https://launchpad.net/~ubuntugis/+archive/ubuntu/ppa">gis stable</a></li>
+<li><a href="https://launchpad.net/~ubuntugis/+archive/ubuntu/ubuntugis-unstable">gis unstable (beta-versions)</a></li>
 </ul>
-</div><div class="column">
-<p><strong>QGIS/QField Cloud managers:</strong></p>
-<ul>
-<li>Willeke A’Campo</li>
-<li>Stig Claussen</li>
-</ul>
-</div>
-</div>
+<p><strong>Installation:</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>sudo apt update</code></td>
+<td>update all package list</td>
+</tr>
+<tr class="even">
+<td><code>sudo apt install &lt;software-name&gt;</code></td>
+<td>install software</td>
+</tr>
+<tr class="odd">
+<td><code>sudo add-apt-repository ppa:ubuntugis/ppa</code></td>
+<td>add gis repo (not standard installed)</td>
+</tr>
+<tr class="even">
+<td><code>sudo apt list -a qgis</code></td>
+<td>list available versions</td>
+</tr>
+<tr class="odd">
+<td><code>sudo apt install qgis=version-number</code></td>
+<td>install specific version</td>
+</tr>
+</tbody>
+</table>
 
 
 </section>
@@ -797,13 +865,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../data-collection/data-collection.html" class="pagination-link" aria-label="Data Collection">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Data Collection</span>
+      <a href="../project-management/project-management.html" class="pagination-link" aria-label="Project Management">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Project Management</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../data-collection/field-surveys/qfield-bm.html" class="pagination-link" aria-label="Biodiversity Metric 4.0">
-        <span class="nav-page-text"><span class="chapter-title">Biodiversity Metric 4.0</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../qgis/qfield-intro.html" class="pagination-link" aria-label="QField and QCloud setup">
+        <span class="nav-page-text"><span class="chapter-title">QField and QCloud setup</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -812,4 +880,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/NINAnor/EAguide/edit/main/data-collection/field-surveys/qfield-nin.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/NINAnor/EAguide/edit/main/qgis/qgis-installation.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>

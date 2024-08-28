@@ -8,7 +8,7 @@
 
 <meta name="description" content="NINAs Technical Guidebook for Local-Scale Ecosystem Accounting Projects">
 
-<title>QGIS and QField introduction – Local Ecosystem accounts - a technical guidebook</title>
+<title>Background layers – Local Ecosystem accounts - a technical guidebook</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,24 +24,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../data-collection/field-surveys/qfield-nin.html" rel="next">
-<link href="../../data-collection/data-collection.html" rel="prev">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../data-collection/data-collection.html" rel="next">
+<link href="../qgis/qgis-plugins.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../data-collection/data-collection.html">Data Collection</a></li><li class="breadcrumb-item"><a href="../../data-collection/field-surveys/intro-to-qfield.html"><span class="chapter-title">QGIS and QField introduction</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qgis/qgis-installation.html">QGIS</a></li><li class="breadcrumb-item"><a href="../qgis/qgis-background-maps.html"><span class="chapter-title">Background layers</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -97,7 +97,7 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../../">Local Ecosystem accounts - a technical guidebook</a> 
+      <a href="../">Local Ecosystem accounts - a technical guidebook</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/NINAnor/EAguide" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
@@ -135,19 +135,19 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../project-management/project-management.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Project Management</span></a>
+  <a href="../project-management/project-management.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Project Management</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../data-collection/data-collection.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data Collection</span></a>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">QGIS</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -155,50 +155,30 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../data-collection/field-surveys/intro-to-qfield.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">QGIS and QField introduction</span></a>
+  <a href="../qgis/qgis-installation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Install QGIS</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../data-collection/field-surveys/qfield-nin.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">NiN 2.0 Naturtype Mapping</span></a>
+  <a href="../qgis/qfield-intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">QField and QCloud setup</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../data-collection/field-surveys/qfield-bm.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Biodiversity Metric 4.0</span></a>
+  <a href="../qgis/qgis-plugins.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">QGIS plugins</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../data-collection/field-surveys/qfield-bgf.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Bluegreen Factor</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../data-collection/field-surveys/rshiny-carbonviewer.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">CarbonViewer</span></a>
+  <a href="../qgis/qgis-background-maps.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Background layers</span></a>
   </div>
 </li>
       </ul>
   </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../data-analysis/data-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data analysis</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../data-publishing/data-publishing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Publishing</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../documentation/documentation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Documentation</span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">FAIR Data Management</span></a>
+            <a href="../data-collection/data-collection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Collection</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -206,20 +186,45 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../fair-data/fair-principles.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">FAIR Principles</span></a>
+  <a href="../data-collection/field-surveys/qfield-nin.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">NiN 2.0 Naturtype Mapping</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../fair-data/naming-convention.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Naming Convention</span></a>
+  <a href="../data-collection/field-surveys/qfield-bm.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Biodiversity Metric 4.0</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data-collection/field-surveys/qfield-bgf.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Bluegreen Factor</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data-collection/field-surveys/rshiny-carbonviewer.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">CarbonViewer</span></a>
   </div>
 </li>
       </ul>
   </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data-analysis/data-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Analysis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data-publishing/data-publishing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Publishing</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../documentation/documentation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Documentation</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Appendices</span></a>
+ <span class="menu-text">FAIR Data Management</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -227,7 +232,28 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../appendix/appendix-notes.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Additional Notes</span></a>
+  <a href="../fair-data/fair-principles.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">FAIR Principles</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../fair-data/naming-convention.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Naming Convention</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendix/appendix-notes.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Additional Notes</span></a>
   </div>
 </li>
       </ul>
@@ -237,25 +263,15 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul class="collapse">
-  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link active" data-scroll-target="#prerequisites">Prerequisites</a></li>
-  <li><a href="#download-a-project-from-qfield-cloud" id="toc-download-a-project-from-qfield-cloud" class="nav-link" data-scroll-target="#download-a-project-from-qfield-cloud">Download a project from QField Cloud</a></li>
-  <li><a href="#manual-installation-of-a-qfield-project" id="toc-manual-installation-of-a-qfield-project" class="nav-link" data-scroll-target="#manual-installation-of-a-qfield-project">Manual installation of a QField project</a></li>
-  <li><a href="#overview-of-ninanor-qfield-cloud-projects" id="toc-overview-of-ninanor-qfield-cloud-projects" class="nav-link" data-scroll-target="#overview-of-ninanor-qfield-cloud-projects">Overview of NINAnor QField Cloud projects</a></li>
-  <li><a href="#official-documentation" id="toc-official-documentation" class="nav-link" data-scroll-target="#official-documentation">Official Documentation</a></li>
-  </ul>
-<div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/NINAnor/EAguide/edit/main/data-collection/field-surveys/intro-to-qfield.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../data-collection/data-collection.html">Data Collection</a></li><li class="breadcrumb-item"><a href="../../data-collection/field-surveys/intro-to-qfield.html"><span class="chapter-title">QGIS and QField introduction</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qgis/qgis-installation.html">QGIS</a></li><li class="breadcrumb-item"><a href="../qgis/qgis-background-maps.html"><span class="chapter-title">Background layers</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-intro-to-qfield" class="quarto-section-identifier"><span class="chapter-title">QGIS and QField introduction</span></span></h1>
+<h1 class="title"><span class="chapter-title">Background layers</span></h1>
 </div>
 
 
@@ -272,147 +288,57 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>QGIS</strong> is an open-source desktop GIS application and <strong>QField</strong> is it’s mobile twin that allows you to take your QGIS projects into the field and collect data. <strong>QField Cloud</strong> is a cloud-based service that allows you to synchronize your QGIS projects with your QField projects.</p>
-<p>Several QField projects exists which are useful within ecosystem accounting. A QField project (also called a QField or QGIS template) is a QGIS project file made in QGIS that is optimized for use in the QField app. This project file is transferred to your mobile device and opened in the QField app.</p>
-<p>The page <a href="../data-collection.html#sec-field-surveys">Field Surveys</a> provides a list of QField projects that are useful for ecosystem accounting and their specific instructions on how to install and use them. This page provides a general introduction to QGIS, QField and QField Cloud and how they can be used to transfer your project data between QGIS and QField.</p>
-<section id="prerequisites" class="level2">
-<h2 class="anchored" data-anchor-id="prerequisites">Prerequisites</h2>
-<ul>
-<li><a href="https://qgis.org/en/site/index.html">QGIS v3.x</a> installed on your computer.</li>
-<li><a href="https://qfield.org/">QField</a> installed on your device.
-<ul>
-<li><a href="https://play.google.com/store/apps/details?id=ch.opengis.qfield">Google Play</a></li>
-<li><a href="https://apps.apple.com/us/app/qfield-for-qgis/id1531726814">Apple App Store</a>.</li>
-</ul></li>
-<li>A <a href="https://qfield.cloud/">QField Cloud</a> account.
-<ul>
-<li>Sign up for an account using your NINA email address <a href="https://app.qfield.cloud/accounts/signup/">here</a>.</li>
-<li>Send and email to NINA’s <strong>datahjelp</strong> for access to the NINAnor QField Cloud organization and ask to be added to the <em>Fieldwork</em> group.</li>
-</ul></li>
-</ul>
-<p>Once you have installed QGIS on your computer. Go to <em>Plugins &gt; Manage and Install Plugins &gt; All</em> and install the following plugins in QGIS:</p>
-<ul>
-<li><a href="https://plugins.qgis.org/plugins/qfieldsync/">QFieldSync</a>: a QGIS plugin that allows you to synchronize your QGIS projects with QField Cloud.</li>
-</ul>
-<p>Other useful plugins:</p>
-<ul>
-<li><a href="https://plugins.qgis.org/plugins/get_nib-main/">NiB-ortofoto-prosjekt</a>: a Q GIS plugin that allows you to add high-resolution aerial photos from the Norwegian Mapping Authority (Kartverket) and use them as a background (WMS) layer in your QGIS project. It finds all available aerial photos for the area you are working in and adds them to your project.</li>
-</ul>
-</section>
-<section id="download-a-project-from-qfield-cloud" class="level2">
-<h2 class="anchored" data-anchor-id="download-a-project-from-qfield-cloud">Download a project from QField Cloud</h2>
-<section id="download-to-qfield-application" class="level4">
-<h4 class="anchored" data-anchor-id="download-to-qfield-application">Download to QField application</h4>
-<ol type="1">
-<li>Ensure that the mobile QField application is installed on your device.</li>
-<li>Ensure that you have enough free space (&gt; 3 GB).</li>
-<li>Open the QField App &gt; <code>QFieldCloud projects</code></li>
-<li>Select a project from <code>NINAnor</code> or from your personal user.</li>
-<li>Now your Cloud project will open within your app!</li>
-</ol>
-</section>
-<section id="download-to-qgis-desktop" class="level4">
-<h4 class="anchored" data-anchor-id="download-to-qgis-desktop">Download to QGIS Desktop</h4>
-<ol type="1">
-<li>Ensure QField Sync Plugin is installed and enabled.</li>
-<li>Login to QField cloud: click on the blue <code>Cloud-icon</code>.</li>
-<li>Choose your project from your project overview</li>
-<li>Click on the <code>Folder-icon</code> to either open your existing local project or create a local version of the project.</li>
-<li>Now your Cloud project will open within your QGIS desktop version!</li>
-</ol>
-<br>
-<figure style="width: 100%; max-width: 650px; display: block; margin-left: auto; margin-right: auto;" class="figure">
-<img src="qfield_cloud_desktop.PNG" alt="Download QField Cloud project to QGIS desktop." style="width: 100%; height: auto;" class="figure-img">
-<figcaption style="text-align: center;">
-Download QField Cloud project to QGIS desktop.
-</figcaption>
-</figure>
-</section>
-</section>
-<section id="manual-installation-of-a-qfield-project" class="level2">
-<h2 class="anchored" data-anchor-id="manual-installation-of-a-qfield-project">Manual installation of a QField project</h2>
-<p>Manually add a QField project to your mobile device:</p>
-<ol type="1">
-<li>Package your QGIS project to a ZIP-file using the <code>Package Project for QField</code> tool.</li>
-<li>Connect your Android device to your PC using a USB cable.</li>
-<li>Copy and extract the ZIP file from your PC to your tablet/phone:
-<ul>
-<li>Samsung phone: <code>This PC\Samsung XXX\Internal storage\Documents\QField_zip_folder</code></li>
-<li>Samsung tablet: <code>This PC\Tablet\Documents\QField_zip_folder</code></li>
-</ul></li>
-<li>Open the QField app on your mobile device.
-<ul>
-<li>Click on <code>Open local file</code></li>
-<li>Click on the green <code>plus sign</code></li>
-<li>Click on <code>Import project from folder</code></li>
-<li>Navigate to the path where you extracted the QField folder in step 3.</li>
-<li>Select the folder and choose <code>Use this folder</code>.</li>
-<li>The QField project folder is now availalbe in <code>Imported Projects</code></li>
-<li>Click on <code>Imported Projects</code> &gt; <code>Project Folder</code> &gt; the project located under <code>Projects</code></li>
-</ul></li>
-<li>Now the project will open within your app! The next time you can find it under <code>Recent Projects</code>.</li>
-</ol>
-<br>
-<figure style="width: 100%; max-width: 650px; display: block; margin-left: auto; margin-right: auto;" class="figure">
-<img src="qfield_cloud_phone.PNG" alt="Manually add a QField project to your mobile device." style="width: 100%; height: auto;" class="figure-img">
-<figcaption style="text-align: center;">
-Manually add a QField project to your mobile device.
-</figcaption>
-</figure>
-</section>
-<section id="overview-of-ninanor-qfield-cloud-projects" class="level2">
-<h2 class="anchored" data-anchor-id="overview-of-ninanor-qfield-cloud-projects">Overview of NINAnor QField Cloud projects</h2>
+<p>A list of usefull <em>WMS/WMTS/XYZ</em> links that can be added as online background layers in QGIS.</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Project name</th>
-<th>Description</th>
+<th><small><strong>Name</strong></small></th>
+<th><small><strong>description</strong></small></th>
+<th><small><strong>url</strong></small></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="https://app.qfield.cloud/a/NINAnor/bm_2024_ecogaps/">bm_2024_ecogaps</a></td>
-<td>Biodiversity Metrics 4.0 mapping in Nordre Follo. EcoGaps-project.</td>
+<td><small><strong>Kartverket N50 topo</strong></small></td>
+<td><small>Topographic map of Norway.</small></td>
+<td><small><a href="http://opencache.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=topo4&amp;zoom=%7Bz%7D&amp;x=%7Bx%7D&amp;y=%7By%7D" class="uri">http://opencache.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=topo4&amp;zoom={z}&amp;x={x}&amp;y={y}</a></small></td>
 </tr>
 <tr class="even">
-<td><a href="https://app.qfield.cloud/a/NINAnor/nin2_2024_ecogaps/">nin2_2024_ecogaps</a></td>
-<td>NiN 2.0 naturetype mapping in Nordre Follo. EcoGaps-project.</td>
+<td><small><strong>NiB Ortomosaic</strong></small></td>
+<td><small>Norge i Bilder. Orthomosaic of Norway.</small></td>
+<td><small><a href="http://opencache.statkart.no/gatekeeper/gk/gk.open_nib_utm33_wmts_v2" class="uri">http://opencache.statkart.no/gatekeeper/gk/gk.open_nib_utm33_wmts_v2</a></small></td>
 </tr>
 <tr class="odd">
-<td><a href="https://app.qfield.cloud/a/NINAnor/nin2_2024_envisol/">nin2_2024_envisol</a></td>
-<td>NiN 2.0 naturetype mapping in Stor Elvdal. EnviSol-project.</td>
+<td><small><strong>Overflatemodel (DOM)</strong></small></td>
+<td><small>Digital surface model of Norway.</small></td>
+<td><small><a href="https://wms.geonorge.no/skwms1/wms.hoyde-dom" class="uri">https://wms.geonorge.no/skwms1/wms.hoyde-dom</a></small></td>
 </tr>
 <tr class="even">
-<td><a href="https://app.qfield.cloud/a/NINAnor/nin2_2024_norge/">nin2_2024_norge</a></td>
-<td>NiN 2.0 naturetype mapping. A template for the whole of Norway.</td>
+<td><small><strong>Terrengmodell (DTM)</strong></small></td>
+<td><small>Digital terrain model of Norway.</small></td>
+<td><small><a href="https://wms.geonorge.no/skwms1/wms.hoyde-dtm" class="uri">https://wms.geonorge.no/skwms1/wms.hoyde-dtm</a></small></td>
+</tr>
+<tr class="odd">
+<td><small><strong>Felles KartdataBase (FKB)</strong></small></td>
+<td><small>Common map data base of Norway with among others building, roads and landuse data.</small></td>
+<td><small><a href="https://openwms.statkart.no/skwms1/wms.fkb" class="uri">https://openwms.statkart.no/skwms1/wms.fkb</a></small></td>
+</tr>
+<tr class="even">
+<td><small><strong>Matrikkel</strong></small></td>
+<td><small>Cadastre data of Norway.</small></td>
+<td><small><a href="https://openwms.statkart.no/skwms1/wms.matrikkel" class="uri">https://openwms.statkart.no/skwms1/wms.matrikkel</a></small></td>
+</tr>
+<tr class="odd">
+<td><small><strong>Grunnkart for Arealregnskap</strong></small></td>
+<td><small>Base map for area accounting in Norway.</small></td>
+<td><small><a href="https://wms.nibio.no/cgi-bin/arealregnskap_grunnkart" class="uri">https://wms.nibio.no/cgi-bin/arealregnskap_grunnkart</a></small></td>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="official-documentation" class="level2">
-<h2 class="anchored" data-anchor-id="official-documentation">Official Documentation</h2>
-<p>Official QField documentation: <a href="https://docs.qfield.org/">docs.qfield.org</a></p>
-<section id="usefull-how-to-guides" class="level4">
-<h4 class="anchored" data-anchor-id="usefull-how-to-guides">Usefull how to guides:</h4>
-<ul>
-<li>Map controls: <a href="https://docs.qfield.org/how-to/map-interaction/">map-interaction</a>
-<ul>
-<li>visibility of layers</li>
-<li>select features</li>
-</ul></li>
-<li>Digitize features: <a href="https://docs.qfield.org/how-to/digitize/">digitize</a>
-<ul>
-<li>Note that you <strong>must</strong> be in editing mode to change feature and their attributes, otherwise your changes are not saved!</li>
-</ul></li>
-<li>Attribute forms: <a href="https://docs.qfield.org/how-to/attributes-form/">attributes-form</a>
-<ul>
-<li>How to create attribute forms in QGIS Desktop</li>
-</ul></li>
-</ul>
+<p><br></p>
+<p><em>Please add more background layers to this list by clicking on:</em> <code>Edit this page.</code></p>
 
 
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -837,13 +763,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../data-collection/data-collection.html" class="pagination-link" aria-label="Data Collection">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Data Collection</span>
+      <a href="../qgis/qgis-plugins.html" class="pagination-link" aria-label="QGIS plugins">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">QGIS plugins</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../data-collection/field-surveys/qfield-nin.html" class="pagination-link" aria-label="NiN 2.0 Naturtype Mapping">
-        <span class="nav-page-text"><span class="chapter-title">NiN 2.0 Naturtype Mapping</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../data-collection/data-collection.html" class="pagination-link" aria-label="Data Collection">
+        <span class="nav-page-text">Data Collection</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -852,4 +778,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/NINAnor/EAguide/edit/main/data-collection/field-surveys/intro-to-qfield.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/NINAnor/EAguide/edit/main/qgis/qgis-background-maps.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>

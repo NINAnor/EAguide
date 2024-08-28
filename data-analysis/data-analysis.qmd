@@ -1,4 +1,4 @@
-# Data analysis {#sec-data-analysis}
+# Data Analysis {#sec-data-analysis}
 
 - comparison of methods
 - refer to previous project methods

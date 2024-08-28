@@ -38,6 +38,8 @@ book:
         - fair-data/naming-convention.qmd
   appendices:
     - appendix/appendix-notes.qmd
+  sidebar:
+    collapse-level: 1
     
 format:
   html: 

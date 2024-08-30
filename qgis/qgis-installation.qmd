@@ -9,7 +9,7 @@ Install QGIS on Windows using NINA's Firmaportal or by downloading the installer
 
 ## Linux QGIS Installation
 
-#### Nix Installation
+### Nix Installation
 
 [Nix](https://nix.dev/tutorials/first-steps/) is a package manager that allows you to install software without admin rights. You can install software in a temporary environment or in your personal profile.
 

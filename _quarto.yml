@@ -1,7 +1,7 @@
 project:
   type: book
   output-dir: _book
-  
+
 book:
   title: "Local Ecosystem accounts - a technical guidebook" 
   subtitle: "Finskala Naturregnskap - en teknisk håndbok"
@@ -40,7 +40,10 @@ book:
     - appendix/appendix-notes.qmd
   sidebar:
     collapse-level: 1
-    
+
+margin-footer: | 
+  <small><em style="font-size: 0.75em;">Content on this page has been partially created using AI services from OpenAI and GitHub Copilot. All content is quality assured by NINA employees before publication.</em></small>
+
 format:
   html: 
     theme: 
@@ -48,7 +51,7 @@ format:
     - NINAstyle.scss
     number-sections: false 
     code-link: true
-    toc-depth: 2
+    toc-depth: 3
 
 bibliography: references.bib
 csl: NINArefStyle.csl

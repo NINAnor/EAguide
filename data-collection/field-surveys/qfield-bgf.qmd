@@ -1,8 +1,47 @@
-# Bluegreen Factor 
+# Bluegreen Factor (BGF)
 
-*short description here*
+The Bluegreen Factor (BGF) is a norm promoting blue-green development in municipal building zones by assesses the quality of blue-green structures, which includes water bodies like lakes and rivers (**blue**) and natural areas such as parks and gardens (**green**). The BGF norm weights blue-green structures and measures. The sum of these weighted values, divided by the area of the plot, gives the BGF value for the project. Traditionally, this process was done by manually recording the area of each blue-green structure and the count of each measure in a spreadsheet. The BGF-QGIS app automates this task by allowing the user to map and digitize blue-green structure typologies and measures. The app calculates the area of each blue-green structure and counts the number of measures. The user can then choose a BGF norm or define a custom norm. The total BGF value for the project area is calculated and displayed in the app. 
 
-### NINA Contacts
+The app supports the following norms: 
+
+- **BGF Oslo 2023:** [Norm for vegetasjon og vannhåndtering (blågrønn faktor)](https://www.oslo.kommune.no/plan-bygg-og-eiendom/planer-normer-og-veiledere/kommunale-normer/#toc-5)
+- **BGF Standard Norge 2020:** [NS 3845:2020](https://online.standard.no/nb/ns-3845-2020)
+- **Custom user-defined norm**: the user manually defines the weights for the different blue-green structures and measures inside the app. 
+
+**Cost calculation of Blue-Green Infrastructure**
+
+The BGF-QGIS app integrated a cost module which calculates the investment and maintenance cost per blue-green structure and measures as well as for the total project area. 
+
+*Bart add more text here*
+
+## BGF-QGIS User Guide
+
+### Getting Started 
+
+1. Install QGIS:
+2. Install the required plugins:
+3. Download the BGF-QGIS app from GitHub:
+
+You are all set up and can now open the project!
+
+### Background Maps 
+
+### Map the Project Area
+
+### Map Blue-Green Structures
+
+### Calculate BGF 
+
+### Calculate the Cost for BG-infrastructure
+
+### Export Data 
+
+
+
+
+
+
+## NINA Contacts
 
 ::: {.columns}
 ::: {.column}
@@ -11,12 +50,5 @@
 - David Barton
 - Bart Immerzeel
 - Maria Korkou
-:::
-
-::: {.column}
-**QGIS/QField Cloud Managers:**
-
-- Willeke A'Campo 
-- Stig Claussen
 :::
 :::

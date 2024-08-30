@@ -208,12 +208,34 @@
   {
     "objectID": "data-collection/field-surveys/qfield-bgf.html",
     "href": "data-collection/field-surveys/qfield-bgf.html",
-    "title": "Bluegreen Factor",
+    "title": "Bluegreen Factor (BGF)",
     "section": "",
-    "text": "short description here\n\nNINA Contacts\n\n\nBGF:\n\nDavid Barton\nBart Immerzeel\nMaria Korkou\n\n\nQGIS/QField Cloud Managers:\n\nWilleke A’Campo\nStig Claussen",
+    "text": "BGF-QGIS User Guide",
     "crumbs": [
       "Data Collection",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Bluegreen Factor</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Bluegreen Factor (BGF)</span>"
+    ]
+  },
+  {
+    "objectID": "data-collection/field-surveys/qfield-bgf.html#bgf-qgis-user-guide",
+    "href": "data-collection/field-surveys/qfield-bgf.html#bgf-qgis-user-guide",
+    "title": "Bluegreen Factor (BGF)",
+    "section": "",
+    "text": "Getting Started\n\nInstall QGIS:\nInstall the required plugins:\nDownload the BGF-QGIS app from GitHub:\n\nYou are all set up and can now open the project!\n\n\nBackground Maps\n\n\nMap the Project Area\n\n\nMap Blue-Green Structures\n\n\nCalculate BGF\n\n\nCalculate the Cost for BG-infrastructure\n\n\nExport Data",
+    "crumbs": [
+      "Data Collection",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Bluegreen Factor (BGF)</span>"
+    ]
+  },
+  {
+    "objectID": "data-collection/field-surveys/qfield-bgf.html#nina-contacts",
+    "href": "data-collection/field-surveys/qfield-bgf.html#nina-contacts",
+    "title": "Bluegreen Factor (BGF)",
+    "section": "NINA Contacts",
+    "text": "NINA Contacts\n\n\nBGF:\n\nDavid Barton\nBart Immerzeel\nMaria Korkou",
+    "crumbs": [
+      "Data Collection",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Bluegreen Factor (BGF)</span>"
     ]
   },
   {

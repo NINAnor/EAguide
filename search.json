@@ -210,7 +210,18 @@
     "href": "data-collection/field-surveys/qfield-bgf.html",
     "title": "Bluegreen Factor (BGF)",
     "section": "",
-    "text": "BGF-QGIS User Guide",
+    "text": "BGF Norms and calculation methods\nThe app supports the following norms:",
+    "crumbs": [
+      "Data Collection",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Bluegreen Factor (BGF)</span>"
+    ]
+  },
+  {
+    "objectID": "data-collection/field-surveys/qfield-bgf.html#bgf-norms-and-calculation-methods",
+    "href": "data-collection/field-surveys/qfield-bgf.html#bgf-norms-and-calculation-methods",
+    "title": "Bluegreen Factor (BGF)",
+    "section": "",
+    "text": "BGF PBE 2023: Norm for vegetasjon og vannhåndtering (blågrønn faktor)\nBGF Standard Norge 2020: NS 3845:2020\nCustom user-defined norm: the user manually defines the weights for the different blue-green structures and measures inside the app.\n\n\nDifferences between BGF PBE 2023 and SN 2020\n\nGreen terrain:\n\nPBE 2023: Distinguishes between both new and existing vegetation and surface layer.\nSN 2020: Does not distuinguish between vegetation and surface layer. Existing vegetation is factored in as a additional weight.\n\nGreen Roofs:\n\nPBE 2023: Classifies green roofs by growing medium with specific growing ranges per class.\nSN 2020: Uses slightly different growing ranges and weights per class for green roofs.\n\nGreen Walls:\n\nPBE 2023: Distinguishes between vertical urban agriculture and climbing plants.\nSN 2020: Does not distinguish between vertical urban agriculture and climbing plants, and uses slightly different weights.\n\nSurface Water:\n\nNo differences in the classification, but PBE 2023 weights surface water higher than SN 2020.\n\nSurface depsression:\n\nPBE 2023: Classifies surface depression but does not classify additional measures.\nSN 2020: Classifies surface depression and factores in the mainfunction: infiltration or reduction/delay of runoff.\n\nPermeable and Impermeable surfaces:\n\nPBE 2023: Classifies permeable and impermeable surfaces and subclassifies permeable surfaces into: permeable green, semi-permeable gray and partially permeable gray surfaces.\nSN 2020: Classifies permeable and impermeable surfaces, but does not subclassify permeable surfaces.\n\n\nA crosswalk between the two norms is provided in the BGF-QGIS app, and can be downloaded here.",
     "crumbs": [
       "Data Collection",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Bluegreen Factor (BGF)</span>"
@@ -220,8 +231,8 @@
     "objectID": "data-collection/field-surveys/qfield-bgf.html#bgf-qgis-user-guide",
     "href": "data-collection/field-surveys/qfield-bgf.html#bgf-qgis-user-guide",
     "title": "Bluegreen Factor (BGF)",
-    "section": "",
-    "text": "Getting Started\n\nInstall QGIS:\nInstall the required plugins:\nDownload the BGF-QGIS app from GitHub:\n\nYou are all set up and can now open the project!\n\n\nBackground Maps\n\n\nMap the Project Area\n\n\nMap Blue-Green Structures\n\n\nCalculate BGF\n\n\nCalculate the Cost for BG-infrastructure\n\n\nExport Data",
+    "section": "BGF-QGIS User Guide",
+    "text": "BGF-QGIS User Guide\n\nGetting Started\n\nInstall QGIS:\nInstall the required plugins:\nDownload the BGF-QGIS app from GitHub:\n\nYou are all set up and can now open the project!\n\n\nBackground Maps\n\n\nMap the Project Area\n\n\nMap Blue-Green Structures\n\n\nCalculate BGF\n\n\nCalculate the Cost for BG-infrastructure\n\n\nExport Data",
     "crumbs": [
       "Data Collection",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Bluegreen Factor (BGF)</span>"

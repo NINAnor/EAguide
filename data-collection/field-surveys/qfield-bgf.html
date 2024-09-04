@@ -268,7 +268,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#bgf-qgis-user-guide" id="toc-bgf-qgis-user-guide" class="nav-link active" data-scroll-target="#bgf-qgis-user-guide">BGF-QGIS User Guide</a>
+  <li><a href="#bgf-norms-and-calculation-methods" id="toc-bgf-norms-and-calculation-methods" class="nav-link active" data-scroll-target="#bgf-norms-and-calculation-methods">BGF Norms and calculation methods</a></li>
+  <li><a href="#bgf-qgis-user-guide" id="toc-bgf-qgis-user-guide" class="nav-link" data-scroll-target="#bgf-qgis-user-guide">BGF-QGIS User Guide</a>
   <ul class="collapse">
   <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a></li>
   <li><a href="#background-maps" id="toc-background-maps" class="nav-link" data-scroll-target="#background-maps">Background Maps</a></li>
@@ -307,15 +308,53 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>The Bluegreen Factor (BGF) is a norm promoting blue-green development in municipal building zones by assesses the quality of blue-green structures, which includes water bodies like lakes and rivers (<strong>blue</strong>) and natural areas such as parks and gardens (<strong>green</strong>). The BGF norm weights blue-green structures and measures. The sum of these weighted values, divided by the area of the plot, gives the BGF value for the project. Traditionally, this process was done by manually recording the area of each blue-green structure and the count of each measure in a spreadsheet. The BGF-QGIS app automates this task by allowing the user to map and digitize blue-green structure typologies and measures. The app calculates the area of each blue-green structure and counts the number of measures. The user can then choose a BGF norm or define a custom norm. The total BGF value for the project area is calculated and displayed in the app.</p>
-<p>The app supports the following norms:</p>
-<ul>
-<li><strong>BGF Oslo 2023:</strong> <a href="https://www.oslo.kommune.no/plan-bygg-og-eiendom/planer-normer-og-veiledere/kommunale-normer/#toc-5">Norm for vegetasjon og vannhåndtering (blågrønn faktor)</a></li>
-<li><strong>BGF Standard Norge 2020:</strong> <a href="https://online.standard.no/nb/ns-3845-2020">NS 3845:2020</a></li>
-<li><strong>Custom user-defined norm</strong>: the user manually defines the weights for the different blue-green structures and measures inside the app.</li>
-</ul>
 <p><strong>Cost calculation of Blue-Green Infrastructure</strong></p>
 <p>The BGF-QGIS app integrated a cost module which calculates the investment and maintenance cost per blue-green structure and measures as well as for the total project area.</p>
 <p><em>Bart add more text here</em></p>
+<section id="bgf-norms-and-calculation-methods" class="level2">
+<h2 class="anchored" data-anchor-id="bgf-norms-and-calculation-methods">BGF Norms and calculation methods</h2>
+<p>The app supports the following norms:</p>
+<ul>
+<li><strong>BGF PBE 2023:</strong> <a href="https://www.oslo.kommune.no/plan-bygg-og-eiendom/planer-normer-og-veiledere/kommunale-normer/#toc-5">Norm for vegetasjon og vannhåndtering (blågrønn faktor)</a></li>
+<li><strong>BGF Standard Norge 2020:</strong> <a href="https://online.standard.no/nb/ns-3845-2020">NS 3845:2020</a></li>
+<li><strong>Custom user-defined norm</strong>: the user manually defines the weights for the different blue-green structures and measures inside the app.</li>
+</ul>
+<section id="differences-between-bgf-pbe-2023-and-sn-2020" class="level4">
+<h4 class="anchored" data-anchor-id="differences-between-bgf-pbe-2023-and-sn-2020">Differences between BGF PBE 2023 and SN 2020</h4>
+<ul>
+<li><strong>Green terrain:</strong>
+<ul>
+<li><strong>PBE 2023:</strong> Distinguishes between both new and existing vegetation and surface layer.</li>
+<li><strong>SN 2020:</strong> Does not distuinguish between vegetation and surface layer. Existing vegetation is factored in as a additional weight.</li>
+</ul></li>
+<li><strong>Green Roofs:</strong>
+<ul>
+<li><strong>PBE 2023:</strong> Classifies green roofs by growing medium with specific growing ranges per class.</li>
+<li><strong>SN 2020:</strong> Uses slightly different growing ranges and weights per class for green roofs.</li>
+</ul></li>
+<li><strong>Green Walls:</strong>
+<ul>
+<li><strong>PBE 2023:</strong> Distinguishes between vertical urban agriculture and climbing plants.</li>
+<li><strong>SN 2020:</strong> Does not distinguish between vertical urban agriculture and climbing plants, and uses slightly different weights.</li>
+</ul></li>
+<li><strong>Surface Water</strong>:
+<ul>
+<li>No differences in the classification, but <strong>PBE 2023</strong> weights surface water higher than <strong>SN 2020</strong>.</li>
+</ul></li>
+<li><strong>Surface depsression:</strong>
+<ul>
+<li><strong>PBE 2023:</strong> Classifies surface depression but does not classify additional measures.</li>
+<li><strong>SN 2020:</strong> Classifies surface depression and factores in the mainfunction: infiltration or reduction/delay of runoff.</li>
+</ul></li>
+<li><strong>Permeable and Impermeable surfaces:</strong>
+<ul>
+<li><strong>PBE 2023:</strong> Classifies permeable and impermeable surfaces and subclassifies permeable surfaces into: permeable green, semi-permeable gray and partially permeable gray surfaces.</li>
+<li><strong>SN 2020:</strong> Classifies permeable and impermeable surfaces, but does not subclassify permeable surfaces.</li>
+</ul></li>
+</ul>
+<p>A crosswalk between the two norms is provided in the BGF-QGIS app, and can be downloaded <a href="">here</a>.</p>
+</section>
+</section>
 <section id="bgf-qgis-user-guide" class="level2">
 <h2 class="anchored" data-anchor-id="bgf-qgis-user-guide">BGF-QGIS User Guide</h2>
 <section id="getting-started" class="level3">

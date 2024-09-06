@@ -272,7 +272,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#bgf-qgis-user-guide" id="toc-bgf-qgis-user-guide" class="nav-link" data-scroll-target="#bgf-qgis-user-guide">BGF-QGIS User Guide</a>
   <ul class="collapse">
   <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a></li>
-  <li><a href="#background-maps" id="toc-background-maps" class="nav-link" data-scroll-target="#background-maps">Background Maps</a></li>
   <li><a href="#map-the-project-area" id="toc-map-the-project-area" class="nav-link" data-scroll-target="#map-the-project-area">Map the Project Area</a></li>
   <li><a href="#map-blue-green-structures" id="toc-map-blue-green-structures" class="nav-link" data-scroll-target="#map-blue-green-structures">Map Blue-Green Structures</a></li>
   <li><a href="#calculate-bgf" id="toc-calculate-bgf" class="nav-link" data-scroll-target="#calculate-bgf">Calculate BGF</a></li>
@@ -360,17 +359,72 @@ ul.task-list li input[type="checkbox"] {
 <section id="getting-started" class="level3">
 <h3 class="anchored" data-anchor-id="getting-started">Getting Started</h3>
 <ol type="1">
-<li>Install QGIS:</li>
-<li>Install the required plugins:</li>
-<li>Download the BGF-QGIS app from GitHub:</li>
+<li><a href="../../qgis/qgis-installation.html">Install QGIS</a></li>
+<li><a href="../../qgis/qgis-plugins.html">Install</a> the required plugins</li>
+<li>Download or clone the BGF-QGIS app from GitHub: <a href="https://github.com/ac-willeke/BGF-QGIS_3.x">BGF-QGIS_3.x</a></li>
 </ol>
 <p>You are all set up and can now open the project!</p>
+<p>Open the BGF-QGIS project in QGIS: <code>Project -&gt; Open</code></p>
+<section id="configure-the-project" class="level4">
+<h4 class="anchored" data-anchor-id="configure-the-project">Configure the Project</h4>
+<p>Configure the <strong>project settings</strong>: <code>Project -&gt; Properties</code></p>
+<ul>
+<li>Set the project title: <code>-&gt; General</code></li>
+<li>Set the project units: <code>-&gt; General</code>
+<ul>
+<li>Default: meters</li>
+</ul></li>
+<li>Set the title, author and abstract: <code>-&gt; Metadata</code>:</li>
+<li>Set the project CRS to the desired coordinate reference system: <code>-&gt; CRS</code>
+<ul>
+<li>Default: EPSG:25832 (ETRS89 / UTM zone 32N)</li>
+</ul></li>
+</ul>
 </section>
-<section id="background-maps" class="level3">
-<h3 class="anchored" data-anchor-id="background-maps">Background Maps</h3>
+<section id="background-maps" class="level4">
+<h4 class="anchored" data-anchor-id="background-maps">Background Maps</h4>
+<p>The BGF-QGIS app provides online <a href=".../qgis/qgis-background-maps.qmd">background maps</a> for the whole of Norway under the group “Online Grunnkart” in the QGIS Layer Panel. The user can also add additional WMS layers by selecting <code>Layer -&gt; Add Layer -&gt; Add WMS/WMTS Layer</code>.</p>
+<p>It is recommended to download offline maps for the project area to ensure that the app works offline, and to make it easier to digitize blue-green structures by snapping to the background map.</p>
+<p><strong>Download offline maps</strong>:</p>
+<ul>
+<li><code>Layer -&gt; Add Layer -&gt; Add Raster Layer/Add Vector Layer</code></li>
+<li>It is recommended to download the following layers:
+<ul>
+<li>FKB bygning - bygning_omrade: <a href="https://kartkatalog.geonorge.no/metadata/fkb-bygning/8b4304ea-4fb0-479c-a24d-fa225e2c6e97">GeoNorge - FKB bygning</a></li>
+<li>Matrikkelen Eiendomskart teig: <a href="https://kartkatalog.geonorge.no/metadata/matrikkelen-eiendomskart-teig/74340c24-1c8a-4454-b813-bfe498e80f16?search=teig">GeoNorge - Matrikkelen</a></li>
+<li>Tree crown polygons for your municipality if available.
+<ul>
+<li><a href="maps-test.nina.no">Oslo Trekroner 2021</a></li>
+</ul></li>
+</ul></li>
+</ul>
+<div class="note">
+<p><strong>Note</strong> that for offline use of the BGF-QGIS app. You must remove the online background maps (WMS-layers) from the QGIS project, otherwise your QGIS project is not able to work offline. Do this BEFORE going offline or into flightmode.</p>
+</div>
+</section>
+<section id="snapping-options" class="level4">
+<h4 class="anchored" data-anchor-id="snapping-options">Snapping Options</h4>
+<p>Configure <strong>snapping options</strong>: <code>Settings -&gt; Snapping Options</code></p>
+<ul>
+<li>Enable snapping options for the project.</li>
+<li>Recommended snapping tolerance is 10 pixels.</li>
+<li>Set the snapping mode to <code>Vertex</code> and <code>Segment</code>. This allows you to snap to the other BGF typology polygons, the offline background map layers and the project area boundary.</li>
+<li>Enable the <code>Avoid intersection</code> option for the layer <code>BGF Typologi</code>. This prevents the creation of overlapping polygons and automatically cuts the new polygon along the boundary of the existing polygon.</li>
+</ul>
+<br>
+<figure style="width: 100%; max-width: 650px; display: block; margin-left: auto; margin-right: auto;" class="figure">
+<img src="bgf_qgis_snapping.PNG" alt="Recommended snapping options" style="width: 100%; height: auto;" class="figure-img">
+<figcaption style="text-align: center;">
+Recommended snapping options.
+</figcaption>
+</figure>
+</section>
 </section>
 <section id="map-the-project-area" class="level3">
 <h3 class="anchored" data-anchor-id="map-the-project-area">Map the Project Area</h3>
+<ul>
+<li>Activate</li>
+</ul>
 </section>
 <section id="map-blue-green-structures" class="level3">
 <h3 class="anchored" data-anchor-id="map-blue-green-structures">Map Blue-Green Structures</h3>

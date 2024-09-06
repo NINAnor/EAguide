@@ -47,15 +47,62 @@ A crosswalk between the two norms is provided in the BGF-QGIS app, and can be do
 
 ### Getting Started 
 
-1. Install QGIS:
-2. Install the required plugins:
-3. Download the BGF-QGIS app from GitHub:
+1. [Install QGIS](/qgis/qgis-installation.qmd)
+2. [Install](/qgis/qgis-plugins.qmd) the required plugins
+3. Download or clone the BGF-QGIS app from GitHub: [BGF-QGIS_3.x](https://github.com/ac-willeke/BGF-QGIS_3.x)
 
 You are all set up and can now open the project!
 
-### Background Maps 
+Open the BGF-QGIS project in QGIS: `Project -> Open`
+
+#### Configure the Project
+
+Configure the **project settings**: `Project -> Properties`
+
+- Set the project title: `-> General`
+- Set the project units: `-> General` 
+    - Default: meters
+- Set the title, author and abstract: `-> Metadata`:
+- Set the project CRS to the desired coordinate reference system: `-> CRS`
+    - Default: EPSG:25832 (ETRS89 / UTM zone 32N)
+
+#### Background Maps
+
+The BGF-QGIS app provides online [background maps](.../qgis/qgis-background-maps.qmd) for the whole of Norway under the group "Online Grunnkart" in the QGIS Layer Panel. The user can also add additional WMS layers by selecting `Layer -> Add Layer -> Add WMS/WMTS Layer`.
+
+It is recommended to download offline maps for the project area to ensure that the app works offline, and to make it easier to digitize blue-green structures by snapping to the background map.
+
+**Download offline maps**:  
+
+- `Layer -> Add Layer -> Add Raster Layer/Add Vector Layer`
+- It is recommended to download the following layers:
+    - FKB bygning - bygning_omrade: [GeoNorge - FKB bygning](https://kartkatalog.geonorge.no/metadata/fkb-bygning/8b4304ea-4fb0-479c-a24d-fa225e2c6e97)
+    - Matrikkelen Eiendomskart teig: [GeoNorge - Matrikkelen](https://kartkatalog.geonorge.no/metadata/matrikkelen-eiendomskart-teig/74340c24-1c8a-4454-b813-bfe498e80f16?search=teig)
+    - Tree crown polygons for your municipality if available. 
+        - [Oslo Trekroner 2021](maps-test.nina.no)
+
+::: {.note}
+**Note** that for offline use of the BGF-QGIS app. You must remove the online background maps (WMS-layers) from the QGIS project, otherwise your QGIS project is not able to work offline. Do this BEFORE going offline or into flightmode.
+:::
+
+#### Snapping Options
+
+Configure **snapping options**: `Settings -> Snapping Options`
+
+- Enable snapping options for the project.
+- Recommended snapping tolerance is 10 pixels.
+- Set the snapping mode to `Vertex` and `Segment`. This allows you to snap to the other BGF typology polygons, the offline background map layers and the project area boundary.
+- Enable the `Avoid intersection` option for the layer `BGF Typologi`. This prevents the creation of overlapping polygons and automatically cuts the new polygon along the boundary of the existing polygon.
+
+<br>
+<figure style="width: 100%; max-width: 650px; display: block; margin-left: auto; margin-right: auto;">
+  <img src="bgf_qgis_snapping.PNG" alt="Recommended snapping options" style="width: 100%; height: auto;"/>
+  <figcaption style="text-align: center;">Recommended snapping options.</figcaption>
+</figure>
 
 ### Map the Project Area
+
+- Activate 
 
 ### Map Blue-Green Structures
 

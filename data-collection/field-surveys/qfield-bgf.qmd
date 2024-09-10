@@ -48,25 +48,42 @@ A crosswalk between the two norms is provided in the BGF-QGIS app, and can be do
 ### Getting Started 
 
 1. [Install QGIS](/qgis/qgis-installation.qmd)
-2. [Install](/qgis/qgis-plugins.qmd) the required plugins
-3. Download or clone the BGF-QGIS app from GitHub: [BGF-QGIS_3.x](https://github.com/ac-willeke/BGF-QGIS_3.x)
+2. [Install](/qgis/qgis-plugins.qmd) and activate the plugins: `Plugins -> Manage and Install Plugins`
+    - Geometry Checker (core plugin)
+    - Offline editing (core plugin)
+    - Processing (core plugin)
+    - Topology Checker (core plugin)
+    - (OPTIONAL) QField Sync
+    - (OPTIONAL) NIB-ortofoto-prosjekt
+3. Activate necessary toolbars: `View -> Toolbars`
+    - Project Toolbar
+    - Map Navigation toolbar
+    - Attributes Toolbar
+    - Plugins toolbar
+    - Selection Toolbar
+    - Digitizing Toolbar
+    - Snapping Toolbar
+    - (OPTIONAL) Advanced digitizing toolbar
+    - (OPTIONAL) Shape digitizing toolbar
+4. Activate necessary panels: `View -> Panels`
+    - Browser Panel
+    - Layer Panel
+5. Download or clone the BGF-QGIS app from GitHub: [BGF-QGIS_3.x](https://github.com/ac-willeke/BGF-QGIS_3.x)
 
-You are all set up and can now open the project!
-
-Open the BGF-QGIS project in QGIS: `Project -> Open`
+You are all set up and can now open the BGF-QGIS project in QGIS!
 
 #### Configure the Project
 
 Configure the **project settings**: `Project -> Properties`
 
 - Set the project title: `-> General`
-- Set the project units: `-> General` 
+- Set the project units: `-> General`
     - Default: meters
 - Set the title, author and abstract: `-> Metadata`:
 - Set the project CRS to the desired coordinate reference system: `-> CRS`
     - Default: EPSG:25832 (ETRS89 / UTM zone 32N)
 
-#### Background Maps
+#### Background Maps{#background-maps}
 
 The BGF-QGIS app provides online [background maps](.../qgis/qgis-background-maps.qmd) for the whole of Norway under the group "Online Grunnkart" in the QGIS Layer Panel. The user can also add additional WMS layers by selecting `Layer -> Add Layer -> Add WMS/WMTS Layer`.
 
@@ -100,22 +117,176 @@ Configure **snapping options**: `Settings -> Snapping Options`
   <figcaption style="text-align: center;">Recommended snapping options.</figcaption>
 </figure>
 
+You can activate and deactivate snapping and tracing of objects by clicking on their icons or pressing the shortcut keys.
+
+- Snapping icon: `manget` (Shortcut: `s`)
+- Tracing icon: `line and lightning bolt` (Shortcut: `t`)
+
+<br>
+<figure style="width: 100%; max-width: 300px; display: block; margin-left: auto; margin-right: auto;">
+  <img src="bgf_qgis_icons.PNG" alt="Activating/deactivating snapping and tracing of objects." style="width: 100%; height: auto;"/>
+  <figcaption style="text-align: center;">Activating/deactivating snapping and tracing of objects.</figcaption>
+</figure>
+
+
 ### Map the Project Area
 
-- Activate 
+Map the project area, which is often a cadastral parcel or a building plot. It helps to add and enable a background map with the cadastral parcel boundaries (see [Background Maps](#background-maps)).
+
+1. Select the `Lokalitetsområde` layer in the QGIS Layer Panel. 
+2. Activate editing mode by clicking on the `Pencil` icon. 
+3. Activate `Enable tracing (t)`to easily follow the cadastral parcel boundary.
+4. Click on the `Add Polygon Feature` icon and digitize the project area by tracing the cadastral parcel boundary. Finish by right-clicking or double-clicking.
+5. Review the auto-filled fields in the pop-up window and click `OK`. To reopen the pop-up window, use the `Identify Features` button and click on the project area polygon. Then click on the `Open form` button.
+
+Advanced digitizing options *(e.g. splitting/merging of polygons)* are explained in the [QGIS User Guide](https://docs.qgis.org/3.34/en/docs/user_manual/working_with_vector/editing_geometry_attributes.html).
+
+<br>
+<figure style="width: 100%; max-width: 650px; display: block; margin-left: auto; margin-right: auto;">
+  <img src="digitize_project_area.PNG" alt="Digitize the project area (Lokalitetsområde)." style="width: 100%; height: auto;"/>
+  <figcaption style="text-align: center;">Digitize the project area (Lokalitetsområde).</figcaption>
+</figure>
+
+It is recommended to digitize only one project area per QGIS project. If you have multiple project areas, you can create a new QGIS project for each project area using the template provided in the BGF-QGIS app.
+
+::: {.note}
+**Note** that is important to save your edits regularly by clicking on the `Save Layer Edits` icon or using `Ctrl + S`. You can also save the project by clicking on `Project -> Save` or using `Ctrl + S`.
+:::
 
 ### Map Blue-Green Structures
 
-### Calculate BGF 
+Map the blue-green structures within the project area. The BGF-QGIS app provides a predefined typology layer, `BGF typologier`, with the typologies listed in the table below. For a full cross-walk table showing both English and Norwegian typology names see [BGF_typology_lookup](bgf_typology_crosswalk.xlsx).
 
-### Calculate the Cost for BG-infrastructure
+
+```{r, echo=FALSE}
+# Install packages for rendering excel tabels 
+library(readxl)
+library(knitr)
+
+# Read the Excel file
+data <- read_excel("bgf_typology_crosswalk.xlsx", sheet = "EN_crosswalk")
+
+# Render the table
+kable(data)
+```
+
+<br> 
+
+**Digitizing the blue-green structures**
+
+1. Select the `BGF typologi` layer in the QGIS Layer Panel. 
+2. Activate editing mode by clicking on the `Pencil` icon. 
+3. Ensure that the in the Snapping options `Avoid overlay` is enabled for the BGF typology layer, so polygons are automatically cut along eachothers border. 
+4. Activate `Enable tracing (t)`to easily follow background layers such as buildings and treecrowns. 
+5. Click on the `Add Polygon Feature` icon to add a new typology polygon. Finish by right-clicking or double-clicking. A pop-up window opens to start editing the attributes.
+
+**Filling in the attributes**
+
+1. Review the `admin` attributes and check that they are filled out correctly. 
+    - Check that the `ID - Lokalitetsområde` corresponds with the study area ID. 
+    - Check the `Kartlegger` (registrant) and `Kartleggingsdato` (date). 
+
+<figure style="width: 100%; max-width: 650px; display: block; margin-left: auto; margin-right: auto;">
+  <img src="bgf_admin_fields.PNG" alt="Administrative and Area attributes." style="width: 100%; height: auto;"/>
+  <figcaption style="text-align: center;">Check the administrative and area atrributes.</figcaption>
+</figure>
+
+2. Select the BGF Norm you like to use for mapping: `PBE 2023` or `SN 2020`
+    - the url to the selected norm will apear for additional info.
+    - additional tabs become visible to start classifing the typology.
+
+<figure style="width: 100%; max-width: 650px; display: block; margin-left: auto; margin-right: auto;">
+  <img src="bgf_norm_field.PNG" alt="Fill out the BGF Norm." style="width: 100%; height: auto;"/>
+  <figcaption style="text-align: center;">Fill out the BGF Norm.</figcaption>
+</figure>
+
+3. Classify the BGF typology
+    - select the main typology in the tab `BGF hovedtypologi`
+    - depending on which Norm you have selected, you can select the sub typology
+    in either the `PBE 2023 | undertypologi`or `SN 2020 | undertypologi` tab.
+
+<figure style="width: 100%; max-width: 650px; display: block; margin-left: auto; margin-right: auto;">
+  <img src="bgf_subtypology.PNG" alt="Fill out the BGF typology." style="width: 100%; height: auto;"/>
+  <figcaption style="text-align: center;">Fill out the BGF typology, based on the selected Norm a subtypology can be selected.</figcaption>
+</figure>
+
+4. Check the calculated BGF value for the polygon. 
+    
+    The BGF value for the selected norm is visible under the tab `PBE 2023 | BGF beregning` or `SN 2023 | BGF beregning`.
+    
+:::{.note}
+**Note** that these values are not (yet) divided by the total study area. It is also important to note that all classes are calculated by multiplying the typology area by the weight, except for trees. Here the count of trees is multiplied by the weight. It is important to map trees individually as the tool assumes that each row in the attribute table stands for óne tree. Thus the BGF value for a tree polygon equals the weight (1*BGF weight). The total BGF score is calculated in a separate table see [Calculate the total BGF score](#total-bgf). 
+:::
+
+5. (OPTIONAL) use a user-defined norm. 
+
+    After filling in the BGF typology, you see that also a tab appears for `Egendefinerte Norm | BGF beregning`. The user-defined norm is not filled out as default and thus the BGF weight and value will be set to `NULL`. 
+
+    **Define your own Norm:**
+
+    - Open the lookup table `lut_bgf_weight` under the tab `BGF koblingstabller`: `Right click -> Open attribute table`
+    - Activate editing mode by clicking on the `Pencil` icon. 
+    - Fill out values for each typlogy under the column `custom_weight`. 
+    - Start mapping your BGF typologies, the user-defined norm will now be automatically calculated using the values you entered in the table. 
+
+<figure style="width: 100%; max-width: 650px; display: block; margin-left: auto; margin-right: auto;">
+  <img src="bgf_custom_norm.PNG" alt="Fill out the BGF typology." style="width: 100%; height: auto;"/>
+  <figcaption style="text-align: center;">Define custom weights.</figcaption>
+</figure>
+
+6. Check the blue-green infrastructure costs under the group `Kostnader`. 
+
+    The costs are calculated automatically, by using a [lookup_table](link/here). Note that costs are calculated by multiplying the area (m2) by the cost value in the look up table. Thus, trees are also economically valued by tree crown coverage and not per individual tree. 
+
+5. Add a comment, or leave the default value: `Ingen kommentar`. 
+
+Repeat these steps untill the complete study area is mapped and the `Kartlagt areal (%)` attribute shows 100 %. 
+
+:::{.note}
+**Note:** that the complete study area must be mapped and all attributes must be filled out correctly, otherwise the BGF score cannot be calculated. If a polygon is not mapped correctly, or the attributes are not filled out correctly it will be classified as `Ikke klassifisert`. 
+:::
+
+### Calculate the total BGF score{#total-bgf}
+
+The final BGF score for each study area is calculated in a separate table under the tab `BGF beregning`. These table aggregates the results of the BGF-mapping and calculates the BGF score. Note that the total score is calculated differently for different norms. It is important to choose the correct norm and follow the steps outlined below. 
+
+#### Norm PBE 2023 
+
+1. Navigate to: `BGF beregning -> Norm PBE 2023 | BGF beregning`
+2. Open the attribute table: `right-click`. 
+3. Switch to `form view` in the bottom right corner. 
+4. Check that the info under `Admin`, `Areal` and `BGF norm` is filled in correctly. 
+5. Answer the TRUE-FALSE questions under `Styrke blågrønn struktur og biologisk mangfold`. 
+6. Check the automatically calculated BGF-values per typology type under `Terreng og Flater`
+7. Check the automatically calculated BGF-values for trees under `Trær`
+8. Check the total BGF-score
+9. Export results: `right-click -> Export -> Save features as -> CSV/EXCEL`
+
+*SN Norm not yet included, wait for license* 
+
+### Calculate the total cost for Blue-Green Infrastructure
+
+*work in progress, needs feedback from bart/max* 
 
 ### Export Data 
 
+To export your data right-click on the layer you like to export and choose `Export -> Save features as`. In the upper drop-down box you can choose your export format. 
 
+Here are examples for the most common exports:
 
+- Export blue-green structure typologies to .GPKG: go to layer `BGF typologies` and `Export` as GPKG (to include geometry) or to csv/excel to only export the attributes.
+- Export the final BGF score: `BGF beregning -> Norm PBE .. or  Norm SN ..` to csv\excel
+- Export the final blue-green structure costs: `BGF beregning -> BGF Cost beregning`. 
 
+**Future improvements:**
 
+- option to export a PDF rapport
+
+### Common errors 
+
+- Topology errors, solve using the `Topology Checker` pluginn read more in the [QGIS User Guide](https://docs.qgis.org/3.34/en/docs/user_manual/plugins/core_plugins/plugins_topology_checker.html)
+- Attributes are not calculated, sometimes you must make a change before the calculations of attributes take place. Solve by for example changing the typology to another value and then change back. 
+- Attribute values you fill in are overwritten by the default value. For example, the field `Kommentar` does not want to change. Go to the layer where the problem occurs, right-click on `Properties` navigate to `Attribute forms` and uncheck `Apply default value by update`. 
 
 ## NINA Contacts
 
@@ -126,5 +297,12 @@ Configure **snapping options**: `Settings -> Snapping Options`
 - David Barton
 - Bart Immerzeel
 - Maria Korkou
+:::
+
+::: {.column}
+**BGF-QGIS application:**
+
+- Willeke A'Campo
+- Bart Immerzeel 
 :::
 :::

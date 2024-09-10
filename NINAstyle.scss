@@ -21,19 +21,22 @@ $headings-font-family: $font-family-sans-serif;
 $body-color: #000000;;
 
 /*-- table styling --*/
+table {
+  font-size: 0.1em; // Smaller font size for tables
+}
+
 table thead tr {
-    background-color: rgba($primary, .8
-    );
-    color: white;
-  }
-  
-  table tbody tr:nth-child(even) {
-    background-color: rgba($primary, .1);
-  }
-  
-  table tbody tr:nth-child(odd) {
-    background-color: white;
-  }
+  background-color: rgba($primary, .8);
+  color: white;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: rgba($primary, .1);
+}
+
+table tbody tr:nth-child(odd) {
+  background-color: white;
+}
 
 /*-- codeblock styling --*/
 pre, code {

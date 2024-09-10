@@ -12,4 +12,6 @@ Imports:
   DiagrammeRsvg,
   rsvg, 
   downlit,
-  xml2
+  xml2,
+  readxl,
+  knitr

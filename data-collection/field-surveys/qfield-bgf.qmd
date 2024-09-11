@@ -68,7 +68,7 @@ A crosswalk between the two norms is provided in the BGF-QGIS app, and can be do
 4. Activate necessary panels: `View -> Panels`
     - Browser Panel
     - Layer Panel
-5. Download or clone the BGF-QGIS app from GitHub: [BGF-QGIS_3.x](https://github.com/ac-willeke/BGF-QGIS_3.x)
+5. Download or clone the BGF-QGIS app from GitHub: [BGF-QGIS_3.x](https://github.com/ac-willeke/BGF-QGIS)
 
 You are all set up and can now open the BGF-QGIS project in QGIS!
 

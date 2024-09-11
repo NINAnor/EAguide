@@ -146,7 +146,7 @@ To be able to display rasters in the browser it's necessary to use instead of `l
 also when opening it in the browser.
 :::
 
-1. Open the frontend map application
+2. Open the frontend map application
 
             ```{bash}
             xdg-open "http://$(hostname):8000"
@@ -156,7 +156,7 @@ also when opening it in the browser.
 Errors in the web application can be inspected in the browser console using: `right-click -> inspect -> console` or `ctrl+shift+j`.
 :::
 
-1. Install the Naturregnskap API
+3. Install the Naturregnskap API
 
     - Follow the instructions in the README of the [naturregnskap_maps_uploader](https://github.com/NINAnor/naturregnskap_maps_uploader)
         - Install the Python environment

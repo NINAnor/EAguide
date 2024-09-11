@@ -103,9 +103,10 @@ Below is a brief guide for setting up a local installation of the Catalogue on y
             ```{bash}	
             cd setup
             docker compose up --build
+            cd ..
             ```
 
-        - start all services in `dev` mode
+        - start all services with the `map` profile
         
             ```{bash}
             # source the helper functions
@@ -114,22 +115,22 @@ Below is a brief guide for setting up a local installation of the Catalogue on y
             # alias in helpers.sh
             # run the docker-compose file in the dev profile
             # env variables are loaded from secrets 
-            dpcli_dev up --build
+            dpcli_map up --build
             ```
 
-        - create an admin user
+        - an admin user is already created with the following credentials
 
-            ```{bash}
-            djcli_dev migrate
-            djcli_dev createsuperuser
+            ```
+            email: admin@nina.no
+            password: password            
             ```
 
-            Set the admin email and password, and remember them to later login to the Django admin: [localhost:8000/admin/](http://localhost:8000/admin/) 
+            These can be used to login to the Django admin: [localhost:8000/admin/](http://localhost:8000/admin/) 
 
         - start the Django admin interface
 
             ```{bash}
-            xdg-open http://localhost:8000/admin
+            xdg-open "http://$(hostname):8000/admin"
             ```
         - generate a token for your user in Django admin GUI: Tokens -> Add token
 
@@ -139,20 +140,16 @@ Below is a brief guide for setting up a local installation of the Catalogue on y
   <figcaption style="text-align: center;">Django Admin GUI</figcaption>
 </figure>
 
-2. Install the frontend map application
 
-    - Follow the instructions in the README of the [nina-map-explorer](https://github.com/NINAnor/nina-map-explorer)
-        - start the web service in `prod` mode
+:::{.note}
+To be able to display rasters in the browser it's necessary to use instead of `localhost` your VDI's hostname. Run `hostname` in your terminal and replace `localhost` with this value,
+also when opening it in the browser.
+:::
 
-            ```{bash}
-            # Start all services defined in the docker-compose.yml
-            # -d run in detached mode (background)
-            docker compose --profile prod up
-            ```
-        - start the web app
+2. Open the frontend map application
 
             ```{bash}
-            xdg-open http://localhost:3000
+            xdg-open "http://$(hostname):8000"
             ```
 
 :::{.note}
@@ -186,8 +183,10 @@ Now you have a local installation of the NINA Catalogue and the following servic
 | --- | --- |
 | Metadata catalogue | [localhost:8000](http://localhost:8000) |
 | Django admin | [localhost:8000/admin/](http://localhost:8000/admin/) |
-| Map application | [localhost:3000](http://localhost:3000) |
+| API documentation | [localhost:8000/api/docs/](http://localhost:8000/api/docs/) |
+| Map application | [localhost:8000](http://localhost:8000) |
 | Documentation | [localhost:3001](http://localhost:3001) |
+| TiTiler documentation | [localhost:8000/titiler/](http://localhost:8000/titiler/) |
 
 ## How to create a map and upload data to the NINA Catalogue
 

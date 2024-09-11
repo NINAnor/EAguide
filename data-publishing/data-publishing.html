@@ -424,21 +424,22 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><p>Create secrets in the <code>secrets</code> folder</p>
 <pre class="{bash}"><code>cd setup
-docker compose up --build</code></pre></li>
-<li><p>start all services in <code>dev</code> mode</p>
+docker compose up --build
+cd ..</code></pre></li>
+<li><p>start all services with the <code>map</code> profile</p>
 <pre class="{bash}"><code># source the helper functions
 . helpers.sh
 
 # alias in helpers.sh
 # run the docker-compose file in the dev profile
 # env variables are loaded from secrets 
-dpcli_dev up --build</code></pre></li>
-<li><p>create an admin user</p>
-<pre class="{bash}"><code>djcli_dev migrate
-djcli_dev createsuperuser</code></pre>
-<p>Set the admin email and password, and remember them to later login to the Django admin: <a href="http://localhost:8000/admin/">localhost:8000/admin/</a></p></li>
+dpcli_map up --build</code></pre></li>
+<li><p>an admin user is already created with the following credentials</p>
+<pre><code>email: admin@nina.no
+password: password            </code></pre>
+<p>These can be used to login to the Django admin: <a href="http://localhost:8000/admin/">localhost:8000/admin/</a></p></li>
 <li><p>start the Django admin interface</p>
-<pre class="{bash}"><code>xdg-open http://localhost:8000/admin</code></pre></li>
+<pre class="{bash}"><code>xdg-open "http://$(hostname):8000/admin"</code></pre></li>
 <li><p>generate a token for your user in Django admin GUI: Tokens -&gt; Add token</p></li>
 </ul></li>
 </ul></li>
@@ -450,19 +451,14 @@ djcli_dev createsuperuser</code></pre>
 Django Admin GUI
 </figcaption>
 </figure>
+<div class="note">
+<p>To be able to display rasters in the browser it’s necessary to use instead of <code>localhost</code> your VDI’s hostname. Run <code>hostname</code> in your terminal and replace <code>localhost</code> with this value, also when opening it in the browser.</p>
+</div>
 <ol start="2" type="1">
-<li><p>Install the frontend map application</p>
-<ul>
-<li>Follow the instructions in the README of the <a href="https://github.com/NINAnor/nina-map-explorer">nina-map-explorer</a>
-<ul>
-<li><p>start the web service in <code>prod</code> mode</p>
-<pre class="{bash}"><code># Start all services defined in the docker-compose.yml
-# -d run in detached mode (background)
-docker compose --profile prod up</code></pre></li>
-<li><p>start the web app</p>
-<pre class="{bash}"><code>xdg-open http://localhost:3000</code></pre></li>
-</ul></li>
-</ul></li>
+<li><p>Open the frontend map application</p>
+<pre><code>     ```{bash}
+     xdg-open "http://$(hostname):8000"
+     ```</code></pre></li>
 </ol>
 <div class="note">
 <p>Errors in the web application can be inspected in the browser console using: <code>right-click -&gt; inspect -&gt; console</code> or <code>ctrl+shift+j</code>.</p>
@@ -509,12 +505,20 @@ DEBUG=True</code></pre></li>
 <td><a href="http://localhost:8000/admin/">localhost:8000/admin/</a></td>
 </tr>
 <tr class="odd">
-<td>Map application</td>
-<td><a href="http://localhost:3000">localhost:3000</a></td>
+<td>API documentation</td>
+<td><a href="http://localhost:8000/api/docs/">localhost:8000/api/docs/</a></td>
 </tr>
 <tr class="even">
+<td>Map application</td>
+<td><a href="http://localhost:8000">localhost:8000</a></td>
+</tr>
+<tr class="odd">
 <td>Documentation</td>
 <td><a href="http://localhost:3001">localhost:3001</a></td>
+</tr>
+<tr class="even">
+<td>TiTiler documentation</td>
+<td><a href="http://localhost:8000/titiler/">localhost:8000/titiler/</a></td>
 </tr>
 </tbody>
 </table>

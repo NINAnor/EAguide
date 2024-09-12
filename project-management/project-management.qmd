@@ -4,3 +4,4 @@
 - Licenses, tools, software 
 - budget for data management and data publishing
 - involve Miljødata from step 1 (project application)
+- test

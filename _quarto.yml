@@ -8,6 +8,7 @@ book:
   author:
   - name: "Willeke A'Campo"
   - name: "Anders Lorentzen Kolstad"
+  - name: "Niccolò Cantù"
   description: | 
     NINAs Technical Guidebook for Local-Scale Ecosystem Accounting Projects
   repo-url: https://github.com/NINAnor/EAguide

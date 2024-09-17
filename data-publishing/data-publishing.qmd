@@ -115,7 +115,7 @@ Below is a brief guide for setting up a local installation of the Catalogue on y
             # alias in helpers.sh
             # run the docker-compose file in the dev profile
             # env variables are loaded from secrets 
-            dpcli_map up --build
+            dpcli_maps up --build
             ```
 
         - an admin user is already created with the following credentials

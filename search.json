@@ -14,7 +14,7 @@
     "href": "index.html#introduction",
     "title": "Local Ecosystem accounts - a technical guidebook",
     "section": "",
-    "text": "Project Management: Guidance on planning and budgeting for data infrastructure in ecosystem accounting projects.\nData collection: Procedures for collecting data in ecosystem accounting projects.\n\nField Surveys: Instructions on conducting field surveys, including common methods and protocols.\nRemote Sensing: Techniques for utilizing remote sensing data in ecosystem accounting projects.\n\nData analysis: Best practices and methods for analyzing data in ecosystem accounting projects.\nData Publishing: Steps for publishing data in NINA’s map catalogue.\nDocumentation: Guidelines for documenting your project and data.\nFAIR Data Managment: How to adhere to FAIR principles in ecosystem accounting projects.",
+    "text": "Project Management: Guidance on planning and budgeting for data infrastructure in ecosystem accounting projects.\nData collection: Procedures for collecting data in ecosystem accounting projects.\n\nField Surveys: Instructions on conducting field surveys, including common methods and protocols.\nRemote Sensing: Techniques for utilizing remote sensing data in ecosystem accounting projects.\n\nData analysis: Best practices and methods for analyzing data in ecosystem accounting projects.\nData Publishing: Steps for publishing data in NINA’s map catalogue for Local Ecosystem Accounts.\nDocumentation: Guidelines for documenting your project and data.\nFAIR Data Managment: How to adhere to FAIR principles in ecosystem accounting projects.",
     "crumbs": [
       "Introduction"
     ]
@@ -24,7 +24,7 @@
     "href": "project-management/project-management.html",
     "title": "Project Management",
     "section": "",
-    "text": "Data Management Plan\nLicenses, tools, software\nbudget for data management and data publishing\ninvolve Miljødata from step 1 (project application)\ntest\ntest",
+    "text": "suggestions for this page\n\ncreate a template for an Ecosystem Accounting Data Management Plan: https://nina.sharepoint.com/SitePages/nn_md_dmp.aspx\ninfo on Licenses, tools, software (or links to Intranett)\nbudget for data management and data publishing\ninvolve Miljødata from step 1 (project application)",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Project Management</span>"
     ]
@@ -166,7 +166,7 @@
     "href": "data-collection/field-surveys/qfield-nin.html#developer-guide",
     "title": "NiN 2.0 Naturtype Mapping",
     "section": "Developer Guide",
-    "text": "Developer Guide\n\nHow to create a new NiN 2.0 template for a new project area?\nYou can create a new template for a new mapping area by using the NiN 2.0 mapping template for the whole of Norway. Here you need to add your study area polygon and offline background maps.\n\nRead the PDF instructions, especially chapter 2 “Installering og oppstart”.\nDownload the qfield_nin2_norge QField template from NiN_QGIS_3.x repository.\nCreate a new polygon layer study_area and save it to vector/%project_name%_misc.gpkg GPKG and add it to the Area group.\nDownload raster files in GeoTIFF format from høydedata.no and norgeibilder.no.\n\nDTMs and DSMs: høydedata.no\nOrtophotos (RGB and CIR): norgeibilder.no\n\nLogin with your Geonorge GeoID\nenter study area bounding box coordinates\nCoordinate system: UTM 33\nclip by bounding box\nsend order\n\n\nConvert your rasters to Cloud Optimized GeoTiffs. Shell scripts can be found here.\nAdd your downloaded raster files as offline map layers in QField.\nUpload your new project to QField Cloud and invite the fieldworkers (collaborators) to the project.\n\n\n\nChange log:\nWe forked the NiN 2.0 Template from the GitHub repository developed by the University of Oslo. Changes made to orginal template are documented here.\n\n\nNINA Contacts\n\n\nNiN:\n\nTrond Simensen\nErik Stange\nAnders Lyngstad\n\n\nQGIS/QField Cloud managers:\n\nWilleke A’Campo\nStig Claussen",
+    "text": "Developer Guide\n\nHow to create a new NiN 2.0 template for a new project area?\nYou can create a new template for a new mapping area by using the NiN 2.0 mapping template for the whole of Norway. Here you need to add your study area polygon and offline background maps.\n\nRead the PDF instructions, especially chapter 2 “Installering og oppstart”.\nDownload the qfield_nin2_norge QField template from NiN_QGIS_3.x repository.\nCreate a new polygon layer study_area and save it to vector/%project_name%_misc.gpkg GPKG and add it to the Area group.\nDownload raster files in GeoTIFF format from høydedata.no and norgeibilder.no.\n\nDTMs and DSMs: høydedata.no\nOrtophotos (RGB and CIR): norgeibilder.no\n\nLogin with your Geonorge GeoID\nenter study area bounding box coordinates\nCoordinate system: UTM 33\nclip by bounding box\nsend order\n\n\nConvert your rasters to Cloud Optimized GeoTiffs. Shell scripts can be found here.\nAdd your downloaded raster files as offline map layers in QField.\nUpload your new project to QField Cloud and invite the fieldworkers (collaborators) to the project.\n\n\n\nChange log:\nWe forked the NiN 2.0 Template from the GitHub repository developed by the University of Oslo. Changes made to orginal template are documented here.\n\n\nNINA Contacts\n\n\nNiN:\n\nTrond Simensen\nErik Stange\nAnders Lyngstad\n\n\nQGIS/QField Cloud managers:\n\nTrond Simensen\nStig Claussen",
     "crumbs": [
       "Data Collection",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>NiN 2.0 Naturtype Mapping</span>"
@@ -199,7 +199,7 @@
     "href": "data-collection/field-surveys/qfield-bm.html#developer-guide",
     "title": "Biodiversity Metric 4.0",
     "section": "Developer Guide",
-    "text": "Developer Guide\n\nHow to create a new Biodiveristy Metric template for a new project area?\nYou can create a new template for a new mapping area by using the Biodiveristy Mapping template for Norway. Here you need to add your study area polygon and offline background maps.\n\nDownload the QField template from the BiodiversityMetric_QGIS_3.x repository.\nCreate a new polygon layer study_area and save it to vector/%project_name%_misc.gpkg GPKG and source it to the Red Line Boundary(Kartleggingsgrense) group.\nDownload raster files in GeoTIFF format from høydedata.no and norgeibilder.no.\n\nDTMs and DSMs: høydedata.no\nOrtophotos (RGB and CIR): norgeibilder.no\n\nLogin with your Geonorge GeoID\nenter study area bounding box coordinates\nCoordinate system: UTM 33\nclip by bounding box\nsend order\n\n\nConvert your rasters to Cloud Optimized GeoTiffs. Shell scripts can be found here.\nAdd your downloaded raster files as offline map layers in QField.\nUpload your new project to QField Cloud and invite the fieldworkers (collaborators) to the project.\n\n\n\nChange log:\nWe adapted the template from The Statutory Biodiversity Metric - QGIS template, developed and published by Natural England (JP039) under the Open Government Licence - OGLv3.0. Changes made to orginal template are documented here.\n\n\nNINA Contacts\n\n\nBiodiversity Metrics:\n\nTrond Simensen\nErik Stange\n\n\nQGIS/QField Cloud managers:\n\nWilleke A’Campo\nStig Claussen",
+    "text": "Developer Guide\n\nHow to create a new Biodiveristy Metric template for a new project area?\nYou can create a new template for a new mapping area by using the Biodiveristy Mapping template for Norway. Here you need to add your study area polygon and offline background maps.\n\nDownload the QField template from the BiodiversityMetric_QGIS_3.x repository.\nCreate a new polygon layer study_area and save it to vector/%project_name%_misc.gpkg GPKG and source it to the Red Line Boundary(Kartleggingsgrense) group.\nDownload raster files in GeoTIFF format from høydedata.no and norgeibilder.no.\n\nDTMs and DSMs: høydedata.no\nOrtophotos (RGB and CIR): norgeibilder.no\n\nLogin with your Geonorge GeoID\nenter study area bounding box coordinates\nCoordinate system: UTM 33\nclip by bounding box\nsend order\n\n\nConvert your rasters to Cloud Optimized GeoTiffs. Shell scripts can be found here.\nAdd your downloaded raster files as offline map layers in QField.\nUpload your new project to QField Cloud and invite the fieldworkers (collaborators) to the project.\n\n\n\nChange log:\nWe adapted the template from The Statutory Biodiversity Metric - QGIS template, developed and published by Natural England (JP039) under the Open Government Licence - OGLv3.0. Changes made to orginal template are documented here.\n\n\nNINA Contacts\n\n\nBiodiversity Metrics:\n\nTrond Simensen\nErik Stange\n\n\nQGIS/QField Cloud managers:\n\nTrond Simensen\nStig Claussen",
     "crumbs": [
       "Data Collection",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Biodiversity Metric 4.0</span>"
@@ -265,7 +265,7 @@
     "href": "data-analysis/data-analysis.html",
     "title": "Data Analysis",
     "section": "",
-    "text": "comparison of methods\nrefer to previous project methods\nbest practices",
+    "text": "suggestions for this page\n\ncomparison of methods\nrefer to previous project methods\nbest practices",
     "crumbs": [
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Data Analysis</span>"
     ]
@@ -281,8 +281,8 @@
     ]
   },
   {
-    "objectID": "data-publishing/data-publishing.html#step-by-step-guide-for-submitting-data",
-    "href": "data-publishing/data-publishing.html#step-by-step-guide-for-submitting-data",
+    "objectID": "data-publishing/data-publishing.html#sec-submitting-data",
+    "href": "data-publishing/data-publishing.html#sec-submitting-data",
     "title": "Data Publishing",
     "section": "",
     "text": "Organize your data\n\n\nCreate a folder nina_map_catalog within your project folder (P:/)\nGroup your data into Ecosystem Accounting Framework groups: services, extent, condition, misc.\nRaster data:\n\nsave each raster as a single-band GeoTIFF into the nina_map_catalog folder.\nuse underscore as spaces (air_pollution_0301.tif)\n\nVector data:\n\nsave all vector layers of one group into one GeoPackage and save it in the nina_map_catalog folder.\n%project_name%_service.gpkg\n%project_name%_extent.gpkg\n%project_name%_condition.gpkg\n%project_name%_misc.gpkg\n\n\n\nFill out the import schema\n\nDownload import schema\nEnsure to read the README-sheet and fill out all required (*) fields.\nImportant: Check the data source of each data layer. If the data source is not owned by NINA, provide the WMS link to the original source and the link of where users can download this data (for example GeoNorge). For example, we do not add AR5 data into the gpkg’s! Instead we show the map as a WMS layer and point the users to NIBIO for downloading the data.\n\nLayer styling\n\nsave your vector layer style inside your Geopackage.\nsave your raster colormap inside a .txt file: “datasetName-style.txt”\n\nNote: it is recommended to save your layer style inside your Geopackage using QGIS or create a QGIS style file. It is also possible to share your style using another file format (e.g. arcgis pro style file, yaml- python- or R-script with styling info.) We try to make the styling as similar as possible, but know that the MapLibre library we use is not as advanced as for example ArcGIS Pro. So customized colormaps might look slightly different in the NINA Maps Portal.\nRequest for publishing a new project within the EA NINA map portal\n\nSend the following information to Miljødata:\n\nthe filled out import-schema\nthe path to your cleaned and organized data: P:/…/nina_map_catalog\na qgis file, a arcgispro layer file, an agol app, an R or python file that displays your preferred styling of the map layers.\n\n\n\n\nExample structure of nina_map_catalog folder:\nP:/.../nina_map_catalog\n├── NINA_naturregnskap_metadata_importskjema_PROSJEKTNAVN.xlsx    (import schema)\n├── *%project_name%*_layer_styling.qgz                            (qgis project with preferred styling)\n├── *%project_name%*_condition.gpkg                               (vector layers grouped by EA framework)  \n├── *%project_name%*_extent.gpkg\n├── *%project_name%*_misc.gpkg\n|    ├── study_area\n|    └── vector_layer\n├── *%project_name%*_service.gpkg\n├── air_pollution_0301.tif                                        (single band raster layers)\n└── raster_layer.tif",
@@ -308,6 +308,27 @@
     "text": "How to create a map and upload data to the NINA Catalogue\nBelow are the steps to create a map for the Local Ecosystem Accounts dataset and upload the data to the NINA Catalogue from scratch. You only need to create a map once, and then you can upload data to the same map multiple times using the API.\n\nDjango admin - Create a Map\n\nDjango admin -&gt; Maps -&gt; Add map\nFill out the form and save. An error will be shown if the form is not filled out correctly.\nThe field Extras can be used to directly pass a JSON object to the MapLibre Frontend. For example, to set the initial map view, you can pass the following JSON object: {\"center\": [10.7, 59.9]}.\n\nDjango admin - Add background layer to the map.\n\nadd raster source\n\nMaps &gt; Raster sources\nSet tile-URL, zoom and size in extras:\n{\n\"tiles\": [\"https://a.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png\"], \n\"maxZoom\": 20, \n\"tileSize\": 256\n}\n\nadd source to the Map as Layer\n\nMaps &gt; Layers &gt; Add layer\nSet style: {\"type\": \"raster\"}\ncheck basemap box\n\n\nPrepare your data\n\nPrepare the raster data\n\nraster_operations.sh\n\nmosaic rasters (if raster is split into multiple files)\nclip the raster to your study area, set a NoData value, and set the coordinate system\n\ngenerate_cog.sh\n\nconvert a GeoTIFF to a Cloud Optimized GeoTIFF (COG)\n# source the helper functions\nsource raster_operations.sh\nsource generate_cog.sh\n\n# mosaic rasters\nmosaic_rasters /path/to/input_dir /path/to/mosaic_output.tif\n\n# clip the raster\nclip_raster input.tif input.gpkg clip_layer output.tif NODATA EPSG \n\n# convert to COG (using default method, see the script for more options)\nto_cog /path/to/input.tif default\n\n\nPrepare the vector data\n\ngenerate_pmtiles.sh\n\nconvert the GPKGs to PMTiles using GDAL &gt;= 3.8.\nMAXZOOM and MINZOOM influence the level of detail in the map and the size of the tiles (higher values = more detail, larger tiles).\ndocs: gdal.org/drivers/vector/pmtiles.html.\nsource generate_pmtiles.sh\ngenerate_pmtiles /path/to/input.gpkg /path/to/output.pmtiles MINZOOM MAXZOOM\n\n\n\nStyle your data\n\nStyle template: style.json\n\nNaturregnskaps API - Upload map layers and metadata\n\nCheck the import schema (provided by the projects data manager)\nCheck the style file\nUpload the data and metadata using the API\ncommand: naturregnskap_maps_uploader_start http://server:port map_slug --wd /path/to/data/\nexample: naturregnskap_maps_uploader_start http://localhost:8000 localEA --wd ~/temp/nina-map-catalog\nThe API will read the import schema and upload the data to the NINA Catalogue.",
     "crumbs": [
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>Data Publishing</span>"
+    ]
+  },
+  {
+    "objectID": "documentation/documentation.html",
+    "href": "documentation/documentation.html",
+    "title": "Documentation",
+    "section": "",
+    "text": "suggestions for this page\n\nRefer to Quarto templates:\n\nQuarto NINA rapport template: https://github.com/NINAnor/quarto_nina_report\nQuarto NINA template: https://github.com/NINAnor/NINA-ebook-template",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Documentation</span>"
+    ]
+  },
+  {
+    "objectID": "fair-data/fair-principles.html",
+    "href": "fair-data/fair-principles.html",
+    "title": "FAIR Principles",
+    "section": "",
+    "text": "suggestions for this page\n\nrefer to https://ninanor.github.io/data-management-handbook/dmh_content/chapters/c7_acknowledgements.html",
+    "crumbs": [
+      "FAIR Data Management",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>FAIR Principles</span>"
     ]
   },
   {
@@ -347,7 +368,7 @@
     "href": "data-collection/data-collection.html#sec-field-surveys",
     "title": "Data Collection",
     "section": "",
-    "text": "NiN 2.0 Naturetype Mapping\nBiodiversity Metric 4.0\nBlue Green Factor\nCarbon Viewer\n\n\n\n\n\nField Application\nTool\nInstructions\nDownload\n\n\n\n\nNiN 2.0  Naturetype Mapping\nQGIS/QField\nPDF Instructions\nNINAnor/NiN_QGIS_3.x\n\n\nBiodiversity Metric 4.0\nQGIS/QField\n• GIS tools User Guide (PDF)  • Data Standard (XLSX)\nNINAnor/BiodiversityMetric_QGIS_3.x\n\n\nBluegreen Factor\nQGIS/QField\nunder development\nunder development\n\n\nCarbonViewer\nRShiny\n• App Instructions  • Publication\n• NINAnor/carbonviewer  • carbonviewer.nina.no",
+    "text": "NiN 2.0 Naturetype Mapping\nBiodiversity Metric 4.0\nBlue Green Factor\nCarbon Viewer\n\n\n\n\n\nField Application\nTool\nInstructions\nDownload\n\n\n\n\nNiN 2.0  Naturetype Mapping\nQGIS/QField\nPDF Instructions\nNINAnor/NiN_QGIS_3.x\n\n\nBiodiversity Metric 4.0\nQGIS/QField\n• GIS tools User Guide (PDF)  • Data Standard (XLSX)\nNINAnor/BiodiversityMetric_QGIS_3.x\n\n\nBluegreen Factor\nQGIS/QField\n• App Instructions\nNINAnor/BGF-QGIS\n\n\nCarbonViewer\nRShiny\n• App Instructions  • Publication\n• NINAnor/carbonviewer  • carbonviewer.nina.no",
     "crumbs": [
       "Data Collection"
     ]

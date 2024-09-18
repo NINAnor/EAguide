@@ -268,7 +268,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#step-by-step-guide-for-submitting-data" id="toc-step-by-step-guide-for-submitting-data" class="nav-link active" data-scroll-target="#step-by-step-guide-for-submitting-data">Step-by-step guide for submitting data</a></li>
+  <li><a href="#sec-submitting-data" id="toc-sec-submitting-data" class="nav-link active" data-scroll-target="#sec-submitting-data">Step-by-step guide for submitting data</a></li>
   <li><a href="#guide-for-developers" id="toc-guide-for-developers" class="nav-link" data-scroll-target="#guide-for-developers">Guide for developers</a>
   <ul class="collapse">
   <li><a href="#installation-instructions" id="toc-installation-instructions" class="nav-link" data-scroll-target="#installation-instructions">Installation instructions</a></li>
@@ -301,19 +301,20 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Local Ecosystem Accounts, <em>Finskala Naturregnskap</em>, map results will be published in the dataset <a href="https://maps.nina.no/">Finskala Naturregnskap</a> on NINA’s map catalogue for curated maps. To publish maps, the data manager of the project should submit the import schema to Miljødata (see the <a href="#step-by-step-guide-on-preparing-your-data">step-by-step guide</a>).</p>
+<p>Local Ecosystem Accounts, <em>Finskala Naturregnskap</em>, map results will be published in the dataset <a href="https://maps.nina.no/datasets/localEA">Finskala Naturregnskap</a> on NINA’s map catalogue for curated maps. To publish maps, the data manager of the project should submit the import schema to Miljødata (see the <a href="#sec-submitting-data">step-by-step guide</a>).</p>
 <p>The <strong>Local Ecosystem Accounts Dataset</strong> is structured as follows: maps are categorized by project, and within each project, map layers are further organized according to the components of the Ecosystem Accounting Framework:</p>
 <ul>
 <li>Ecosystem Services (<em>Økosystemtjenester</em>)</li>
-<li>Ecosystem Extent (<em>Arealregnskap for økosystemer</em>)</li>
+<li>Ecosystem Extent (<em>Utbredelsen</em>)</li>
 <li>Ecosystem Condition (<em>Økologisk tilstand</em>)</li>
 <li>Misc. (<em>Andre temakart</em>)</li>
 </ul>
 <div class="note">
 <p><strong>Curated Maps</strong> represent a collection of maps that are carefully selected and organized. <a href="https://maps.nina.no/">NINA’s map catalogue</a> is designed to facilitate the sharing of your final map results with both internal and external users. It’s important to note that this portal is not intended for storing interim or temporary data products.</p>
+<p>If you have feedback on the map portal, please raise an issue in the GitHub repositories or contact the developers. Links to repositories can be found under <code>Guide for Developers</code>.</p>
 </div>
-<section id="step-by-step-guide-for-submitting-data" class="level2">
-<h2 class="anchored" data-anchor-id="step-by-step-guide-for-submitting-data">Step-by-step guide for submitting data</h2>
+<section id="sec-submitting-data" class="level2">
+<h2 class="anchored" data-anchor-id="sec-submitting-data">Step-by-step guide for submitting data</h2>
 <ol type="1">
 <li>Organize your data</li>
 </ol>
@@ -557,12 +558,12 @@ DEBUG=True</code></pre></li>
 <ul>
 <li>Prepare the <strong>raster</strong> data
 <ul>
-<li><a href="https://github.com/NINAnor/nina-map-explorer/blob/main/scripts/raster_operations.sh">raster_operations.sh</a>
+<li><a href="https://github.com/NINAnor/naturregnskap_maps_uploader/blob/main/scripts/raster_operations.sh">raster_operations.sh</a>
 <ul>
 <li>mosaic rasters (if raster is split into multiple files)</li>
 <li>clip the raster to your study area, set a NoData value, and set the coordinate system</li>
 </ul></li>
-<li><a href="https://github.com/NINAnor/nina-map-explorer/blob/main/scripts/generate_cog.sh">generate_cog.sh</a>
+<li><a href="https://github.com/NINAnor/naturregnskap_maps_uploader/blob/main/scripts/generate_cog.sh">generate_cog.sh</a>
 <ul>
 <li><p>convert a GeoTIFF to a Cloud Optimized GeoTIFF (COG)</p>
 <pre class="{bash}"><code># source the helper functions
@@ -581,7 +582,7 @@ to_cog /path/to/input.tif default</code></pre></li>
 </ul></li>
 <li>Prepare the <strong>vector</strong> data
 <ul>
-<li><a href="https://github.com/NINAnor/nina-map-explorer/blob/main/scripts/generate_pmtiles.sh">generate_pmtiles.sh</a>
+<li><a href="https://github.com/NINAnor/naturregnskap_maps_uploader/blob/main/scripts/generate_pmtiles.sh">generate_pmtiles.sh</a>
 <ul>
 <li><p>convert the GPKGs to PMTiles using GDAL &gt;= 3.8.</p></li>
 <li><p>MAXZOOM and MINZOOM influence the level of detail in the map and the size of the tiles (higher values = more detail, larger tiles).</p></li>

@@ -18,3 +18,7 @@ The guidebook covers the following topics:
 - **FAIR Data Managment**: How to adhere to FAIR principles in ecosystem accounting projects.
 
 This guidebook is a living document and will be updated as new methods and best practices are developed. If you have any suggestions for improvements or additions, please contact the authors or submit a pull request on the [GitHub repository](https://github.com/NINAnor/EAguide).
+
+:::{.note}
+[Here](/assets/17.09.2024_user-seminar_DI_naturregnskap.pptx) you can find the presentation for the user seminar **"Seminar | Datainfrastruktur finskala naturregnskap"** given on 18 september 2024. 
+:::

@@ -122,7 +122,7 @@ Below is a brief guide for setting up a local installation of the Catalogue on y
 
             ```
             email: admin@nina.no
-            password: password            
+            password: admin            
             ```
 
             These can be used to login to the Django admin: [localhost:8000/admin/](http://localhost:8000/admin/) 

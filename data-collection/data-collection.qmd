@@ -19,7 +19,7 @@ This page presents a list of field surveys and applications usefull for ecosyste
 | :---------------- | :--- | :----------- | :------- |
 | **NiN 2.0** <br> **Naturetype Mapping**| QGIS/QField | [PDF Instructions](https://github.com/geco-nhm/NiN_QGIS_3.x/blob/master/NHM_Rapport_83_QGIS_NiN_2019.pdf) | [NINAnor/NiN_QGIS_3.x](https://github.com/NINAnor/NiN_QGIS_3.x) |
 | **Biodiversity Metric 4.0** | QGIS/QField | • [GIS tools User Guide (PDF)](https://publications.naturalengland.org.uk/publication/6049804846366720) <br> • [Data Standard (XLSX)](https://publications.naturalengland.org.uk/publication/6049804846366720) | [NINAnor/BiodiversityMetric_QGIS_3.x](https://github.com/NINAnor/BiodiversityMetric_QGIS_3.x) |
-| **Bluegreen Factor** | QGIS/QField | *under development* | *under development* |
+| **Bluegreen Factor** | QGIS/QField | • [App Instructions](./field-surveys/qfield-bgf.qmd) |  [NINAnor/BGF-QGIS](https://github.com/NINAnor/BGF-QGIS) | 
 | **CarbonViewer** | RShiny | • [App Instructions](https://carbonviewer.nina.no/)  <br> • [Publication](https://ntnuopen.ntnu.no/ntnu-xmlui/bitstream/handle/11250/3099192/KyrkjeeideAcalculatorCarbonManagement2023gull.pdf?sequence=1&isAllowed=y) | • [NINAnor/carbonviewer](https://github.com/NINAnor/carbonviewer) <br> • [carbonviewer.nina.no](https://carbonviewer.nina.no/)|
 
 <br>

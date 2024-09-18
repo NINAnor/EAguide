@@ -9,7 +9,7 @@ The page [Field Surveys](#sec-field-surveys) provides a list of QField projects 
 
 ## Prerequisites
 
-- [QGIS v3.x](qgis-installation-guide.qmd) installed on your computer.
+- [QGIS v3.x](qgis-installation.qmd) installed on your computer.
 - [QField](https://qfield.org/) installed on your device.
     - [Google Play](https://play.google.com/store/apps/details?id=ch.opengis.qfield) 
     - [Apple App Store](https://apps.apple.com/us/app/qfield-for-qgis/id1531726814).
@@ -21,7 +21,7 @@ Once you have installed QGIS on your computer. Go to  *Plugins > Manage and Inst
 
 - [QFieldSync](https://plugins.qgis.org/plugins/qfieldsync/): a QGIS plugin that allows you to synchronize your QGIS projects with QField Cloud.
 
-See [QGIS plugins](qgis-plugins.md) for other useful plugins.
+See [QGIS plugins](qgis-plugins.qmd) for other useful plugins.
 
 ## Download a project from QField Cloud
 

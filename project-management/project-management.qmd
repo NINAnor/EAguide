@@ -1,8 +1,8 @@
 # Project Management {#sec-project-management}
 
-- Data Management Plan
-- Licenses, tools, software 
+*suggestions for this page*
+
+- create a template for an Ecosystem Accounting Data Management Plan: https://nina.sharepoint.com/SitePages/nn_md_dmp.aspx
+- info on Licenses, tools, software (or links to Intranett)
 - budget for data management and data publishing
 - involve Miljødata from step 1 (project application)
-- test
-- test

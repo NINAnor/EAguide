@@ -1,1 +1,7 @@
 # Documentation {#seq-documentation}
+
+*suggestions for this page*
+
+- Refer to Quarto templates:
+    - Quarto NINA rapport template: https://github.com/NINAnor/quarto_nina_report
+    - Quarto NINA template: https://github.com/NINAnor/NINA-ebook-template

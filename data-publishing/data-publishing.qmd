@@ -1,19 +1,21 @@
 # Data Publishing {#sec-data-publishing}
 
-Local Ecosystem Accounts, *Finskala Naturregnskap*, map results will be published in the dataset [Finskala Naturregnskap](https://maps.nina.no/) on NINA's map catalogue for curated maps. To publish maps, the data manager of the project should submit the import schema to Miljødata (see the [step-by-step guide](#step-by-step-guide-on-preparing-your-data)). 
+Local Ecosystem Accounts, *Finskala Naturregnskap*, map results will be published in the dataset [Finskala Naturregnskap](https://maps.nina.no/datasets/localEA) on NINA's map catalogue for curated maps. To publish maps, the data manager of the project should submit the import schema to Miljødata (see the [step-by-step guide](#sec-submitting-data)). 
 
 The **Local Ecosystem Accounts Dataset** is structured as follows: maps are categorized by project, and within each project, map layers are further organized according to the components of the Ecosystem Accounting Framework:
 
 - Ecosystem Services (*Økosystemtjenester*)
-- Ecosystem Extent (*Arealregnskap for økosystemer*)
+- Ecosystem Extent (*Utbredelsen*)
 - Ecosystem Condition (*Økologisk tilstand*)
 - Misc. (*Andre temakart*)
 
 :::{.note}
 **Curated Maps** represent a collection of maps that are carefully selected and organized. [NINA's map catalogue](https://maps.nina.no/)  is designed to facilitate the sharing of your final map results with both internal and external users. It's important to note that this portal is not intended for storing interim or temporary data products. 
+
+If you have feedback on the map portal, please raise an issue in the GitHub repositories or contact the developers. Links to repositories can be found under `Guide for Developers`.
 :::
 
-## Step-by-step guide for submitting data
+## Step-by-step guide for submitting data{#sec-submitting-data}
 
 1. Organize your data
 - Create a folder *nina_map_catalog* within your project folder (*P:/*)
@@ -218,10 +220,10 @@ Below are the steps to create a map for the Local Ecosystem Accounts dataset and
 3. Prepare your data
 
     - Prepare the **raster** data
-        - [raster_operations.sh](https://github.com/NINAnor/nina-map-explorer/blob/main/scripts/raster_operations.sh)
+        - [raster_operations.sh](https://github.com/NINAnor/naturregnskap_maps_uploader/blob/main/scripts/raster_operations.sh)
             - mosaic rasters (if raster is split into multiple files)
             - clip the raster to your study area, set a NoData value, and set the coordinate system
-        - [generate_cog.sh](https://github.com/NINAnor/nina-map-explorer/blob/main/scripts/generate_cog.sh)
+        - [generate_cog.sh](https://github.com/NINAnor/naturregnskap_maps_uploader/blob/main/scripts/generate_cog.sh)
             - convert a GeoTIFF to a Cloud Optimized GeoTIFF (COG)
 
                 ```{bash}
@@ -240,7 +242,7 @@ Below are the steps to create a map for the Local Ecosystem Accounts dataset and
                 ```
 
     - Prepare the **vector** data
-        - [generate_pmtiles.sh](https://github.com/NINAnor/nina-map-explorer/blob/main/scripts/generate_pmtiles.sh)
+        - [generate_pmtiles.sh](https://github.com/NINAnor/naturregnskap_maps_uploader/blob/main/scripts/generate_pmtiles.sh)
             - convert the GPKGs to PMTiles using GDAL >= 3.8.
             - MAXZOOM and MINZOOM influence the level of detail in the map and the size of the tiles (higher values = more detail, larger tiles). 
             - docs: [gdal.org/drivers/vector/pmtiles.html](https://gdal.org/drivers/vector/pmtiles.html).

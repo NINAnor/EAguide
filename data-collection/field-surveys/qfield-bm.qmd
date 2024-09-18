@@ -67,7 +67,7 @@ We adapted the template from The Statutory Biodiversity Metric - QGIS template, 
 ::: {.column}
 **QGIS/QField Cloud managers:**
 
-- Willeke A'Campo 
+- Trond Simensen
 - Stig Claussen
 :::
 :::

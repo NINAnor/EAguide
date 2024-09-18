@@ -13,7 +13,7 @@ The guidebook covers the following topics:
     - **Field Surveys**: Instructions on conducting field surveys, including common methods and protocols.
     - **Remote Sensing**: Techniques for utilizing remote sensing data in ecosystem accounting projects.
 - **Data analysis**: Best practices and methods for analyzing data in ecosystem accounting projects.
-- **Data Publishing**: Steps for publishing data in [NINA's map catalogue](https://maps.nina.no/).
+- **Data Publishing**: Steps for publishing data in [NINA's map catalogue for Local Ecosystem Accounts](https://maps.nina.no/datasets/localEA).
 - **Documentation**: Guidelines for documenting your project and data.
 - **FAIR Data Managment**: How to adhere to FAIR principles in ecosystem accounting projects.
 

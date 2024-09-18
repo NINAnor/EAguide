@@ -10,7 +10,7 @@ The NiN 2.0 mapping protocol is used to map and register naturetypes in Norway. 
 
 #### Install NiN QField on your tablet
 
-The **NiN 2.0** QGIS template is uploaded to NINA's QField Cloud account. For general instructions on QGIS, QField and QField Cloud follow the guide: [QGIS and QField introduciton](intro-to-qfield.qmd).
+The **NiN 2.0** QGIS template is uploaded to NINA's QField Cloud account. For general instructions on QGIS, QField and QField Cloud follow the guide: [QGIS and QField introduciton](/qgis/qfield-intro.qmd).
 
 1. Open QField on your tablet and go to `QFieldCloud projects` > `My Projects` 
 2. Select the project and the latest version of the project will be downloaded to your tablet.
@@ -70,7 +70,7 @@ We forked the NiN 2.0 Template from the [GitHub ](https://github.com/geco-nhm/Ni
 ::: {.column}
 **QGIS/QField Cloud managers:**
 
-- Willeke A'Campo 
+- Trond Simensen
 - Stig Claussen
 :::
 :::

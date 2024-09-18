@@ -1,1 +1,5 @@
 # FAIR Principles {#sec-fair-principles}
+
+*suggestions for this page* 
+
+- refer to https://ninanor.github.io/data-management-handbook/dmh_content/chapters/c7_acknowledgements.html

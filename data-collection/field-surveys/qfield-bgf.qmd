@@ -4,9 +4,11 @@ The Bluegreen Factor (BGF) is a norm promoting blue-green development in municip
 
 **Cost calculation of Blue-Green Infrastructure**
 
-The BGF-QGIS app integrated a cost module which calculates the investment and maintenance cost per blue-green structure and measures as well as for the total project area. 
+The BGF-QGIS app includes an integrated cost module that estimates the investment and maintenance costs of each blue-green structure and measure, as well as the total costs for the entire project area.
 
-*Bart add more text here*
+Costs were calculated for all BGI measures defined under the BGF norm. For each measure, unit implementation costs (including materials and installation) and annual operation and maintenance costs (e.g. pruning, irrigation, tree removal) were estimated. These were based on historical data from real-world projects in Oslo, supplemented by data from Sweden and Denmark to fill gaps. All costs were standardised to NOK/m2, and adjusted to 2022 values using the consumer price index (CPI) from Statistics Norway.
+
+To reflect cost uncertainty, low, average, and high values were estimated for implementation cost, maintenance cost, and expected lifetime. These were refined through expert consultations. Using these parameters, the app calculates the Net Present Value (NPV) of each BGI measure over its lifetime. NPV is computed by discounting future maintenance and reinvestment costs using a 2% discount rate.
 
 ## BGF Norms and calculation methods
 
@@ -266,7 +268,17 @@ The final BGF score for each study area is calculated in a separate table under 
 
 ### Calculate the total cost for Blue-Green Infrastructure
 
-*work in progress, needs feedback from bart/max* 
+1. Go to BGF kartlegging → BGF typologi in the QGIS project.
+2. Open the attribute table by right-clicking the layer.
+3. In the attribute table, switch to form view (bottom right corner).
+4. For each BGI typology, review the cost values shown in the ‘Kostnader’ section (centre-right of the form).
+5. You can switch between typologies using the left-hand menu.
+6. The app displays automatically calculated values for:
+7. Investment cost (low, average, high)
+8. Maintenance cost (low, average, high)
+9. Expected lifetime (low, average, high)
+
+*Note pending: It appears that the formula for expected lifetime in the app may currently be incorrect, as the values displayed seem too high
 
 ### Export Data 
 
